@@ -1,0 +1,291 @@
+// variables
+$formWidth: 1260
+$formBreakPoint: 767
+$font: '微軟正黑體修正', 'Microsoft JhengHei', '微軟正黑體', sans-serif
+$color-main: #b0904d
+
+
+// 表格類
+.fm 
+  max-width: $formWidth + px
+  width: 100%
+  margin: 0 auto
+.fm-row
+  width: 100%
+  display: flex
+  margin-bottom: 4px
+  padding: 0 125px
+  &:nth-child(odd)
+    background-color: $info
+  +rwdmax(1200)
+    padding: 0 80px
+  +rwdmax(900)
+    padding: 0 50px
+  +rwdmax($formBreakPoint)
+    flex-direction: column
+    margin-bottom: 0
+    padding: 0 20px
+.fm-grid
+  width: 100%
+  padding-right: 4px
+  +rwdmax($formBreakPoint)
+    padding-right: 0
+    margin-bottom: 4px
+  .tip
+    display: none
+    position: absolute
+    left: -10px
+    top: 15px
+  .notice
+    visibility: hidden
+    padding: 0 20px 15px
+    letter-spacing: 4.8px
+    color: $main
+    font-size: px(16)
+    &.alert
+      color: red
+    +rwdmax($formBreakPoint)
+      padding: 0 10px
+  // 驗證 *
+  &.required
+    .tip
+      display: block
+    p.option
+      position: relative
+      font-family: $font
+      font-size: px(14)
+    .fm-group, .type-fullbox
+      p.option
+        &::before
+          display: none
+.fm-group
+  display: flex
+  align-items: center
+  padding: 20px
+  +rwdmax($formBreakPoint)
+    padding: 10px
+  p.subject
+    position: relative
+    padding: 10px 10px 10px 0
+    flex-shrink: 0
+    font-weight: bold
+  // subject & input 並列
+  &.type-row
+    align-items: start
+  // subject & input 垂直
+  &.type-column
+    flex-direction: column
+    align-items: flex-start
+  
+  // 一般input
+  input[type="text"], input[type="password"], input[type="tel"], input[type="email"], input[type="date"]
+    width: 100%
+    background: transparent
+    border: none
+    padding: 17px 15px
+    +rwdmax($formBreakPoint)
+      padding: 8px 10px
+      font-size: px(16)
+    +mozhack 
+      // margin-top: -1px
+    &::placeholder
+      // transform: translateY(-1px)
+      // line-height: 1.5
+      font-family: $font
+    &.text-right
+      text-align: right
+      padding-right: 12px
+
+// 下拉選單
+.fm-select
+  width: 100%
+  flex: 1
+  select
+    position: absolute
+    right: 0
+    top: 0
+    visibility: hidden
+    padding: 20px 14px
+    width: 100%
+    min-width: 120px
+    background-color: transparent
+    font-weight: bold
+    color: $main
+    border: solid 2px $second
+    font-size: 18px
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    background-image: url(../font/icomoon/SVG/keyboard_arrow_down.svg)
+    background-repeat: no-repeat
+    background-position-x: 99% 
+    background-position-y: 50%
+    +rwdmax($formBreakPoint)
+      padding: 10px
+      font-size: 16px
+  i
+    position: absolute
+    right: 10px
+    top: 50%
+    transform: translateY(-50%)
+    font-size: px(26)
+
+
+// checkbox
+.fm-check
+  display: flex
+  +rwdmax($formBreakPoint)
+    padding-left: 0
+    width: 100%
+    justify-content: space-between
+.check-wrap
+  width: 100%
+  display: flex
+  align-items: center
+  margin-right: 18px
+  +rwdmax($formBreakPoint)
+    margin-right: 10px
+  input
+    display: none
+    &:checked+label.form-fakebox
+      .form-box
+        background-color: transparent
+        &::after
+          opacity: 1
+        span 
+          color: $color-main
+    &:checked+label.form-fakebox.transparent
+      .form-box
+        background-color: transparent
+        span 
+          background-color: $color-main
+        
+  label.form-fakebox
+    position: relative
+    display: block
+    width: 20px
+    height: 20px
+    border-radius: 100%
+    cursor: pointer
+    .form-box
+      position: static
+      width: 20px
+      height: 20px
+      border-radius: 50%
+      border: solid 2px $main
+      +posCenter
+      &::after
+        content: ''
+        width: 10px
+        height: 10px
+        border-radius: 50%
+        opacity: 0
+        background-color: $main
+        transition: .3s ease
+        +posCenter
+      +rwdmax(767)
+        border: solid 1px $main
+  label.word
+    cursor: pointer
+    padding-left: 8px
+    line-height: 24px
+    letter-spacing: 1.05px
+    // font-weight: bold
+    i 
+      padding-left: 5px
+    +rwdmax($formBreakPoint)
+      padding-left: 5px
+
+.fm
+  // textarea
+  textarea 
+    padding: 20px
+    width: 100%
+    height: 150px
+    background-color: transparent
+    resize: none
+    // overflow: hidden
+    border-radius: 0
+    overflow-y: scroll
+    border: solid 2px $second
+    font-family: $font
+    font-size: 18px
+    +rwdmax($formBreakPoint)
+      width: 100%
+      margin-left: 0
+      margin-right: 0
+      font-size: 16px
+      padding: 10px
+      border: solid 1px $second
+    @media screen and (-ms-high-contrast: active),(-ms-high-contrast: none)
+      overflow: auto
+    
+  textarea::-webkit-scrollbar
+    width: 5px
+  textarea::-webkit-scrollbar-track
+    background-color: transparent
+    box-shadow: 0 0 black
+    opacity: 0
+    &:hover 
+      opacity: 1
+  textarea::-webkit-scrollbar-thumb
+    width: 5px
+    border-radius: 5px
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+    background-color: rgba(0,0,0,0.1)
+
+
+// file 上傳檔案
+.file-wrap 
+  display: flex
+  align-items: center
+  padding: 20px 0
+  +rwdmax($formBreakPoint)
+    padding-left: 0
+.file-name
+  color: #aaa
+  padding-left: 10px
+
+.fm-button
+  padding: 10px
+  background-color: transparent
+  cursor: pointer
+  &[type="submit"]
+    text-align: justify
+    letter-spacing: 4px
+    font-weight: bold
+    color: $main
+    border: solid 2px $second
+    border-radius: 0
+    transition: .3s ease-in-out
+    &:hover 
+      color: $second
+      border-color: $main
+    +rwdmax($formBreakPoint)
+      border: solid 1px $second
+  &[type="reset"]
+    margin-left: 20px
+    border-radius: 0
+    color: #333
+    text-decoration: underline
+    +rwdmax($formBreakPoint)
+      margin-left: auto
+// 驗證提示
+.fm
+  .fm-group
+    position: relative
+  label.error
+    position: absolute
+    color: $main
+    bottom: -7px
+    left: 18px
+    font-size: px(16)
+    letter-spacing: 4px
+    +rwdmax($formBreakPoint)
+      bottom: -10px
+  .input-wrap
+    width: 100%
+    border: solid 2px $second
+    +rwdmax($formBreakPoint)
+      border: solid 1px $second
+      

@@ -1,0 +1,236 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+  
+.service
+  main
+    padding-bottom: 130px
+    overflow: hidden
+    +rwdmax(1200)
+      margin-top: 80px
+    +rwdmax(767)
+      margin-top: 74px
+  .section-story
+    +rwdmax(767)
+      padding-left: 20px
+      padding-right: 20px
+      .section-title
+        text-align: left
+        margin: 0
+  .dropdown,
+  .container-fluid
+    max-width: 1450px
+    width: 90%
+  .dropdown
+    margin: 0 0 55px 105px
+    >div
+      max-width: 720px
+      width: 100%
+    +rwdmax(1200)
+      margin: 0 auto 55px
+      >div
+        margin: 0 auto
+    +rwdmax(767)
+      width: 85%
+  .container-fluid
+    +rwdmax(767)
+      width: 100%
+  .section-content
+    padding-top: 50px
+    padding-bottom: 60px
+    background-color: $info
+    .btn
+      margin-top: 60px
+      +flexCenter
+    +rwdmax(767)
+      padding-top: 40px
+  .container-fluid
+    // padding-right: 0
+    // padding-left: 0
+    .info-block
+      margin-bottom: 15px
+    +rwdmax(1200)
+      .info-block
+        margin-bottom: 35px
+  .info-block
+    margin: 0 auto
+    .text
+      padding: 12px 40px 20px
+      background-color: #fff
+    p
+      +ellipsis(3, 28px)
+    .btn-more
+      margin-top: 20px
+    +rwdmax(767)
+      .text
+        padding: 20px
+    
+  
+  
+  &-awards,
+  &-certified
+    max-width: 1370px
+    width: 90%
+    margin: 0 auto
+    h6.section-title
+      max-width: 1135px
+      width: 100%
+      margin: 0 auto
+      text-align: center
+      
+  &-awards
+    padding-top: 73px
+    +rwdmax(767)
+      padding-top: 50px
+    h6.section-title
+      // margin-bottom: 30px
+      // padding-bottom: 37px
+      // border-bottom: solid 1px $second
+      +rwdmax(767)
+        text-align: left
+        width: 85%
+        margin-bottom: 0
+        padding-bottom: 30px
+    &.section-story
+      p 
+        max-width: 1135px
+        width: 100%
+        margin: 0 auto
+        margin-bottom: 30px
+        padding-bottom: 37px
+        border-bottom: solid 1px $second
+    .awards-block
+      padding: 55px 0
+      +rwdmax(1400)
+        padding: 40px 0
+      +rwdmax(767)
+        border-bottom: solid 1px $second
+        padding: 30px 0
+    .top-block
+      .photo
+        max-width: 175px
+        width: 100%
+      .main
+        padding-left: 30px
+        padding-right: 20px
+        color: #333
+        div
+          padding-bottom: 35px
+          span
+            padding-bottom: 20px
+            display: block
+          h6 
+            line-height: 1.2
+      +rwdmax(900)
+        .photo
+          max-width: 150px
+      +rwdmax(767)
+        .photo
+          max-width: 120px
+        .main
+          padding-left: 20px
+          padding-right: 0
+          div 
+            padding-bottom: 25px
+            span 
+              padding-bottom: 15px
+
+    .cir-btn
+      width: 21px
+      height: 21px
+      margin: 25px auto 0
+      border-radius: 50%
+      border: solid 1px $main
+      cursor: pointer
+      color: $main
+      +flexCenter
+      i
+        font-size: px(15)
+        transition: .3s ease-in-out
+      &.active
+        i 
+          transform: scaleY(-1)
+      +rwdmax(1400)
+        margin-top: 15px
+    .bottom-block
+      padding-top: 25px
+      max-width: 345px
+      width: 100%
+      margin: 0 auto
+      display: none
+      li 
+        // margin-left: 10px
+        padding-left: 15px
+        position: relative
+        line-height: 24px
+        color: #333
+        font-size: px(12)
+        &::before
+          position: absolute
+          left: 0
+          top: 9px
+          content: ''
+          width: 7px
+          height: 7px
+          border-radius: 50%
+          background-color: #000
+  &-certified
+    h6.section-title
+      padding-top: 37px
+      padding-bottom: 90px
+      border-top: solid 1px $second
+    +rwdmax(1200)
+      h6.section-title
+        padding-bottom: 60px
+    +rwdmax(767)
+      h6.section-title
+        text-align: left
+        border-top: 0
+        width: 85%
+  .swiper-service
+    position: relative
+    .swiper-button-next,
+    .swiper-button-prev
+      &::after
+        color: $main
+        font-size: px(32)
+    .slide-box
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      .photo
+        max-width: 140px
+        width: 100%
+        padding-bottom: 20px
+      p
+        line-height: 1.2
+        letter-spacing: 1.5px
+        color: #333
+        font-weight: bold
+        font-size: px(15)
+        &.num
+        &.text
+    +rwdmax(1200)
+      .slide-box
+        .photo
+          max-width: 100px
+    +rwdmax(767)
+      .swiper-button-next,
+      .swiper-button-prev
+        &::after
+          font-size: px(24)
+      .swiper-button-next,
+        right: 0
+      .swiper-button-prev
+        left: 0
+      .slide-box
+        padding: 0 15px
+        .photo
+          max-width: 80px
+
+  .swiper-service-width
+    max-width: 1135px
+    width: 90%
+    margin: 0 auto
+    +rwdmax(767)
+      width: 100%

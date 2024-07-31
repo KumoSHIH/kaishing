@@ -1,0 +1,233 @@
+-
+  var swiper = [
+    {
+      ch: '盡心服務',
+      en: '',
+      desktop: '../../uploads/index/index01-1920X945.jpg',
+      mobile: '../../uploads/index/index01-mobile-780X820.jpg',
+      linkName: '關於我們',
+      link: './about.html'},
+    {
+      ch: '以心創新',
+      en: '',
+      desktop: '../../uploads/index/test3.jpg',
+      mobile: '../../uploads/index/index01-mobile-780X820.jpg',
+      linkName: '我們的業務',
+      link: 'javascript:;'},
+    {
+      ch: '連繫人心',
+      en: '',
+      desktop: '../../uploads/index/test4.jpg',
+      mobile: '../../uploads/index/index01-mobile-780X820.jpg',
+      linkName: '可持續發展',
+      link: 'javascript:;'},
+    {
+      ch: '永續未來',
+      en: '',
+      desktop: '../../uploads/index/test5.jpg',
+      mobile: '../../uploads/index/index01-mobile-780X820.jpg',
+      linkName: '卓越服務',
+      link: 'javascript:;'}
+  ]
+
+  var swiperOther = [
+    {
+      photo: [
+        '../../uploads/index/other01-800X605.jpg',
+        '../../uploads/index/other01-800X605.jpg',
+        '../../uploads/index/other01-800X605.jpg',
+        '../../uploads/index/other01-800X605.jpg',
+        '../../uploads/index/other01-800X605.jpg'
+      ],
+      title: '我們的業務',
+      text: '我們的物業管理服務範圍遍佈香港及中國內地，管理的住宅及商業項目多元化，包括辦公大樓、大型購物商場、高級豪宅及大型住宅等，為業戶提供全面、優質的專業物業管理服務。',
+      link: 'javascript:;',
+      speed: '1200'},
+    {
+      photo: [
+        '../../uploads/index/other02-800X605.jpg',
+        '../../uploads/index/other02-800X605.jpg',
+        '../../uploads/index/other02-800X605.jpg',
+        '../../uploads/index/other02-800X605.jpg',
+        '../../uploads/index/other02-800X605.jpg'
+      ],
+      title: '可持續發展',
+      text: '我們在推廣可持續發展方面持續成為業界內表現領先的物業管理服務公司。為減少碳排放，我們的團隊從不同層面出發，積極尋求不同方案，提升物業的整體能源使用效益，達致節能減碳。',
+      link: 'javascript:;',
+      speed: '1200'},
+    {
+      photo: [
+        '../../uploads/index/other03-800X605.jpg',
+        '../../uploads/index/other03-800X605.jpg',
+        '../../uploads/index/other03-800X605.jpg',
+        '../../uploads/index/other03-800X605.jpg',
+        '../../uploads/index/other03-800X605.jpg'
+      ],
+      title: '卓越服務',
+      text: '啟勝在業界內成就卓越，歷年來獲獎無數。憑藉多年專業的服務經驗，我們的團隊用心、創新，策動超越所想的服務，開拓非一般視野，為客戶創造長遠價值，打造理想生活環境。',
+      link: 'javascript:;',
+      speed: '1200'},
+    {
+      photo: [
+        '../../uploads/index/other04-800X605.jpg',
+        '../../uploads/index/other04-800X605.jpg',
+        '../../uploads/index/other03-800X605.jpg',
+        '../../uploads/index/other03-800X605.jpg',
+        '../../uploads/index/other03-800X605.jpg'
+      ],
+      title: '客戶故事',
+      text: '啟勝以客戶的需求為出發點，耐心聆聽客戶需要，致力為他們提供最優質的服務，打造理想的生活空間。<br>啟勝的服務一直以來都得到不少客戶的信賴和讚賞。來看看我們與客戶之間的真實故事，一同細味貼心服務帶來的喜悅吧!',
+      link: 'javascript:;',
+      speed: '1200'},
+  ]
+
+  var news = [
+    {
+      data: [
+        {
+          photo: '../../uploads/index/news01-615X345.jpg',
+          title: '這是假字，這是假字這是假字。',
+          link: 'javascript:;'},
+        {
+          photo: '../../uploads/index/news02-615X345.jpg',
+          title: '啟勝應用智能抗疫 獲「抗逆貢獻嘉許大獎2021」榮譽大獎及多項殊榮獲「抗逆貢獻嘉許大獎2021」榮譽大獎及多項殊榮',
+          link: 'javascript:;'},
+        {
+          photo: '../../uploads/index/other04-800X605.jpg',
+          title: '啟勝應用智能抗疫 獲「抗逆貢獻嘉許大獎2021」榮譽大獎及多項殊榮',
+          link: 'javascript:;'},
+      ]},
+    {
+      data: [
+        {
+          photo: '../../uploads/index/other01-800X605.jpg',
+          title: '啟勝應用智能抗疫 獲「抗逆貢獻嘉許大獎2021」榮譽大獎及多項殊榮',
+          link: 'javascript:;'},
+        {
+          photo: '../../uploads/index/other04-800X605.jpg',
+          title: '啟勝應用智能抗疫 獲「抗逆貢獻嘉許大獎2021」榮譽大獎及多項殊榮',
+          link: 'javascript:;'},
+        {
+          photo: '../../uploads/index/news02-615X345.jpg',
+          title: '啟勝應用智能抗疫 獲「抗逆貢獻嘉許大獎2021」榮譽大獎及多項殊榮獲「抗逆貢獻嘉許大獎2021」榮譽大獎及多項殊榮',
+          link: 'javascript:;'},
+      ]},
+  ]
+
+doctype html
+html(lang="zh-Hant-HK")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../assets/css/index.css")
+
+  body.index(data-page="home" data-lang="tc")
+    .main-wrapper
+      // 導覽列
+      include ../layouts/_navbar.pug
+      // 主要內容
+      main
+        // swiper
+        section.section-banner
+          // 標題
+          .swiper-title
+            .swiper-container
+              .swiper-wrapper
+                each val in swiper
+                  .swiper-slide
+                    .slide-box.white
+                      .title
+                        .title-main
+                          h6= val.ch
+                        .title-bg= val.ch
+                      //- .link-box
+                      //-   a(href= val.link target="_blank")= val.linkName
+            .swiper-pagination.horizon
+          // 背景圖
+          .banner-photo
+            each val,index in swiper
+              .photo(data-photo-index= index)
+                // 電腦版圖片建議尺寸 1920X945
+                .photo-desktop(style=`background-image: url(${val.desktop})`)
+                // 手機板圖片建議尺寸 780X820
+                .photo-mobile(style=`background-image: url(${val.mobile})`)
+          // link 
+          .link-box.white
+            a(href="./about.html" target="_blank") 關於我們
+
+        // 我們的故事
+        // 文字對齊可設定 左: +left/ 中: +center / 右: +right
+        section.section-story.common-width.center.waypoint
+          h6.section-title 我們的故事
+          p 一切源於一九七八年，新鴻基地產集團在香港成立了啟勝管理服務有限公司（啟勝），讓旗下物業得到專業、優質的物業管理服務。<br>啟勝團隊上下一心、積極進取的精神，令公司不斷壯大，逐步在業界內穩健成長。<br>至今，啟勝負責管理的物業已遍佈香港及內地重要城市，歷年來獲獎無數，在業界內佔有舉足輕重的地位!<br><br>
+            <br>近半世紀以來，我們一直秉持母公司「以心建家」的核心價值，陪伴客戶走過不同人生階段，亦慢慢塑造出啟勝獨一無二的品牌價值觀。<br><br>
+            <br>優質，就得著重細節；創新，須有破格思維。我們的服務專注且細膩，用心感受客戶每一步；<br>同時，亦與時並進，將創新元素滲透到服務的每一角落。<br><br>
+            <br>這就是啟勝!
+        // 我們的業務
+        section.section-other
+          each val,index in swiperOther
+            .article-wrap.common-width
+              // data-speed: 可設定輪播秒數(毫秒) 
+              .swiper-normal.waypoint(class= `swiper-normal${index + 1}` data-speed= val.speed)
+                .swiper-container
+                  .swiper-wrapper
+                    each data in val.photo
+                      .swiper-slide
+                        // 圖片建議尺寸 800X605
+                        // 最多五張圖
+                        .photo.swiper-lazy(data-background= data)
+                          .swiper-lazy-preloader
+                .swiper-pagination.vertical
+              .text-block.waypoint
+                h6.section-title= val.title
+                // 文字區域最多九行，超過將出現 ...
+                p !{val.text}
+                a.btn-more(href= val.link target="_blank")
+                  span 了解更多
+                  .circle-right.main
+                    div
+        // 新聞及資源，最多六則
+        // 背景色可自訂
+        section.section-news(style="background-color: #faf7f1")
+          .common-width.waypoint
+            h6.section-title 新聞及資源
+            .swiper-news.swiper-article
+              .swiper-container
+                .swiper-wrapper
+                  each val in news
+                    // 一個slide 塞三則消息
+                    .swiper-slide
+                      each slide in val.data
+                        .slide-box
+                          // 圖片建議尺寸 615X345
+                          .photo(style=`background-image: url(${slide.photo}`)
+                          // 標題超過兩行出現 ...
+                          h2 !{slide.title}
+                          a.btn-more(href= slide.link target="_blank") 
+                            span 更多消息
+                            .circle-right.main
+                              div
+              .swiper-tools
+                .swiper-button-prev
+                .swiper-pagination.horizon
+                .swiper-button-next
+
+
+      // breadcrumb
+      // 背景色需與 上一塊新聞背景色設定相同
+      .breadcrumb.waypoint(style="background-color: #faf7f1")
+        ul.common-width
+          li
+            a(href="javascript:;")
+              span 主頁
+      // footer
+      include ../layouts/_footer.pug
+
+  //引入的script
+  include ../layouts/_script.pug
+
+
+
+

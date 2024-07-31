@@ -1,0 +1,990 @@
+//共用
+  
+*
+  outline: none
+
+html
+  font-size: 100%
+  scrollbar-width: thin //for Firefox
+  scrollbar-color: rgba(108, 110, 113, 1) transparent //for Firefox
+  &.scrollbarStyle
+    scrollbar-width: thin //for Firefox
+    scrollbar-color: rgba(108, 110, 113, 1) transparent //for Firefox
+    body
+      //↓↓↓卷軸樣式↓↓↓
+      &::-webkit-scrollbar-track
+        border-radius: 10px
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+      &::-webkit-scrollbar
+        // display: none
+        width: 12px
+        +rwdmax(767)
+          display: none
+      &::-webkit-scrollbar-thumb
+        border-radius: 10px
+        background-color: rgba(108, 110, 113, 1)
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+  //Mac系統以外的設定
+  &:not(.isMac)
+    width: 100vw
+    body
+      width: 100vw
+      overflow-y: auto
+      overflow-x: hidden !important
+      -webkit-overflow-scrolling: touch
+  +rwdmax(1600)
+    // font-size: 93.75%
+body
+  font-family: $basic
+  font-weight: normal
+  color: #333
+  &.lock
+    overflow-y: hidden !important
+main
+.swiper-container
+  width: 100%
+  height: 100%
+.swiper-slide
+  text-align: center
+  font-size: 18px
+  background: transparent
+  /* Center slide text vertically */
+  display: -webkit-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  -webkit-justify-content: center
+  justify-content: center
+  -webkit-box-align: center
+  -ms-flex-align: center
+  -webkit-align-items: center
+  align-items: center
+.swiper-pagination
+  &.horizon
+    width: 100%
+    bottom: -10px
+    left: 50%
+    transform: translateX(-50%)
+  &.vertical
+    top: 50%
+    transform: translateY(-50%)
+    display: flex
+    flex-direction: column
+    .swiper-pagination-bullet
+      margin: 15px 0
+.swiper-pagination-bullet
+  margin: 0 15px
+  width: 20px
+  height: 20px
+  position: relative
+  background-color: #fff
+  opacity: 1
+  border: solid 3px #dbdbdb
+  &.swiper-pagination-bullet-active 
+    &::after
+      background-color: $main
+  &::after
+    content: ''
+    width: 10px
+    height: 10px
+    border-radius: 50%
+    background-color: #fff
+    +posCenter
+  +rwdmax(1200)
+    border: solid 1px #dbdbdb
+.swiper-tools
+  position: relative
+  margin-top: 60px
+  +flexCenter
+  .swiper-pagination
+    position: static
+    width: auto
+    bottom: auto
+    transform: translate(0)
+    min-width: 400px
+    +flexCenter
+  .swiper-button-prev,
+  .swiper-button-next
+    position: static
+    margin-top: 0
+    &::after
+      font-family: 'icomoon'
+      color: $second
+      font-size: px(26)
+  .swiper-button-prev
+    +flexCenter
+    &::after
+      content: '\e903'
+      transform: translateX(5px)
+  .swiper-button-next
+    &::after
+      content: '\e902'
+  +rwdmax(500)
+    margin-top: 10px
+    .swiper-pagination
+      min-width: unset
+      padding-left: 20px
+      padding-right: 20px
+
+
+// X
+.cross
+  $w: 23px
+  $h: $w
+
+  padding: 10px
+  width: $w * 2
+  height: $h * 2
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  cursor: pointer
+  // border: solid 1px
+  // &:hover
+  //   div:first-child
+  //     transform: rotate(90deg)
+  //   div:last-child
+  //     transform: rotate(-90deg)
+  div
+    width: $w
+    height: $h
+    position: absolute
+    left: 10.5px
+    top: 10.5px
+    transition: .5s ease-in-out
+    &::after
+      content: ''
+      position: absolute
+      left: 50%
+      top: 0
+      height: $h
+      width: 3px
+      transition: background-color .3s ease-in-out
+      background-color: $second
+  div:first-child
+    &::after
+      top: -2px
+      transform: rotate(-45deg) translateX(-50%)
+  div:last-child
+    &::after
+      top: 0px
+      transform: rotate(45deg) translateX(-50%)
+  &:hover 
+    div
+      &::after
+        background-color: $main
+// waypoint動畫
+.waypoint
+  opacity: 0
+  transition: .5s ease-in-out
+  &.show
+    opacity: 1
+
+// banner 標題
+.banner-title
+  width: 100%
+  .title-center,
+  .title-bg
+    width: 100%
+    text-align: center
+    +posCenter
+  .title-center
+    z-index: 1
+    h6
+      color: #fff
+      letter-spacing: 35px
+      font-weight: bold
+      font-size: px(100)
+      text-shadow: 0 0 15px #fff
+  .title-bg
+    z-index: 0
+    h6 
+      letter-spacing: 65px
+      -webkit-text-stroke: 1px $second
+      color: transparent
+      font-weight: bold
+      font-size: px(120)
+  +rwdmax(1500)
+    .title-center h6
+      letter-spacing: 30px
+      font-size: px(80)
+    .title-bg h6
+      letter-spacing: 44px
+      font-size: px(110)
+  +rwdmax(1200)
+    .title-center h6
+      font-size: px(70)
+    .title-bg h6
+      letter-spacing: 36px
+      font-size: px(98)
+  +rwdmax(900)
+    .title-center h6
+      letter-spacing: 25px
+      font-size: px(66)
+    .title-bg h6
+      font-size: px(84)
+  +rwdmax(767)
+    .title-center h6
+      letter-spacing: 12px
+      font-size: px(44)
+    .title-bg h6
+      letter-spacing: 21px
+      font-size: px(52)
+  &.waypoint
+    .title-center h6,
+    .title-bg h6
+      opacity: 0
+      transition: opacity, transform .5s ease-in-out
+    .title-center h6 
+      transform: translateX(50px)
+    .title-bg h6
+      transform: translateX(-50px)
+  &.show
+    .title-center h6,
+    .title-bg h6
+      opacity: 1
+      transform: translateX(0)
+
+
+.common-banner
+  position: relative
+  padding-bottom: 15%
+  background-color: #fff4e6
+.common-title
+  position: absolute
+  left: 50%
+  bottom: -40px
+  transform: translateX(-50%)
+  h6 
+    text-align: center
+    font-weight: bold
+    font-size: px(80)
+// 單色banner
+.normal-banner
+  .bg
+    position: relative
+    height: 300px
+    background-color: $info
+    &::after,
+    &::before
+      content: ''
+      width: 100%
+      position: absolute
+      bottom: 0
+      left: 50%
+      transform: translateX(-50%)
+      opacity: .2
+      background-color: $second
+    &::after
+      max-width: 960px
+      height: 17px
+      +rwdmax(1100)
+        height: 15px
+      +rwdmax(767)
+        height: 10px
+    &::before
+      max-width: 930px
+      height: 34px
+      +rwdmax(1100)
+        height: 30px
+      +rwdmax(767)
+        height: 20px
+  .normal-title
+    width: 100%
+    position: absolute
+    left: 50%
+    bottom: -20px
+    transform: translateX(-50%)
+    z-index: 1
+    h6
+      text-align: center
+      font-weight: bold
+      letter-spacing: 30px
+      font-family: $JhengHeiBold
+      font-size: px(80)
+    &.small
+      bottom: -12px
+      h6 
+        letter-spacing: 12px
+        font-size: px(58)
+    +rwdmax(1200)
+      h6
+        letter-spacing: 20px
+        font-size: px(74)
+    +rwdmax(900)
+      bottom: 5px
+      h6
+        letter-spacing: 15px
+        font-size: px(66)
+    +rwdmax(767)
+      h6 
+        letter-spacing: 10px
+        font-size: px(32)
+  p
+    padding: 145px 0
+    text-align: center
+    max-width: 1200px
+    width: 90%
+    margin: 0 auto
+    line-height: px(30)
+    +rwdmax(1200)
+      padding: 80px 0
+      width: 80%
+    +rwdmax(767)
+      padding: 50px 0
+      width: 85%
+      text-align: justify
+
+// 背景banner
+.bg-banner
+  position: relative
+  .banner-photo
+    position: relative
+    padding-bottom: 38%
+    +rwdmax(1200)
+      padding-bottom: 42%
+    +rwdmax(767)
+      padding-bottom: 70%
+  .photo-desktop,
+  .photo-mobile
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+  .photo-desktop
+    +rwdmax(767)
+      display: none
+  .photo-mobile
+    display: none
+    +rwdmax(767)
+      display: block
+
+.section-title
+  padding-bottom: 50px
+  font-weight: bold
+  line-height: 1.3
+  letter-spacing: 4.8px
+  +fontTitle
+  &.center
+    text-align: center
+  +rwdmax(1200)
+    padding-bottom: 20px
+    letter-spacing: 2px
+  +rwdmax(767)
+    padding-bottom: 15px
+    
+
+
+// 按鈕
+.btn-more
+  display: inline-flex
+  align-items: center
+  color: $main
+  font-size: px(18)
+  span
+    font-weight: bold
+    letter-spacing: 7px
+  i
+    display: block
+    font-size: px(22)
+  .circle-right
+    margin-left: 5px
+  &.border
+    padding: 16px 20px
+    width: 215px
+    justify-content: center
+    border: solid 2px $main
+    span
+      transition: opacity .3s ease-in-out
+      transform: translateX(5px)
+    &:hover
+      span
+        opacity: .8
+    +rwdmax(767)
+      width: 175px
+      padding: 12px
+  &:hover
+    i
+      animation: xmove .8s ease-in-out infinite
+    .circle-right
+      div:after
+        animation: xmove2 .8s ease-in-out infinite
+// .circle-right
+.circle-right
+  div 
+    width: 20px
+    height: 20px
+    border-radius: 50%
+    position: relative
+    &::after
+      content: '\e909'
+      font-family: 'icomoon'
+      display: flex
+      align-items: center
+      justify-content: center
+      height: 18px
+      font-size: px(18)
+  &.main 
+    div 
+      border: solid 1px $main
+
+.breadcrumb
+  background-color: #fff
+  padding-bottom: 10px
+  font-size: px(16)
+  +rwdmax(767)
+    padding-top: 40px
+    background-color: #fafafa !important
+  ul 
+    display: flex
+    // +commonW(1650)
+    // width: 90%
+    +rwdmax(767)
+      width: 85%
+  li
+    padding-right: 15px
+    margin-right: 15px
+    position: relative
+    +flexCenter
+    a
+      padding: 5px 10px
+      transition: color .3s ease-in-out
+      &:hover 
+        color: $main
+        span 
+          &::after
+            width: 100%
+    &::after
+      position: absolute
+      right: 0
+      top: 50%
+      transform: translateX(50%) translateY(-50%)
+      font-family: 'icomoon' !important
+      content: '\e902'
+      font-size: px(13)
+    &:first-child
+      a
+        padding-left: 0
+    &:last-child
+      font-weight: bold
+      &::after
+        display: none
+    span
+      position: relative
+      padding-bottom: 2px
+      &::after
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 50%
+        transform: translateX(-50%)
+        width: 0
+        height: 1px
+        background-color: $main
+        transition: width .3s ease-in-out
+
+// 我們的故事
+.section-story
+  padding: 120px 0
+  +rwdmax(1200)
+    padding: 80px 0 50px
+    width: 60%
+  +rwdmax(767)
+    padding: 70px 0px 50px
+    width: 85%
+  &.left
+    text-align: left
+  &.center
+    text-align: center
+  &.right
+    text-align: right
+  p 
+    +spaceArticle
+    +rwdmax(767)
+      text-align: justify
+  .logo
+    max-width: 150px
+    width: 100%
+    margin: 0 auto 50px
+  &.waypoint
+    +yWaypoint(50)
+  &.show
+    +zWaypoint
+
+.icon-wrap
+  display: flex
+  justify-content: space-between
+  +commonW(800)
+  li
+    display: flex
+    flex-direction: column
+    align-items: center
+    &.color-main
+      color: #b08f4c
+    &.color-dark
+      color: #333
+    >span 
+      padding-top: 8px
+      letter-spacing: 1.2px
+      font-weight: bold
+      font-family: $JhengHeiBold
+  .photo
+    max-width: 85px
+    width: 100%
+    margin: 0 auto 10px
+  p 
+    text-align: center
+    font-weight: bold
+    letter-spacing: 1.2px
+    line-height: px(30)
+    font-size: px(24)
+    font-family: $JhengHeiBold
+    span 
+      font-weight: normal
+      font-size: px(16)
+  
+  &.waypoint
+    +yWaypoint(50)
+  &.show
+    +zWaypoint
+  +rwdmax(1200)
+    max-width: 700px
+    .photo
+      max-width: 70px
+    p 
+      line-height: px(26)
+      font-size: px(22)
+  +rwdmax(800)
+    max-width: 600px
+  +rwdmax(767)
+    flex-wrap: wrap
+    width: 85%
+    li
+      width: 50%
+      margin-bottom: 40px
+      &:last-child,
+      &:nth-last-child(2)
+        margin-bottom: 0
+    .photo
+      max-width: 65px
+    p
+      line-height: px(24)
+      font-size: px(20)
+
+// 下拉選單
+.dropdown
+  .form-select
+    height: 100%
+    position: relative
+    border: solid 1px $main
+    &.active
+      .select-head
+        i
+          transform: scaleY(-1)
+    .select-head
+      position: relative
+      padding: 12px 22px
+      cursor: pointer
+      p.option
+        padding-right: 20px
+        color: $main
+      i
+        display: block
+        position: absolute
+        right: 15px
+        top: 5px
+        transition: transform .3s
+        color: #333
+        font-size: px(32)
+      +rwdmax(767)
+        padding: 10px 20px
+        i 
+          top: 3px
+          right: 10px
+    .select-content
+      display: none
+      position: absolute
+      z-index: 1
+      left: -1px
+      width: calc(100% + 2px)
+      top: 100%
+      background-color: rgba(255,255,255,.9)
+      border: solid 1px $main
+      ul.scrollbar-inner
+        max-height: 172px !important
+        li
+          padding: 12px 22px
+          cursor: pointer
+          opacity: .9
+          background-color: #fff
+          transition: .3s
+          color: $main
+          border-bottom: solid 1px $main
+          &:hover
+            background-color: #f2e9d8
+          &:last-child
+            border-bottom: 0
+        +rwdmax(767)
+          max-height: 150px !important
+          li
+            padding: 10px 20px
+      .scrollbar-inner
+        .scroll-element
+          &.scroll-y
+            width: 5px
+          .scroll-bar
+            background-color: rgba(0,0,0,0.5)
+            opacity: 1
+          .scroll-element_track
+            opacity: 0.8
+    // 下拉不包含title
+  &.type-normal
+    width: 120px
+    .select-head
+      p.option
+        span
+          letter-spacing: 0.7px
+          font-size: px(14)
+          &:nth-child(1)
+            // font-weight: bold
+            // font-family: $fontBold
+          &:nth-child(2)
+            padding-left: 5px
+            // font-family: $font
+          &.line 
+            position: relative
+            padding-right: 10px
+            margin-right: 5px
+            &::after
+              content: ''
+              position: absolute
+              top: 50%
+              right: 0
+              transform: translateY(-50%)
+              width: 1px
+              height: 13px
+              background-color: #000
+
+  // 下拉包含title
+  &.type-fullbox
+    .select-head
+      display: flex
+      +rwdmax(767)
+        flex-wrap: wrap
+      p.subject
+        position: relative
+        padding: 20px 0
+        +rwdmax(767)
+          width: 100%
+          padding-bottom: 0
+      p.option
+        flex: 1
+        +rwdmax(767)
+          width: 100%
+          padding-left: 0
+      span.arrow-icon
+        +rwdmax(767)
+          top: auto
+          bottom: calc(30px - 6px)
+
+// 共用消息
+.info-block
+  max-width: 475px
+  width: 100%
+  .photo
+    position: relative
+    padding-bottom: 55.78%
+    overflow: hidden
+    &-box 
+      width: 100%
+      +posCenter
+    img
+      transition: transform .3s ease-in-out
+  h2 
+    margin-top: 15px
+    margin-bottom: 10px
+    font-weight: bold
+    font-family: $JhengHeiBold
+    font-size: px(24)
+    line-height: px(30)
+    +ellipsis(2, 30px)
+  p 
+    line-height: px(30)
+    +ellipsis(2, 30px)
+  .btn-more
+    margin: 15px 0
+  &:hover
+    .photo
+      img
+        transform: scale(1.05)
+  &.waypoint
+    +yWaypoint(50)
+  &.show
+    +zWaypoint
+
+
+// 共用 swiper
+.section-swiper
+  padding: 35px 0
+  .section-wrap
+    // max-width: 1450px
+    width: 90%
+    margin: 0 auto
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: relative
+  .title-block
+    width: 50%
+    margin-right: 80px
+    // max-width: pxTovw(660)
+    // width: 100%
+    .section-title
+      padding-bottom: 10px
+    strong
+      padding-bottom: 40px
+      display: block
+      letter-spacing: 6.8px
+      font-size: px(64)
+      font-weight: bold
+      font-family: $JhengHeiBold
+      color: $main
+    .photo-logo 
+      max-width: 250px
+      padding: 20px 0
+    p 
+      line-height: px(30)
+  .swiper-common
+    width: 50%
+    // max-width: pxTovw(800)
+    // width: 100%
+    // margin-left: 80px
+  &.waypoint
+    +yWaypoint(50)
+  &.show
+    +zWaypoint
+  +rwdmax(1700)
+    .title-block
+      margin-right: 50px
+    .swiper-common
+      // margin-left: 50px
+  +rwdmax(1500)
+    .title-block
+      strong
+        font-size: px(58)
+  +rwdmax(1200)
+    margin-top: 50px
+    padding: 50px 0
+    // .swiper-common
+    //   margin-left: 0
+    .title-block
+      margin-right: 30px
+      strong
+        padding-bottom: 20px
+        font-size: px(50)
+  +rwdmax(900)
+    .section-wrap
+      flex-direction: column-reverse
+      align-items: center
+    .title-block,
+    .swiper-common
+      max-width: none
+    .swiper-common
+      width: 60%
+    .title-block
+      width: 55%
+      padding: 30px 10px
+      margin-right: 0
+      strong
+        letter-spacing: 4px
+        font-size: px(44)
+  +rwdmax(767)
+    margin-top: 20px
+    padding: 35px 0
+    .swiper-common
+      width: 100%
+    .title-block
+      width: 90%
+      padding-top: 25px
+      padding-bottom: 15px
+      strong
+        padding-bottom: 10px
+        font-size: px(36)
+      p 
+        line-height: px(32)
+
+// 共用 圖文左右
+.article-wrap
+  display: flex
+  justify-content: center
+  align-items: center
+  +rwdmax(1200)
+    flex-direction: column
+    &.common-width
+      width: 60%
+  +rwdmax(767)
+    width: 100%
+    &.common-width
+      width: 85%
+  .swiper-normal,
+  .photo-wrap
+    max-width: 800px
+    position: relative
+    .photo
+      width: 100%
+      position: relative
+      padding-bottom: 75.625%
+      background-repeat: no-repeat
+      background-size: cover
+      background-position: center
+      img
+        +posCenter
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      width: 300px
+      height: 100%
+      opacity: .1
+      background-color: $second
+    +rwdmax(1200)
+      max-width: none
+      &::before
+        display: none
+  .swiper-normal,
+  .photo-wrap,
+  .text-block 
+    width: 50%
+    p 
+      line-height: 30px
+      +ellipsis(9,30px)
+    .btn-more
+      margin-top: 50px
+    +rwdmax(1700)
+      .section-title
+        padding-bottom: 30px
+    +rwdmax(1680)
+      .section-title
+        padding-bottom: 20px
+      p
+        line-height: 30px
+        +ellipsis(7,30px)
+      .btn-more
+        margin-top: 30px
+    +rwdmax(1400)
+      line-height: 26px
+      p 
+        +ellipsis(5,26px)
+    +rwdmax(1200)
+      width: 100%
+    +rwdmax(767)
+      .section-title
+        padding-bottom: 15px
+      p 
+        +ellipsis(9,30px)
+  &:nth-child(odd)
+    .swiper-normal,
+    .photo-wrap
+      &::before
+        left: -300px
+    .text-block
+      padding-left: pxTovw(100)
+      &.waypoint
+        +xWaypoint(50)
+      &.show
+        +zWaypoint
+    +rwdmax(1680)
+      .text-block
+        padding-left: 70px
+    +rwdmax(1550) 
+      .text-block
+        padding-left: 50px
+    +rwdmax(1200)
+      .text-block
+        padding: 30px 30px 50px
+        &.waypoint
+          +yWaypoint(50)
+        &.show
+          +zWaypoint
+    +rwdmax(767)
+      .text-block
+        padding: 40px 20px 50px
+  &:nth-child(even)
+    flex-direction: row-reverse
+    .swiper-normal,
+    .photo-wrap
+      &::before
+        right: -300px
+    .text-block
+      padding-right: pxTovw(100)
+      &.waypoint
+        +xWaypoint(-50)
+      &.show
+        +zWaypoint
+    +rwdmax(1680)
+      .text-block
+        padding-right: 70px
+    +rwdmax(1550) 
+      .text-block
+        padding-right: 50px
+    +rwdmax(1200)
+      flex-direction: column
+      .text-block
+        padding: 50px 30px
+        &.waypoint
+          +yWaypoint(50)
+        &.show
+          +zWaypoint
+    +rwdmax(767)
+      .text-block
+        padding: 30px 20px 60px
+
+// 內文共用間距
+.common-width
+  max-width: 1450px
+  width: 90%
+  margin: 0 auto
+  +rwdmax(1680)
+    max-width: 1100px
+  +rwdmax(767)
+    width: 85%
+  // +rwdmax(1650)
+  //   max-width: 1350px
+  // +rwdmax(1600)
+  //   max-width: 1090px
+  // +rwdmax(1400)
+  //   max-width: 980px
+  // +rwdmax(1300)
+  //   max-width: 900px
+
+// 一次三則 的 swiper
+.swiper-article
+  .swiper-slide
+    justify-content: space-between
+    +rwdmax(767)
+      flex-direction: column
+      justify-content: center
+  .slide-box
+    text-align: left
+    // max-width: 615px
+    width: 50%
+    margin: 0 20px
+    &:first-child
+      margin-left: 0
+    &:last-child
+      margin-right: 0
+    &:hover
+      .photo
+        background-size: 105%
+    +rwdmax(1200)
+      margin: 0 15px
+    +rwdmax(767)
+      margin: 0 0 40px
+      width: 100%

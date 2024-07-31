@@ -1,0 +1,58 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+
+.contact
+  main 
+    padding-bottom: 135px
+    +rwdmax(767)
+      padding-bottom: 90px
+  .normal-banner
+    .bg
+      &::after,
+      &::before
+        opacity: .1
+      +rwdmax(900)
+        height: 250px
+      +rwdmax(767)
+        height: 165px
+  .fm
+    margin-top: 100px
+    +rwdmax(900)
+      margin-top: 0
+      .fm-row:first-child
+        padding-top: 50px
+    +rwdmax(767)
+      .fm-row:first-child
+        padding-top: 40px
+  .dropdown
+    width: 100%
+    .form-select
+      border: solid 2px $second
+      +rwdmax(767)
+        border: solid 1px $second
+      .select-content
+        top: 102%
+        // left: -2px
+        // width: calc(100% + 4px)
+        +rwdmax(767)
+          ul.scrollbar-inner li
+            padding: 10px 
+      .select-head
+        padding: 22px 20px
+        i 
+          top: 15px
+        p.option
+          font-weight: bold
+          letter-spacing: 4px
+          font-size: px(16)
+        +rwdmax(767)
+          padding: 12px 10px
+          i 
+            right: 10px
+            top: 5px
+          p.option
+            letter-spacing: 3px
+  .fm-grid.recaptcha
+    padding-top: 20px
+    padding-bottom: 20px
+    

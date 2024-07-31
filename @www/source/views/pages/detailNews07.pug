@@ -1,0 +1,62 @@
+doctype html
+html(lang="zh-Hant-HK")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../assets/css/detail.css")
+
+  body.detail(data-page="detail")
+    .main-wrapper
+      // 導覽列
+      include ../layouts/_navbar.pug
+      // 主要內容
+      main
+        section.detail-banner
+          .detail-width
+            h6.section-title 獎項及成就
+        section.detail-content.detail-width
+          h2 啟勝於中電「創新節能企業大獎2023」中榮膺三大殊榮
+          article
+            .photo
+              img(src="../../uploads/news/news07-475X265.jpg", alt="")
+            p 啟勝管理服務有限公司（啟勝）致力推動可持續發展理念，配合大數據及人工智能科技，實施不同的環保節能措施，以提升物業的能源效益。啟勝每年均在中電舉辦的「創新節能企業大獎」中取得佳績。今年啟勝再下一城，在中電舉辦的「創新節能企業大獎2023」中獲得三大殊榮，包括旗下管理的環球貿易廣場（ICC）在企業／政府部門組別獲得最高榮譽 —「創新方案卓越大獎」；而啟勝更在「慳電任務 – 炎夏慳住賞」計劃中獲得「2023積極慳電大獎」銀獎，當中包括共29個物業獲得獎項，當中旗下管理的天晉II更在計劃中獲得「2023慳電推廣先鋒大獎」，充份肯定團隊在節能減碳方面的成就及付出。<br><br>環球貿易廣場（ICC）一直致力成為全香港最高的綠色智慧建築，以創新科技融入日常管理及實踐節能優化策略，全面提升物業的能源效益及可持續低碳的營運模式。ICC以創新的冷凍水電池技術，利用制冷機組及空調系統冷水管道的固有熱能儲存特性，配合人工智能分析及預測制冷需求，以提升空調系統效率，節能效果高達7%。另外，ICC更根據實際需求，將風櫃的能耗進行動態調整，節省逾30%的風扇電量；更運用擴增實境（AR）技術令團隊可遙距監控設施狀態，加強管理效率及處理突發事宜的行動力。<br><br>而榮膺「2023慳電推廣先鋒大獎」的天晉II，其管理團隊則從住戶的角度出發，在電梯內張貼活動海報，鼓勵住戶積極減少用電，為環保出一分力。透過海報宣傳及同事大力鼓吹環保的氛圍下，天晉II團隊與住戶攜手合作，為達致節能減碳的目標向前邁進了一大步。<br><br>未來，啟勝將繼續主動邀請不同持份者參與更多綠色環保計劃和活動，希望能藉此推動更多人改善用電及生活習慣，共同為保護環境而努力，將香港提升至成為世界級的低碳智慧城市。<br><br>獲獎物業名單如下:<br><br><br>
+              |慳電任務 - 積極慳電大獎2023<br>
+              |金獎        天晉II<br>
+              |天晉IIIA<br>
+              |天晉IIIB<br>
+              |海天晉<br>
+              |Grand YOHO<br>
+              |映御<br>
+              |原築<br>
+              |東港城<br>
+              |新都廣場<br>
+              |大埔中心<br>
+              |旭埔苑<br>
+              |銀獎        浪翠園一期<br>
+              |浪翠園四期<br>
+              |荔欣苑<br>
+              |形品．星寓<br>
+              |蟠龍半島<br>
+              |御半山<br>
+              |瑜翠園<br>
+              |銅獎        愛琴海岸<br>
+              |浪翠園二期<br>
+              |浪翠園三期<br>
+              |寶怡花園<br>
+              |卓爾居<br>
+              |怡峰園<br>
+              |星堤<br>
+              |珀御<br>
+              |帝華軒<br>
+              |兆麟苑<br>
+              |新屯門中心
+
+
+      
+      include ../layouts/_newsBreadcrumb
+      // footer
+      include ../layouts/_footer.pug
+  //引入的script
+  include ../layouts/_script.pug

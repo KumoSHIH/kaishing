@@ -1,0 +1,223 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+
+.about
+  main
+    overflow: hidden
+    +rwdmax(1200)
+      margin-top: 80px
+    +rwdmax(767)
+      margin-top: 74px
+  .section-banner
+    position: relative
+    .banner-photo
+      position: relative
+      padding-bottom: 38%
+      +rwdmax(1200)
+        padding-bottom: 42%
+      +rwdmax(767)
+        padding-bottom: 70%
+    .photo-desktop,
+    .photo-mobile
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+      background-position: center
+      background-size: cover
+      background-repeat: no-repeat
+    .photo-desktop
+      +rwdmax(767)
+        display: none
+    .photo-mobile
+      display: none
+      +rwdmax(767)
+        display: block
+  .section-story
+    padding: 80px 0
+    +rwdmax(1200)
+      padding: 50px 0
+    +rwdmax(767)
+      padding: 30px 0
+  .section-icon 
+    padding: 40px 0
+    background-color: $info 
+    +rwdmax(767)
+      padding: 30px 0
+  .section-idea
+    padding: 80px 0
+    +rwdmax(1200)
+      padding: 50px 0
+    +rwdmax(767)
+      padding: 30px 0
+    .section-title
+      padding-bottom: 20px
+    .text
+      display: flex
+      justify-content: center
+      line-height: 1.5
+      text-align: center
+      font-size: px(28)
+    li 
+      p 
+        &.ch
+          padding-top: 5px
+        &.f 
+          padding-top: 20px
+          line-height: 1.5
+          font-weight: normal
+          font-size: px(18)
+    .icon-wrap
+      margin-top: 120px
+    &.waypoint
+      +yWaypoint(50)
+    &.show
+      +zWaypoint
+    +rwdmax(1200)
+      width: 90%
+      .text
+        flex-direction: column
+        align-items: center
+        line-height: 1.5
+        p 
+          padding-right: 0
+    +rwdmax(767)
+      .text
+        font-size: px(18)
+      .icon-wrap
+        margin-top: 50px
+
+  
+    
+  // 公司品牌
+  .section-brand
+    padding-top: 95px
+    padding-bottom: 50px
+    ul
+      display: flex
+      align-items: center
+      flex-wrap: wrap
+      +commonW(1200)
+      li
+        width: 33.3%
+        &.waypoint
+          +yWaypoint(50)
+        &.show
+          +zWaypoint
+      a
+        padding: 40px 0
+        max-width: 300px
+        width: 100%
+        margin: 0 auto
+        img
+          width: auto
+          margin: 0 auto
+    +rwdmax(1200)
+      padding-top: 80px
+      padding-bottom: 30px
+      // width: 85%
+      ul
+        margin: 40px 0
+        li
+          // width: 50%
+          max-width: 280px
+          width: auto
+          img
+            width: 100%
+        a 
+          padding: 30px 40px
+    +rwdmax(767)
+      width: 85%
+      ul
+        margin: 0px 0 10px
+        li
+          width: 50%
+          &:nth-child(odd)
+            a 
+              padding-left: 0
+              margin-left: 0
+        a 
+          max-width: 130px
+          padding: 30px 20px
+
+  .section-videos
+    padding-bottom: 150px
+    position: relative
+    
+    h6
+      padding: 20px 0
+    .text
+      padding: 20px 0
+      text-align: left
+      h5
+        margin-bottom: 10px
+        font-weight: bold
+        line-height: 30px
+        font-family: $JhengHeiBold
+        font-size: px(24)
+        +ellipsis(1, 30px)
+      p
+        line-height: 28px
+        +ellipsis(2, 28px)
+    .btn
+      text-align: center
+    +rwdmax(1200)
+      padding-bottom: 90px
+    +rwdmax(767)
+      padding-bottom: 50px
+      .common-width
+        width: 85%
+  
+
+  .section-swiper
+    .swiper-button-prev,
+    .swiper-button-next
+      width: 40px 
+      height: 168px
+      transform: translateY(-50%)
+      &::after
+        content: ''
+    .swiper-button-prev
+      left: 40px
+    .swiper-button-next
+      right: 40px
+    +rwdmax(1680)
+      .swiper-button-prev,
+      .swiper-button-next
+        width: 30px
+        height: 140px
+    +rwdmax(1400)
+      .swiper-button-prev
+        left: 30px
+      .swiper-button-next
+        right: 30px
+    +rwdmax(1300)
+      .swiper-button-prev,
+      .swiper-button-next
+        width: 15px
+        height: auto
+      .swiper-button-prev
+        left: 10px
+      .swiper-button-next
+        right: 10px
+    +rwdmax(900)
+      .swiper-button-prev,
+      .swiper-button-next
+        display: none !important
+      .swiper-button-prev
+        left: 40px
+      .swiper-button-next
+        right: 40px
+    +rwdmax(767)
+      .swiper-button-prev,
+      .swiper-button-next
+        width: 10px
+        height: 100px
+        transform: translateY(0)
+        top: 20%
+      .swiper-button-prev
+        left: 5px
+      .swiper-button-next
+        right: 5px
+

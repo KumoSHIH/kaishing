@@ -1,0 +1,132 @@
+-
+  var header = [
+    {
+      ch: '關於我們',
+      en: 'about',
+      url: './about.html',
+      class: '',
+      list: ''},
+    {
+      ch: '我們的業務',
+      en: 'jobs',
+      url: './property.html',
+      class: '',
+      list: ''},
+    {
+      ch: '可持續發展',
+      en: 'develop',
+      url: './development.html',
+      class: 'hasBg',
+      list: [
+        {
+          name: '我們的承諾',
+          url: './development.html#content1'},
+        {
+          name: '積極創新',
+          url: './development.html#content2'},
+        {
+          name: '環境保護',
+          url: './development.html#content3'},
+        {
+          name: '社會責任',
+          url: './development.html#content4'}
+      ]},
+    {
+      ch: '卓越服務',
+      en: 'service',
+      url: './service.html',
+      class: '',
+      list: ''},
+    {
+      ch: '人物故事',
+      en: 'develope',
+      url: './story.html',
+      class: 'hasBg',
+      list: [
+        {
+          name: '公司員工的核心價值',
+          url: './story.html#content1'},
+        {
+          name: '員工故事分享',
+          url: './story.html#content2'},
+      ]},
+  ]
+
+  var other = [
+    {
+      ch: '影片庫',
+      en: 'VIDEOS',
+      url: './blank.html'},
+    {
+      ch: '新聞及資源',
+      en: 'NEWS',
+      url: './news.html'},
+    {
+      ch: '聯繫我們',
+      en: 'CONTACT',
+      url: './contact.html'},
+    {
+      ch: '加入我們',
+      en: 'JOIN US',
+      url: './blank.html'}
+  ]
+
+header.hd
+  .hd-container
+    a.logo(href="./index.html")
+      img(src="../../assets/img/logo-main.png", alt="")
+    .hd-right-wrap
+      .hd-right
+        .hd-menu
+          ul
+            each val in header
+              li(class= val.class)
+                a(href= val.url)
+                  span= val.ch
+                //- if (val.class === '')
+                //-   a(href= val.url target="_blank")
+                //-     span= val.ch
+                //- else 
+                //-   a(href= val.url)
+                //-     span= val.ch
+                if (val.list !== '')
+                  ul.hd-second
+                    each item in val.list
+                      li
+                        a(href= item.url)= item.name
+          .hd-tools.hd-search
+            form(action="post") 
+              .sch-input
+                input(type="text" placeholder="請輸入文字")
+              .desktop-search
+                input.pointer-none(type="submit")
+                i.icon-search
+          .hd-tools.hd-lang
+            i.icon-globe
+            ul
+              li
+                a(href="javascript:;") EN
+              li
+                a(href="javascript:;") 简
+        .hd-other
+          .mobile-search
+            input(type="text" placeholder="請輸入文字")
+            a(href="javascript:;")
+              i.icon-search
+          ul
+            each val,index in other
+              li
+                a(href= val.url)= val.ch
+                //- if (index === 0 || index === 3)
+                //-   a(href= val.url target="_blank")= val.ch
+                //- else
+                //-   a(href= val.url)= val.ch
+      .mobile-bg 
+        img(src="../../assets/img/bg-logo.png", alt="")
+    .hd-bg
+      img(src="../../assets/img/bg-logo.png", alt="")
+    .hd-hum
+      div
+      div
+      div
+      div

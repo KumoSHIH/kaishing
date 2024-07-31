@@ -1,0 +1,139 @@
+doctype html
+html(lang="zh-Hant-HK")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../assets/css/contact.css")
+
+  body.contact(data-page="contact")
+    .main-wrapper
+      // 導覽列
+      include ../layouts/_navbar.pug
+      // 主要內容
+      main
+        section.normal-banner
+          .bg
+            .normal-title
+              h6 聯繫我們
+        form.fm#form(method="post")
+          .fm-row 
+            .fm-grid
+              .fm-group.type-column
+                p.subject
+                  |稱謂
+                .fm-check
+                  .check-wrap
+                    input#radio1(type="radio" name="title" checked)
+                    label.form-fakebox(for="radio1")
+                      .form-box
+                        span
+                    label.word(for="radio1") 先生
+                  .check-wrap
+                    input#radio2(type="radio" name="title")
+                    label.form-fakebox(for="radio2")
+                      .form-box
+                        span
+                    label.word(for="radio2") 女士
+                  .check-wrap
+                    input#radio3(type="radio" name="title")
+                    label.form-fakebox(for="radio3")
+                      .form-box
+                        span
+                    label.word(for="radio3") 小姐
+              
+          .fm-row
+            .fm-grid.required
+              label.fm-group.type-column
+                p.subject
+                  |姓氏
+                .input-wrap
+                  input(type="text" placeholder="" name="firstname" required)
+              .notice *請輸入您的姓氏。
+            .fm-grid.required
+              label.fm-group.type-column 
+                p.subject
+                  |名字
+                .input-wrap
+                  input(type="text" placeholder="" name="lastname" required)
+              .notice *請輸入您的名字。
+          .fm-row
+            .fm-grid.required
+              label.fm-group.type-column 
+                p.subject
+                  |聯絡電話
+                .input-wrap
+                  input(type="text" placeholder="" name="phone" inputmode="numeric" required)
+              .notice *請輸入您的電話號碼。
+            .fm-grid.required
+              label.fm-group.type-column
+                p.subject
+                  |電郵地址
+                .input-wrap
+                  input(type="email" placeholder="" name="email" required)
+              .notice *請輸入您的電郵地址。
+          .fm-row
+            .fm-grid.required
+              .fm-group.type-column
+                p.subject 
+                  |物業名稱
+                .fm-select
+                  select(name="select" required)
+                    optgroup 
+                      option(value="" selected disabled) 選擇物業
+                      option(value="item1") item1
+                      option(value="item2") item2 
+                      option(value="item3") item3
+                      option(value="item4") item4
+                .dropdown
+                  div
+                    .form-select.type-fullbox
+                      .select-head
+                        p.option 
+                          span 選擇物業
+                        i.icon-keyboard_arrow_down
+                      .select-content
+                        ul.scrollbar-inner
+                          li(data-val="item1") item1
+                          li(data-val="item2") item2
+                          li(data-val="item3") item3
+                          li(data-val="item4") item4
+              .notice *請選擇相關物業。
+          .fm-row
+            .fm-grid.required
+              label.fm-group.type-column
+                p.subject
+                  |意見及留言
+                textarea(name="textarea1" required)
+              .notice *請輸入您的意見及留言。
+          .fm-row
+            .fm-grid.required
+              label.fm-group.type-column
+                p.subject
+                  |投訴
+                textarea(name="textarea2" required)
+              .notice *請輸入您的投訴事宜。
+          .fm-row
+            .fm-grid.recaptcha
+              .fm-group
+                <div class="g-recaptcha" data-sitekey="6LdGoPghAAAAAIN2mF8-WJ8Pi2QFtIZkin7esKiF"></div>
+          .fm-row
+            .fm-grid
+              .fm-group
+                input.fm-button.btn-more.border(type="submit" value="確認及送出")
+                input.fm-button(type="reset" value="重設")
+      // breadcrumb
+      .breadcrumb
+        ul.common-width
+          li
+            a(href="./index.html")
+              span 主頁
+          li 
+            a(href="javascript:;")
+              span 聯繫我們
+      // footer
+      include ../layouts/_footer.pug
+  //引入的script
+  include ../layouts/_script.pug
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>

@@ -1,0 +1,181 @@
+form.fm#form(method="post" action="")
+  // 一排兩個input
+  .fm-row
+    .fm-grid
+      label.fm-group 
+        p.subject 
+          span.tip *
+          |First Name
+        .input-wrap
+          input(type="text" placeholder="KUMO" name="firstname")
+    .fm-grid
+      label.fm-group 
+        p.subject 
+          span.tip *
+          |Last Name
+        .input-wrap
+          input(type="text" placeholder="SHIH" name="lastname")
+  // 一排一個input
+  .fm-row
+    .fm-grid
+      label.fm-group 
+        p.subject 
+          span.tip *
+          |Address
+        .input-wrap
+          input(type="text" placeholder="Address" name="address")
+  // 下拉選單
+  .fm-row 
+    .fm-grid
+      .fm-group
+        .subject 
+          p Industry
+        .fm-select
+          select(name="select2" required)
+            optgroup 
+              option(value="" selected disabled) 請選擇項目
+              option(value="item2") item1
+              option(value="item3") item2
+          i.icon-triangle-down
+  .fm-row 
+    .fm-grid.required
+      .fm-group
+        .subject 
+          p Industry
+        .fm-select
+          select(name="select3")
+            optgroup 
+              option(value="" selected disabled) 請選擇項目
+              option(value="item2") item1
+              option(value="item3") item2
+          i.icon-triangle-down
+    .fm-grid.required
+      .fm-group
+        .subject 
+          p Industry
+        .fm-select
+          select(name="select4")
+            optgroup 
+              option(value="" selected disabled) 請選擇項目
+              option(value="item2") item1
+              option(value="item3") item2
+          i.icon-triangle-down
+  // subject + 下拉(type-normal) + input
+  .fm-row
+    .fm-grid.required
+      label.fm-group
+        p.subject 
+          span.tip *
+          |Phone Number
+        .fm-select.type-normal
+          select(name="select4")
+            optgroup 
+              option(value="item1" selected disabled) 請選擇項目
+              option(value="item2") +886
+              option(value="item3") +852
+        .input-wrap
+          input(type="tel" inputmode="tel" name="phone" placeholder="Please enter your Phone Number" required)
+  // checkbox
+  .fm-row 
+    .fm-grid
+      .fm-group
+        p.subject 
+          span.tip *
+          |Checkbox
+        .fm-check
+          .check-wrap
+            input#ckbox1(type="checkbox")
+            label.form-fakebox(for="ckbox1")
+              .form-box
+                //- span
+            label.word(for="ckbox1") checkbox1
+          .check-wrap
+            input#ckbox2(type="checkbox")
+            label.form-fakebox(for="ckbox2")
+              .form-box
+                //- span
+            label.word(for="ckbox2") checkbox2
+          .check-wrap
+            input#ckbox3(type="checkbox")
+            label.form-fakebox(for="ckbox3")
+              .form-box
+                //- span
+            label.word(for="ckbox3") checkbox3
+  // radio
+  .fm-row 
+    .fm-grid
+      .fm-group
+        p.subject 
+          span.tip *
+          |Radio
+        .fm-check
+          .check-wrap
+            input#radio3(type="radio" name="test")
+            label.form-fakebox(for="radio3")
+              .form-box
+                span
+            label.word(for="radio3") radio1
+          .check-wrap
+            input#radio4(type="radio" name="test")
+            label.form-fakebox(for="radio4")
+              .form-box
+                span
+            label.word(for="radio4") radio2
+  // file 上傳檔案
+  .fm-row
+    // 需填入檔案大小限制 data-limit=""
+    .fm-grid.form-file(data-limit="2MB")
+      label.fm-group
+        p.subject 
+          span.tip *
+          |Files
+        .file-wrap 
+          p.file-name File size is mainly below 
+            span
+          .form-icon.file-input
+            span.icon
+            input(type="file")
+  // 選擇日期
+  .fm-row
+    .fm-grid
+      label.fm-group.date-picker
+        p.subject 
+          span.tip *
+          |Datepicker
+        .form-date
+          input(type="date" name="date" placeholder="YYYY/MM/DD")
+  // textarea
+  // type 1
+  .fm-row
+    .fm-grid
+      label.fm-group.type-row
+        p.subject 
+          span.tip *
+          |Textarea 1
+        textarea(placeholder="enter something ...")
+  // type 2
+  .fm-row
+    .fm-grid
+      label.fm-group.type-column
+        p.subject 
+          span.tip *
+          |Textarea 2
+        textarea(placeholder="enter something ...")
+  // 輸入驗證碼
+  .fm-row
+    .fm-grid.required
+      label.fm-group.form-require
+        p.subject 
+          span.tip *
+          |Require
+        input(type="text" placeholder="enter 4142...")
+        // 重新整理按鈕
+        .form-icon
+          span.icon
+        img(src="", alt="")
+  // 送出 & 清除
+  .fm-row
+    .fm-grid
+      .fm-group 
+        input.fm-button(type="reset" value="清空")
+        input.fm-button(type="submit" value="送出")

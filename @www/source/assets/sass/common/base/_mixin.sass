@@ -1,0 +1,149 @@
+//RWD
+@mixin rwdmax($max)
+	@media only screen and (max-width: $max + px)  
+		@content
+
+@mixin rwdmin($min)
+	@media only screen and (min-width: $min + px)  
+		@content
+
+//文字大小像素轉rem
+@mixin font-size($size: 16) 
+	font-size: ($size/16) + rem
+
+@function px($px)
+	@return $px / 16 * 1rem
+
+//文字大小像素轉vw/vh
+@function pxTovw($px)
+	@return $px / 1920 * 100vw
+
+@function pxTovh($px)
+	@return $px / 1080 * 100vh
+
+//背景圖
+@mixin bg($url,$size,$repeat,$pos)
+	background-image: url($url)
+	background-size: $size
+	background-repeat: $repeat
+	background-position: $pos
+	
+=bgcenter 
+	background-position: center center
+	background-repeat: no-repeat
+	background-size: cover
+
+//文字設定
+=fontSet($size: px(16), $font: $basic)
+	font-family: $font 
+	font-size: $size
+
+//flex
+=flex($display: flex, $wrap: nowrap, $direction: row, $x: center, $y: center)
+	display: $display
+	flex-wrap: $wrap
+	flex-direction: $direction
+	justify-content: $x
+	align-items: $y
+=flexCenter
+	display: flex
+	align-items: center
+	justify-content: center
+// absolute-center
+=posCenter
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%,-50%)
+
+// 文字溢出加省略號 ...
+=ellipsis($line: 2, $lh: 32px, $height: $line * $lh)
+	display: block
+	overflow: hidden
+	display: -webkit-box
+	-webkit-box-orient: vertical
+	-webkit-line-clamp: $line
+	line-height: $lh
+	max-height: $line * $lh
+	// height: $height
+
+//placeholder
+=placeholder($font: $basic, $color: black, $size: px(16))
+	&::placeholder /* Chrome, Firefox, Opera, Safari 10.1+ */
+		font-family: $font
+		font-size: $size
+		color: $color
+		opacity: 1 /* Firefox */
+	&:-ms-input-placeholder /* Internet Explorer 10-11 */
+		font-family: $font
+		font-size: $size
+		color: $color
+	&::-ms-input-placeholder /* Microsoft Edge */
+		font-family: $font
+		font-size: $size
+		color: $color
+
+=hideH1
+	position: absolute
+	left: -1000px
+	top: 0
+// animation setting
+=xWaypoint($x)
+	opacity: 0
+	transform: translateX($x + px)
+	transition: .8s ease-in-out
+=yWaypoint($y)
+	opacity: 0
+	transform: translateY($y + px)
+	transition: .8s ease-in-out
+=zWaypoint 
+	opacity: 1
+	transform: translateZ(0)
+
+=opacity
+	opacity: 0
+	transition: .5s ease-in-out
+=opacity1
+	opacity: 1
+
+////IE
+=ieHack
+  @media screen and (-ms-high-contrast: active),(-ms-high-contrast: none)
+    @content
+// 偵測火狐
+=mozhack
+	@-moz-document url-prefix()
+		@content
+
+// 寬度設定
+=commonW($w)
+	max-width: $w + px
+	width: 100%
+	margin: 0 auto
+
+// 字級設定
+=fz40
+	line-height: px(48)
+	font-size: px(40)
+	+rwdmax(1200)
+		line-height: px(40)
+		font-size: px(36)
+	+rwdmax(850)
+		line-height: px(34)
+		font-size: px(32)
+
+=fz18
+	font-size: px(18)
+
+=fontTitle
+	font-size: px(46)
+	+rwdmax(1500)
+		font-size: px(40)
+	+rwdmax(1200)
+		font-size: px(36)
+	+rwdmax(767)
+		font-size: px(30)
+
+=spaceArticle
+	letter-spacing: 1.6px
+	line-height: 2

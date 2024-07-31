@@ -1,0 +1,74 @@
+-
+  var devData = [
+    {
+      photo: '../uploads/development/img05-800X605.jpg',
+      title: '我們的承諾',
+      text: '長久以來，啟勝的服務品質能深得客戶信任，全賴我們每一位啟勝人都秉持「處處聆聽、處處關心、處處創新」的原則。<br><br>所以我們一直保持謙虛，隨時聆聽客戶需要。時刻如家人般心繫客戶，在客戶不為意間，經以悉心打點一切。永遠提早一步，尋求最新最好的科技與方案，令我們在任何時代都能給客戶最優質的服務。<br><br>持續的追求和改進，讓我們獲得多項本地及國際專業認證。<br>這些認證，除了是一份認可，更體現了我們對服務質素的自我要求。',
+      link: 'javascript:;',},
+    {
+      photo: '../uploads/development/img06-800X605.jpg',
+      title: '積極創新',
+      text: '這是假字點所事提了面叫服又，上代過好賣青單效文之臺運信我並和知密五方飯麼己術以院依人果此要發無設人思呢找的文醫容主老獨關生亞機爭！器作看死。的神希。望字作要盡了面手開法沒活生過我政就容加多：長出了氣資出遊居業筆例格加口始王線展門軍至，品助識我走、有價業……著之一界特……灣感往：備體為利影樣化我驗而一，前電名，人每法商我。',
+      link: 'javascript:;',},
+    {
+      photo: '../uploads/development/img07-800X605.jpg',
+      title: '環境保護',
+      text: '這是假字這是假字，這是假字這是假字。<br>這是假字這是假字，這是假字這是假字。這是假字這是假字，這是假字這是假字。這是假字這是假字這是假字這是假字。這是假字這是假字這是假字這是假字。<br>這是假字，這是假字，這是假字。<br><br>這是假字，這是假字這是假字，這是假字。<br>這是假字這是假字，這是假字這是假字，這是假字。',
+      link: 'javascript:;',},
+  ]
+
+doctype html
+html(lang="zh-Hant-HK")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../assets/css/development_detail.css")
+
+  body.development_detail(data-page="development_detail")
+    .main-wrapper
+      // 導覽列
+      include ../layouts/_navbar.pug
+      // 主要內容
+      main
+        section.section-banner.bg-banner
+          .banner-photo
+            .photo-desktop.b-lazy(src="../assets/img/blazy.gif" data-src="../uploads/development/banner-1920X715.jpg")
+            .photo-mobile.b-lazy(src="../assets/img/blazy.gif" data-src="../uploads/development/banner-mobile-780X550.jpg")
+          .banner-title.waypoint
+            .title-center
+              h6 可持續發展
+            .title-bg 
+              h6 可持續發展
+        // 環境保護
+        section.section-story.common-width.center.waypoint
+          h6.section-title 可持續發展
+          p 這是假字，這是假字，這是假字。這是假字，這是假字這是假字。這是假字這是假字，這是假字。<br>這是假字，這是假字這是假字。這是假字，這是假字這是假字。這是假字這是假字這是假字。
+        // 內文
+        section.section-other.common-width
+          each val,index in devData
+            .article-wrap
+              .photo-wrap.waypoint
+                // 圖片建議尺寸 800X605
+                .photo
+                  img.b-lazy(src="../assets/img/blazy.gif" data-src= val.photo)
+              .text-block.waypoint
+                h6.section-title= val.title
+                p !{val.text}
+        // breadcrumb
+      .breadcrumb
+        ul.common-width
+          li
+            a(href="./index.html")
+              span 主頁
+          li 
+            a(href="./development.html")
+              span 可持續發展
+          li 
+            a(href="javascript:;")
+              span 環境保護
+      // footer
+      include ../layouts/_footer.pug
+  //引入的script
+  include ../layouts/_script.pug

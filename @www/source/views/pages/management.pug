@@ -1,0 +1,78 @@
+-
+  var management = [
+    {
+      title: '設施管理',
+      photo: '',
+      text: ''},
+  ]
+
+  var swiper = [
+    '../uploads/about/swiper01-940X710.jpg',
+    '../uploads/about/swiper01-940X710.jpg',
+    '../uploads/about/swiper01-940X710.jpg'
+  ]
+
+doctype html
+html(lang="zh-Hant-HK")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../assets/css/management.css")
+
+  body.management(data-page="management")
+    .main-wrapper
+      // 導覽列
+      include ../layouts/_navbar.pug
+      // 主要內容
+      main
+        section.section-banner.bg-banner
+          .banner-photo
+            .photo-desktop.b-lazy(src="../assets/img/blazy.gif" data-src="../uploads/about/banner-1920X715.jpg")
+            .photo-mobile.b-lazy(src="../assets/img/blazy.gif" data-src="../uploads/about/banner-mobile-780X550.jpg")
+          .banner-title.waypoint
+            .title-center
+              h6 我們的業務
+            .title-bg 
+              h6 我們的業務
+        // 我們的業務
+        section.section-story.common-width.center.waypoint
+          h6.section-title 我們的業務
+          p 啟勝管理服務有限公司(啟勝) 成立於1978年，是新鴻基地產的一份子，也是全港最具規模的物業管理機構之一。<br><br><br>啟勝一直以人為本，與時並進，將人性化的服務注入不同空間。務求透過「悉心灌注，服務每一處」，令啟勝的服務不論現代及未來，<br><br>都能給所有客戶最尊貴、最貼心的體驗，享受更理想的生活。
+        section.section-management
+          ul
+            each val in management
+              li 
+                a(href="javascript:;")
+                  .box
+        // swiper 背景色可設定
+        section.section-swiper.waypoint(style="background-color: #faf7f1")
+          .section-wrap.common-width
+            .title-block
+              h6.section-title 我們的理念
+              .photo-logo  
+                img(src="../assets/img/logo06.png", alt="")
+              p 待人之道，在於以人為本。啟勝貫徹以客為先的信念，矢志為客戶提供最優越的物業管理服務。除了在每個細節背後加入人性化的設計與智慧，我們亦注重對每位員工的關懷，保持開放的態度，務求讓他們盡展所長，為客戶提供最貼心的服務，打造非凡生活空間。
+            .swiper-common
+              .swiper-container 
+                .swiper-wrapper
+                  each val in swiper
+                    // 圖片建議尺寸 850X560
+                    .swiper-slide
+                      .photo
+                        img(src= val, alt="")
+          .swiper-pagination.horizon
+      // breadcrumb
+      .breadcrumb
+        ul.common-width
+          li
+            a(href="./index.html")
+              span 主頁
+          li 
+            a(href="javascript:;")
+              span 關於我們
+      // footer
+      include ../layouts/_footer.pug
+  //引入的script
+  include ../layouts/_script.pug

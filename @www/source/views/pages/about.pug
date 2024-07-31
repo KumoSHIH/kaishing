@@ -1,0 +1,254 @@
+-
+  var icon = [
+    {
+      icon: '../../uploads/about/icon01.png',
+      text: '成立年份<br>1978年'},
+    {
+      icon: '../../uploads/about/icon02.png',
+      text: '員工<br>9000+'},
+    {
+      icon: '../../uploads/about/icon03.png',
+      text: '管理物業<br>200+'},
+    {
+      icon: '../../uploads/about/icon04.png',
+      text: '管理總面積<br><span>(平方呎)</span>1億+'}
+  ]
+
+  var forward = [
+    {
+      icon: '../../uploads/about/icon09.jpg',
+      text: '細聽，為更好',
+      en: 'WE LISTEN',
+      f: '我們細聽你的聲音，<br>致力於提供更好的服務'},
+    {
+      icon: '../../uploads/about/icon06.png',
+      text: '用心，做更好',
+      en: 'WE CARE',
+      f: '我們用心照顧，<br>力求做得更好。'},
+    {
+      icon: '../../uploads/about/icon07.png',
+      text: '主動，建更好',
+      en: 'WE CREATE',
+      f: ' 我們主動創造，<br>建設更好的環境。'},
+    {
+      icon: '../../uploads/about/icon08.png',
+      text: '實踐，走更遠',
+      en: 'WE ACT',
+      f: '我們用行動實踐，<br>共同走向更遠的未來。'}
+  ]
+
+  var brand = [
+    {
+      logo: '../../assets/img/logo-main.png',
+      url: './property.html#slider-1'},
+    {
+      logo: '../../assets/img/logo06.png',
+      url: './property.html#slider-2'},
+    {
+      logo: '../../assets/img/logo02.png',
+      url: './property.html#slider-3'},
+    {
+      logo: '../../assets/img/logo01.png',
+      url: './property.html#slider-4'},
+    {
+      logo: '../../assets/img/logo05.png',
+      url: './property.html#slider-5'},
+    {
+      logo: '../../assets/img/logo04.png',
+      url: './property.html#slider-6'}
+  ]
+
+  var swiper = [
+    '../../uploads/about/swiper01-940X710.jpg',
+    '../../uploads/about/swiper01-940X710.jpg',
+    '../../uploads/about/swiper01-940X710.jpg'
+  ]
+
+  //- var video = [
+  //-   {
+  //-     photo: '../uploads/index/news01-615X345.jpg',
+  //-     id: 'WErmbh2jt4s',
+  //-     title: '這是假字這是假字這是假字這是假字這是假字這是假字這是假字這是假字這是假字',
+  //-     desc: '這是假字，這是假字，這是假字。'},
+  //-   {
+  //-     photo: '../uploads/index/news02-615X345.jpg',
+  //-     id: 'e69jHUyhqZk',
+  //-     title: '這是假字',
+  //-     desc: '這是假字，這是假字，這是假字。'},
+  //-   {
+  //-     photo: '../uploads/index/other02-800X605.jpg',
+  //-     id: 'BuuIbTF0_b0',
+  //-     title: '這是假字',
+  //-     desc: '這是假字，這是假字，這是假字。'},
+  //- ]
+
+  var video = [
+    {
+      data: [
+        {
+          photo: '../../uploads/index/news01-615X345.jpg',
+          id: 'WErmbh2jt4s',
+          title: '這是假字這是假字這是假字這是假字這是假字這是假字這是假字這是假字這是假字',
+          desc: '這是假字，這是假字，這是假字。'},
+        {
+          photo: '../../uploads/index/news02-615X345.jpg',
+          id: 'e69jHUyhqZk',
+          title: '這是假字',
+          desc: '這是假字，這是假字，這是假字。'},
+        {
+          photo: '../../uploads/index/other04-800X605.jpg',
+          id: 'BuuIbTF0_b0',
+          title: '這是假字',
+          desc: '這是假字，這是假字，這是假字。'},
+      ]},
+    {
+      data: [
+        {
+          photo: '../../uploads/index/news02-615X345.jpg',
+          id: 'WErmbh2jt4s',
+          title: '這是假字這是假字這是假字這是假字這是假字這是假字這是假字這是假字這是假字',
+          desc: '這是假字，這是假字，這是假字。'},
+        {
+          photo: '../../uploads/index/news01-615X345.jpg',
+          id: 'e69jHUyhqZk',
+          title: '這是假字',
+          desc: '這是假字，這是假字，這是假字。'},
+        {
+          photo: '../../uploads/index/other04-800X605.jpg',
+          id: 'BuuIbTF0_b0',
+          title: '這是假字',
+          desc: '這是假字，這是假字，這是假字。'},
+      ]},
+  ]
+
+doctype html
+html(lang="zh-Hant-HK")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../assets/css/about.css")
+
+  body.about(data-page="about" data-lang="tc")
+    .main-wrapper
+      // 導覽列
+      include ../layouts/_navbar.pug
+      // 主要內容
+      main
+        section.section-banner.bg-banner
+          .banner-photo
+            .photo-desktop.b-lazy(src="../../assets/img/blazy.gif" data-src="../../uploads/about/banner-1920X715.jpg")
+            .photo-mobile.b-lazy(src="../../assets/img/blazy.gif" data-src="../../uploads/about/banner-mobile-780X550.jpg")
+          .banner-title.waypoint
+            .title-center
+              h6 關於我們
+            .title-bg 
+              h6 關於我們
+        section.section-icon
+          ul.icon-wrap.waypoint
+            each val in icon
+              li.color-main
+                // icon 圖片建議尺寸 200X200 png
+                .photo
+                  img(src= val.icon, alt="")
+                p !{val.text}
+        // 我們的故事
+        section.section-story.common-width.center.waypoint
+          h6.section-title 我們的故事
+          p 一切源於一九七八年，新鴻基地產集團在香港成立了啟勝管理服務有限公司（啟勝），讓旗下物業得到專業、優質的物業管理服務。<br>啟勝團隊上下一心、積極進取的精神，令公司不斷壯大，逐步在業界內穩健成長。<br>至今，啟勝負責管理的物業已遍佈香港及內地重要城市，歷年來獲獎無數，在業界內佔有舉足輕重的地位!<br><br>
+            <br>近半世紀以來，我們一直秉持母公司「以心建家」的核心價值，陪伴客戶走過不同人生階段，亦慢慢塑造出啟勝獨一無二的品牌價值觀。<br><br>
+            <br>優質，就得著重細節；創新，須有破格思維。我們的服務專注且細膩，用心感受客戶每一步；<br>同時，亦與時並進，將創新元素滲透到服務的每一角落。<br><br>
+            <br>這就是啟勝!
+        section.section-story.common-width.center.waypoint
+          h6.section-title 我們的品牌
+          .logo
+            img(src="../../assets/img/logo03.png", alt="")
+          p 全新品牌標誌的形態及顏色，重新演繹了啟勝時刻向前的企業精神，以嶄新視覺展示啟勝服務的初心，<br>本著「以心建家」的核心價值，在物業管理服務注入創新元素，為客戶締造美好新生活!<br><br>顏色方面則選用了明亮而穩重的銅黃色，並以同色調的不同層次展示，盡顯品牌穩重低調的個性中，不泛靈活、多變的可能性，<br>整體呈現出專業可靠、具彈性且高雅的品牌氣質。<br>富標誌性的「K」則代表著啟勝，其上揚線條形成箭咀，彰顯了啟勝即使在業界穩紮領導地位，但仍持續求進的服務精神。<br>啟勝期待以可靠而富活力的品牌個性，為客戶實踐專業用心的服務承諾。
+        section.section-idea.common-width.waypoint
+          h6.section-title.center 公司願景
+          .text
+            p 我們的品牌價值觀承載著母公司「以心建家」的核心價值，<br>亦帶著我們著重創新思維，放眼未來的願景。
+          ul.icon-wrap.waypoint
+            each val in forward
+              li.color-dark
+                // icon 圖片建議尺寸 200X200 png
+                .photo
+                  img(src= val.icon, alt="")
+                p.en !{val.en}
+                p.ch !{val.text}
+                p.f !{val.f}
+        // 背景色可設定
+        section.section-swiper.waypoint(style="background-color: #faf7f1")
+          .section-wrap.common-width
+            .title-block
+              h6.section-title 我們的理念
+              strong 以人為本
+              p 待人之道，在於以人為本。啟勝貫徹以客為先的信念，矢志為客戶提供最優越的物業管理服務。除了在每個細節背後加入人性化的設計與智慧，我們亦注重對每位員工的關懷，保持開放的態度，務求讓他們盡展所長，為客戶提供最貼心的服務，打造非凡生活空間。
+            .swiper-common
+              .swiper-container 
+                .swiper-wrapper
+                  each val in swiper
+                    // 圖片建議尺寸 850X560
+                    .swiper-slide
+                      .photo
+                        img(src= val, alt="")
+          .swiper-pagination.horizon
+          .swiper-button-prev
+            img(src="../../assets/img/arr-left.png", alt="")
+          .swiper-button-next
+            img(src="../../assets/img/arr-right.png", alt="")
+        section.section-brand.common-width.waypoint
+          h6 公司品牌
+          // 點擊 前往property.html 
+          // 並切換下方相對應的輪播
+          // callback function:
+          // commonSwiper.slideTo(index,800,true)
+          // $('.hd').addClass('down');
+          ul
+            each val,index in brand
+              li.waypoint
+                a(href= val.url)
+                  img(src= val.logo, alt="")
+        // 影片區
+        section.section-videos
+          .common-width
+            h6 相關影片
+            .swiper-videos.swiper-article
+              .swiper-container
+                .swiper-wrapper
+                  each val in video
+                    // 一個slide 塞三則消息
+                    .swiper-slide
+                      each slide in val.data
+                        .slide-box
+                          // video-id: youtube 影片ID
+                          // video-image: 預設圖片建議尺寸 615X345
+                          .video(video-id= slide.id
+                            video-type="youtubeAPI"
+                            video-player-type="onBox"
+                            video-image= slide.photo
+                            data-video)
+                          .text
+                            // 標題最多一行，超過將出現 ...
+                            h5= slide.title
+                            // 敘述最多兩行，超過將出現 ...
+                            p= slide.desc
+              .swiper-tools
+                .swiper-button-prev
+                .swiper-pagination.horizon
+                .swiper-button-next
+      // breadcrumb
+      .breadcrumb
+        ul.common-width
+          li
+            a(href="./index.html")
+              span 主頁
+          li 
+            a(href="javascript:;")
+              span 關於我們
+      // footer
+      include ../layouts/_footer.pug
+  //引入的script
+  include ../layouts/_script.pug
+  <script src="../../assets/js/plugins/video/video-dist.js"></script>

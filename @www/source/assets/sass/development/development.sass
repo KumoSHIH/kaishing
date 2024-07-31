@@ -1,0 +1,46 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+
+.development
+  main 
+    overflow: hidden
+    padding-bottom: 150px
+    +rwdmax(1200)
+      margin-top: 80px
+      padding-bottom: 90px
+    +rwdmax(767)
+      margin-top: 74px
+      padding-bottom: 30px
+  .banner-title .title-bg h6
+    +rwdmax(767)
+      letter-spacing: 15px
+  .section-story
+    padding-bottom: 0
+    padding-top: 100px
+    +rwdmax(1200)
+      padding-top: 80px
+      padding-left: 30px
+      padding-right: 30px
+    +rwdmax(767)
+      padding-top: 70px
+      padding-left: 20px
+      padding-right: 20px
+      h6.section-title
+        text-align: left
+  .section-other
+    #content1
+      padding-top: 120px
+    .article-wrap
+      .text-block 
+        padding-bottom: 50px
+        p 
+          overflow: initial
+          -webkit-line-clamp: unset
+          max-height: unset
+    +rwdmax(1200)
+      width: 60%
+      #content1
+        padding-top: 50px
+    +rwdmax(767)
+      width: 85%
+      

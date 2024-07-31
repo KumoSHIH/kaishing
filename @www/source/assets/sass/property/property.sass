@@ -1,0 +1,403 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+
+.property
+  main 
+    padding-bottom: 100px
+    +rwdmax(1200)
+      margin-top: 80px
+    +rwdmax(767)
+      margin-top: 74px
+  .property-content 
+    padding-top: 50px
+    +rwdmax(1300)
+      padding-top: 0
+    .content
+      max-width: calc(100vw - 400px)
+      width: 100%
+      margin: 0 auto
+      position: relative
+    .property-text
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+      ul 
+        position: relative
+        height: 490px
+        max-width: 1100px
+        width: 100%
+        margin: 0 auto
+        +rwdmax(1400)
+          height: 400px
+      li
+        display: flex
+        align-items: center
+        position: absolute
+        z-index: 1
+        cursor: pointer
+        .tit
+          display: flex
+          align-items: center
+          color: #dcceb3
+          transition: .3s ease-in-out
+          h6 
+            font-size: px(35)
+            font-weight: bold
+            letter-spacing: 3.5px
+          i 
+            padding-left: 10px
+            font-size: 22px
+            transition: .3s ease-in-out
+        .icon
+          width: 88px
+          height: 88px
+          border-radius: 50%
+          background-color: #dcceb3
+          transition: .3s ease-in-out
+          +flexCenter
+          .icon-img
+            max-width: 66px
+        &.active,
+        &:hover
+          .tit
+            color: $second
+          .icon
+            background-color: $second
+        &.active
+          .tit 
+            i 
+              transform: scaleY(-1)
+        &:nth-child(1)
+          left: -210px
+          bottom: 90px
+          .tit
+            padding-right: 16px
+        &:nth-child(2)
+          left: -70px
+          top: 100px
+          .tit
+            padding-right: 16px
+        &:nth-child(3)
+          left: 160px
+          top: -30px
+          .tit
+            padding-right: 16px
+        &:nth-child(4)
+          top: -30px
+          right: 260px
+          flex-direction: row-reverse
+          .tit
+            padding-bottom: 16px
+        &:nth-child(5)
+          right: -70px
+          top: 100px
+          flex-direction: row-reverse
+          .tit
+            padding-left: 16px
+        &:nth-child(6)
+          right: -140px
+          bottom: 90px
+          flex-direction: row-reverse
+          .tit
+            padding-left: 16px
+        +rwdmax(1600)
+          .tit
+            h6
+              font-size: px(28)
+          &:nth-child(1)
+            left: -190px
+          &:nth-child(2)
+            left: -60px
+          &:nth-child(3)
+            top: -20px
+            left: 180px
+          &:nth-child(4)
+            top: -20px
+          &:nth-child(5)
+            right: -60px
+            .icon-img
+              max-width: 45px
+          &:nth-child(6)
+            right: -120px
+        +rwdmax(1400)
+          &:nth-child(1)
+            left: -150px
+          &:nth-child(2)
+            left: -40px
+            top: 70px
+          &:nth-child(3)
+            top: -30px
+            left: 150px
+          &:nth-child(4)
+            top: -30px
+            right: 230px
+          &:nth-child(5)
+            right: -40px
+            top: 70px
+          &:nth-child(6)
+            right: -85px
+        +rwdmax(1300)
+          display: none
+    .roll-box
+      position: relative
+      height: 490px
+      overflow: hidden
+      +commonW(1100)
+      .roll
+        position: absolute
+        left: 0
+        top: 0
+        max-width: 1100px
+        width: 100%
+        height: 1100px
+        border-radius: 50%
+        border: solid 5px #dcceb3
+      .roll-photo
+        max-width: 923px
+        width: 100%
+        margin: 80px auto 0
+      +rwdmax(1600)
+        .roll
+          border-width: 4px
+      +rwdmax(1500)
+        .roll-photo
+          max-width: 820px
+          margin-top: 100px
+      +rwdmax(1400)
+        height: 400px
+        .roll
+          max-width: 900px
+          height: 900px
+          left: 50%
+          transform: translateX(-50%)
+        .roll-photo
+          max-width: 710px
+          margin-top: 95px
+      +rwdmax(1300)
+        display: none
+  .property-swiper
+    max-width: 1155px
+    width: 100%
+    margin: 0 auto
+    background-color: #dcceb3
+    &.active
+      margin-bottom: 50px
+    +rwdmax(1300)
+      background-color: transparent
+    .swiper-slide
+      padding: 0 10px
+      display: none
+      +rwdmax(1300)
+        display: flex
+        .swiper-button-prev,
+        .swiper-button-next
+          display: none
+        &.swiper-slide-active
+          .swiper-button-prev,
+          .swiper-button-next
+            display: flex
+    .slide-box
+      padding: 24px 28px
+      width: 100%
+      display: flex
+      align-items: center
+      justify-content: space-between
+      .photo
+        max-width: 500px
+        width: 100%
+        flex-shrink: 0
+        &-wrap 
+          position: relative
+          padding-bottom: 56%
+          overflow: hidden
+        img
+          width: 100%
+          +posCenter
+        h6 
+          display: none
+      .text
+        max-width: 520px
+        width: 100%
+        color: #333
+        text-align: left
+        h6
+          padding-bottom: 44px
+          letter-spacing: 4.1px
+          font-weight: bold
+          line-height: px(25)
+          font-size: px(41)
+        p
+          line-height: px(35)
+          font-size: px(14)
+      +rwdmax(1300)
+        flex-direction: column
+        max-width: 600px
+        padding: 0
+        .photo
+          position: relative
+          max-width: none
+          &-wrap
+            padding-bottom: 0
+          img
+            position: static
+            transform: translate(0,0)
+          h6
+            display: block
+            background-color: rgba($second,.7)
+            position: absolute
+            left: 0
+            bottom: 0
+            width: 100%
+            font-size: px(28)
+            color: #fff
+            font-weight: bold
+            text-align: left
+            padding: 7px 15px
+            letter-spacing: 2.5px
+        .text
+          padding: 20px 30px 40px
+          max-width: none
+          width: 100%
+          background-color: #faf7f1
+          h6 
+            display: none
+          p 
+            line-height: px(30)
+            font-size: px(16)
+
+    .swiper-button-prev,
+    .swiper-button-next
+      display: none
+      width: 35px
+      height: 35px
+      border-radius: 50%
+      background-color: #fff
+      &::after
+        font-family: 'icomoon'
+        color: $second
+        font-size: px(22)
+    .swiper-button-prev
+      left: -26px
+      &::after
+        content: '\e903'
+        transform: translateX(5px)
+    .swiper-button-next
+      right: -26px
+      &::after
+        content: '\e902'
+  
+  .section-swiper
+    position: relative
+    .swiper-common
+      width: 100%
+    .swiper-slide
+      .text
+        max-width: 590px
+        width: 100%
+        margin-right: auto
+        color: #333
+        text-align: left
+        h6 
+          font-weight: bold
+          letter-spacing: 4.8px
+          font-size: px(48)
+        .img-logo
+          margin: 30px 0
+          max-width: 270px
+          img
+            max-width: 100%
+            max-height: 100%
+            width: auto
+        p
+          line-height: px(38)
+          font-size: px(18)
+      .photo
+        width: 50%
+        flex-shrink: 0
+        margin-left: 50px
+    +rwdmax(1300)
+      margin-top: 50px
+    +rwdmax(1200)
+      .swiper-slide
+        .text
+          h6 
+            font-size: px(36)
+    +rwdmax(900)
+      .swiper-slide
+        flex-direction: column-reverse
+        .text
+          max-width: 500px
+          width: 100%
+          margin: 0 auto
+          padding-top: 30px
+          .img-logo
+            max-width: 200px
+            height: 100%
+        .photo
+          margin-left: 0
+          max-width: 500px
+          width: 100%
+    +rwdmax(767)
+      .swiper-slide
+        .text
+          padding-top: 20px
+          h6 
+            letter-spacing: 2px
+            font-size: px(24)
+          .img-logo
+            max-width: 140px
+            margin: 15px 0
+          p 
+            line-height: px(34)
+  .section-swiper
+    .swiper-button-prev,
+    .swiper-button-next
+      width: 40px 
+      height: 168px
+      transform: translateY(-50%)
+      &::after
+        content: ''
+    .swiper-button-prev
+      left: 40px
+    .swiper-button-next
+      right: 40px
+    +rwdmax(1680)
+      .swiper-button-prev,
+      .swiper-button-next
+        width: 30px
+        height: 140px
+    +rwdmax(1400)
+      .swiper-button-prev
+        left: 30px
+      .swiper-button-next
+        right: 30px
+    +rwdmax(1300)
+      .swiper-button-prev,
+      .swiper-button-next
+        width: 15px
+        height: auto
+      .swiper-button-prev
+        left: 10px
+      .swiper-button-next
+        right: 10px
+    +rwdmax(900)
+      .swiper-button-prev,
+      .swiper-button-next
+        display: none !important
+      .swiper-button-prev
+        left: 40px
+      .swiper-button-next
+        right: 40px
+    +rwdmax(767)
+      .swiper-button-prev,
+      .swiper-button-next
+        width: 10px
+        height: 100px
+        transform: translateY(0)
+        top: 20%
+      .swiper-button-prev
+        left: 5px
+      .swiper-button-next
+        right: 5px

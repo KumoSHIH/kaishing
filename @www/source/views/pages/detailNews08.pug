@@ -1,0 +1,37 @@
+doctype html
+html(lang="zh-Hant-HK")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../assets/css/detail.css")
+
+  body.detail(data-page="detail")
+    .main-wrapper
+      // 導覽列
+      include ../layouts/_navbar.pug
+      // 主要內容
+      main
+        section.detail-banner
+          .detail-width
+            h6.section-title 獎項及成就
+        section.detail-content.detail-width
+          h2 啟勝出席「粵港澳大灣區物業創新發展論壇」及接待內地考察團訪港 促進兩地物管業合作交流
+          article
+            .photo
+              img(src="../../uploads/news/08-2.jpg", alt="")
+            p 啟勝管理服務有限公司（啟勝）旗下管理服務範圍遍佈香港及中國多個重要城市，在內地物管業一直享負盛名。最近，啟勝獲邀請出席在深圳舉行的「中國國際物業管理產業博覽會2023之粵港澳大灣區現代物業創新發展論壇」，向內地業界分享公司物業管理經驗及如何將服務提升至國際水平。<br><br>啟勝副董事總經理朱啟明作為香港唯一的物業管理公司代表，以「從心出發．面向世界」為主題，向在場近500位內地同業分享啟勝的管理心得。他指啟勝秉承母公司新鴻基地產「以心建家」的精神，全方位照顧不同世代需要：「中國人有句說話是『安居樂業』，當中的『安居』正正就是我們工作的核心任務。若物業管理服務能做得貼心到位，幸福感、滿意度自然大大提升。」<br><br>此外，他亦指啟勝為業界屢創先河，包括引入酒店式物業管理服務、提供禮賓司服務等；同時強調綠色管理的重要性，打造可持續發展的生活環境，以及應用創新科技及人工智能管理物業，以達致節能減碳的效果，為全球減碳作出貢獻。<br><br>翌日，啟勝接待內地考察團到訪旗下物業，包括全港最高建築物環球貿易廣場（ICC）及沙田新城市廣場，以了解啟勝運用的人工智能管理系統及節能減碳的措施，並認識本港商場的日常管理模式，雙方交流管理心得及工作經驗。<br><br>這次交流活動成功為兩地物管業的互動掀起了序幕。啟勝樂見兩地物管同業交流頻繁，我們盼望未來能繼續加強聯繫，增加彼此學習及了解的機會，攜手令中國的物業管理水平持續提升，成為國際新標準。
+          article.row-two
+            .photo
+              img(src="../../uploads/news/08-3.jpg", alt="")
+            .photo
+              img(src="../../uploads/news/08-4.jpg", alt="")
+
+
+      
+      include ../layouts/_newsBreadcrumb
+      // footer
+      include ../layouts/_footer.pug
+  //引入的script
+  include ../layouts/_script.pug
