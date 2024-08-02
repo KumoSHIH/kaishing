@@ -1,0 +1,140 @@
+-
+  var video = [
+    {
+      photo: '../../uploads/index/news01-615X345.jpg',
+      id: 'WErmbh2jt4s',
+      title: '這是假字',
+      desc: '這是假字，這是假字，這是假字。'},
+    {
+      photo: '../../uploads/index/news02-615X345.jpg',
+      id: 'e69jHUyhqZk',
+      title: '這是假字',
+      desc: '這是假字，這是假字，這是假字。'},
+    {
+      photo: '../../uploads/index/other04-800X605.jpg',
+      id: 'BuuIbTF0_b0',
+      title: '這是假字',
+      desc: '這是假字，這是假字，這是假字。'},
+     {
+      photo: '../../uploads/index/news01-615X345.jpg',
+      id: 'WErmbh2jt4s',
+      title: '這是假字',
+      desc: '這是假字，這是假字，這是假字。'},
+    {
+      photo: '../../uploads/index/news02-615X345.jpg',
+      id: 'e69jHUyhqZk',
+      title: '這是假字',
+      desc: '這是假字，這是假字，這是假字。'},
+    {
+      photo: '../../uploads/index/other04-800X605.jpg',
+      id: 'BuuIbTF0_b0',
+      title: '這是假字',
+      desc: '這是假字，這是假字，這是假字。'},
+     {
+      photo: '../../uploads/index/news01-615X345.jpg',
+      id: 'WErmbh2jt4s',
+      title: '這是假字',
+      desc: '這是假字，這是假字，這是假字。'},
+    {
+      photo: '../../uploads/index/news02-615X345.jpg',
+      id: 'e69jHUyhqZk',
+      title: '這是假字',
+      desc: '這是假字，這是假字，這是假字。'},
+    {
+      photo: '../../uploads/index/other04-800X605.jpg',
+      id: 'BuuIbTF0_b0',
+      title: '這是假字',
+      desc: '這是假字，這是假字，這是假字。'},
+  ]
+
+
+doctype html
+html(lang="zh-Hant-HK")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+
+  body.videos(data-page="videos" data-lang="tc")
+    .main-wrapper
+      // 導覽列
+      include ../layouts/_navbar.pug
+      // 主要內容
+      main
+        section.normal-banner
+          .bg
+            .normal-title
+              h6 影片庫
+        // 篩選排序
+        .dropdown.common-width
+          .d-flex
+            .form-select.type-fullbox.mr-1
+              .select-head
+                p.option 
+                  span 年份
+                i.icon-keyboard_arrow_down
+              .select-content
+                ul.scrollbar-inner
+                  li 2024
+                  li 2023
+                  li 2022
+                  li 2021
+                  li 2020
+                  li 2019
+                  li 2018
+            .form-select.type-fullbox
+              .select-head
+                p.option 
+                  span 月份
+                i.icon-keyboard_arrow_down
+              .select-content
+                ul.scrollbar-inner
+                  li 1
+                  li 2
+                  li 3
+                  li 4
+                  li 5
+                  li 6
+                  li 7
+                  li 8
+                  li 9
+                  li 10
+                  li 11
+                  li 12
+        
+        // 後端callback: _news.backendCallback();
+        .section-videos
+        .container-fluid.common-width
+          .row
+            each val in video
+              .col-12.col-md-6.col-lg-4.mb-5
+                .slide-box
+                  // video-id: youtube 影片ID
+                  // video-image: 預設圖片建議尺寸 615X345
+                  .video(video-id= val.id
+                    video-type="youtubeAPI"
+                    video-player-type="onBox"
+                    video-image= val.photo
+                    data-video)
+                  .text
+                    h5= val.title
+                    p= val.desc
+
+        // 載入更多按鈕
+        .btn.text-center.mt-5.waypoint
+          a.btn-more.border(href="javascript:;")
+            span 載入更多
+      // breadcrumb
+      .breadcrumb.waypoint
+        ul.common-width
+          li
+            a(href="./index.html")
+              span 主頁
+          li
+            span 影片庫
+      // footer
+      include ../layouts/_footer.pug
+  //引入的script
+  include ../layouts/_script.pug
+  <script src="../../assets/js/plugins/video/video-dist.js"></script>

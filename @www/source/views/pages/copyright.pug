@@ -1,0 +1,31 @@
+doctype html
+html(lang="zh-Hant-HK")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+
+  body.ftPage(data-page="ftPage" data-lang="tc")
+    .main-wrapper
+      // 導覽列
+      include ../layouts/_navbar.pug
+      // 主要內容
+      main
+        section.normal-banner
+          .bg
+            .normal-title.small
+              h6 版權與商標
+          p.text-left 本網站所顯示的商標、商號和標誌，由新鴻基地產及其他相關人士擁有。未經新鴻基地產或該等人士的書面同意，不可使用此等商標、商號和標誌。<br><br>本網站所載的資料及材料受版權保護。未經新鴻基地產事前以書面同意，不可將此等資料及材料的任何部份修改、翻版、儲存、傳送、複製、分發或以任何其他方式作商業或公共用途。<br><br>如中、英文兩個版本有任何抵觸或不相符之處，應以英文版本為準。
+
+      // breadcrumb
+      .breadcrumb
+        ul.common-width
+          li
+            a(href="./index.html")
+              span 主頁
+          li
+            span 版權與商標
+      // footer
+      include ../layouts/_footer.pug
+  //引入的script
+  include ../layouts/_script.pug

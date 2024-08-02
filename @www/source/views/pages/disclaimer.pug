@@ -1,0 +1,32 @@
+doctype html
+html(lang="zh-Hant-HK")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+
+  body.ftPage(data-page="ftPage" data-lang="tc")
+    .main-wrapper
+      // 導覽列
+      include ../layouts/_navbar.pug
+      // 主要內容
+      main
+        section.normal-banner
+          .bg
+            .normal-title.small
+              h6 免責聲明
+          p.text-left 本網站內的資料只供參考和一般資訊之用，而並非有提供全面資訊或任何投資或其他專業意見之意。新鴻基地產並不保證或陳述該等資料是否完整、準確或最新，亦對關於該等資料或其他於本網站的連結網站之不侵權、保安、於某用途的適用性、不受電腦病毒影響等不作出保証，如因使用或進入本網站或任何連結網站或依據本網站或任何連結網站的內容而招致任何損失或損害，本集團概不負上任何責任。如中、英文兩個版本有任何抵觸或不相符之處，應以英文版本為準
+
+
+      // breadcrumb
+      .breadcrumb
+        ul.common-width
+          li
+            a(href="./index.html")
+              span 主頁
+          li
+            span 免責聲明
+      // footer
+      include ../layouts/_footer.pug
+  //引入的script
+  include ../layouts/_script.pug

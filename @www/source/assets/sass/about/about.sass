@@ -76,6 +76,12 @@
       +zWaypoint
     +rwdmax(1200)
       width: 90%
+      .icon-wrap
+        margin-top: 70px
+        flex-wrap: wrap
+        li 
+          width: 50%
+          margin-bottom: 20px
       .text
         flex-direction: column
         align-items: center
@@ -171,6 +177,24 @@
   
 
   .section-swiper
+    .swiper-common
+      width: 100%
+    .slide-wrap
+      width: 100%
+      display: flex
+      align-items: center
+      .title-block
+        width: 50%
+        text-align: left
+      .photo
+        width: 50%
+        flex-shrink: 0
+      +rwdmax(1200)
+        flex-direction: column-reverse
+        .title-block,
+        .photo
+          max-width: 500px
+          width: 100%
     .swiper-button-prev,
     .swiper-button-next
       width: 40px 
@@ -221,3 +245,11 @@
       .swiper-button-next
         right: 5px
 
+
+  &[data-lang="en"]
+    .section-idea .text p
+      +rwdmax(767)
+        line-height: 30px
+    .section-idea li p.f
+      +rwdmax(767)
+        font-size: px(16)

@@ -39,31 +39,36 @@
   var swiper = [
     {
       title: '超卓管理服務有限公司（Supreme）',
-      logo: '../../assets/img/logo-main.png',
-      text: '超卓管理服務有限公司（Supreme）致力為特選的尊貴住宅物業，提供超卓的物業及設施管理。一系列的六星級服務均採用嶄新技術，以滿足甚至超越業戶對物業及生活時尚的要求，全方位積極配合業戶的需要，並透過個人禮賓支援，令服務倍加增值。<br>了解更多：<a href="https://www.supreme-mgt.hk/">https://www.supreme-mgt.hk/</a>',
+      logo: '../../assets/img/logo06.png',
+      text: '超卓管理服務有限公司（Supreme）致力為特選的尊貴住宅物業，提供超卓的物業及設施管理。一系列的六星級服務均採用嶄新技術，以滿足甚至超越業戶對物業及生活時尚的要求，全方位積極配合業戶的需要，並透過個人禮賓支援，令服務倍加增值。 <br>了解更多：<a href="https://www.supreme-mgt.hk/">https://www.supreme-mgt.hk/</a>',
       photo: '../../uploads/about/swiper01-940X710.jpg'},
     {
       title: 'WeSpire Living Limited（WeSpire Living）',
-      logo: '../../assets/img/logo06.png',
+      logo: '../../assets/img/logo02.png',
       text: 'WeSpire Living Limited（WeSpire Living）是一家致力重塑物業管理模式的新世代公司，旨在結合高端智能生活科技，打造「Smart Living Well」生活概念，以創新進步的精神激發生活新靈感，銳意成為住戶的生活伙伴，為住戶帶來多元、優質的管理服務體驗。',
       photo: '../../uploads/about/swiper01-940X710.jpg'},
     {
       title: '上海啟勝物業管理有限公司 （上海啟勝）',
-      logo: '../../assets/img/logo02.png',
+      logo: '../../assets/img/logo-main.png',
       text: '上海啟勝物業管理有限公司 （上海啟勝）於一九九六年成立，是作為進入中國內地市場的首站，主力為上海及蘇州項目提供物業管理服務，其中包括地標項目如上海國金中心、上海環貿廣場、上海ITC一期、上海ITC二期、上海中環廣場、上海濱江凱旋門、上海名仕苑、上海天薈及蘇州湖滨四季等。自成立至今，上海啟勝一直為世界頂級物業提供高質量且符合國際水平的管理服務，在內地已建立良好商譽，物業管理業務迅速增長，服務質素亦持續提升。',
       photo: '../../uploads/about/swiper01-940X710.jpg'},
     {
       title: '廣州市啟勝物業管理有限公司（廣州啟勝）',
-      logo: '../../assets/img/logo01.png',
+      logo: '../../assets/img/r03.jpg',
       text: '廣州市啟勝物業管理有限公司（廣州啟勝）於二零零四年成立，主力負責廣州、北京、南京、成都等地的項目，其中包括廣州天環廣場、廣州天匯廣場、佛山南海廣場、北京APM、北京NTP新城廣場、成都環貿廣場及南京國金中心等。憑藉啟勝多年的物業管理經驗，廣州啟勝致力為國內客戶提供高端的物業管理服務，更積極拓展國內業務市場，於國內屢獲多項殊榮。',
       photo: '../../uploads/about/swiper01-940X710.jpg'},
     {
       title: '康樂園物業管理有限公司',
-      logo: '../../assets/img/logo05.png',
+      logo: '../../assets/img/logo01.png',
       text: '',
       photo: '../../uploads/about/swiper01-940X710.jpg'},
     {
       title: '置富花園有限公司',
+      logo: '../../assets/img/logo05.png',
+      text: '',
+      photo: '../../uploads/about/swiper01-940X710.jpg'},
+    {
+      title: '顧業物業管理有限公司',
       logo: '../../assets/img/logo04.png',
       text: '',
       photo: '../../uploads/about/swiper01-940X710.jpg'}
@@ -129,8 +134,8 @@ html(lang="zh-Hant-HK")
                       .swiper-button-prev
                       .swiper-button-next
                     .text 
-                      h6= val.title 
-                      p !{val.text}
+                      h6
+                      p
                     
 
         // 背景色可設定
@@ -143,7 +148,7 @@ html(lang="zh-Hant-HK")
                     // 圖片建議尺寸 850X560
                     .swiper-slide(data-hash=`slider-${index + 1}`)
                       .text
-                        h6= val.title
+                        //- h6= val.title
                         .img-logo 
                           img(src= val.logo, alt="")
                         p !{val.text}
@@ -160,9 +165,8 @@ html(lang="zh-Hant-HK")
           li
             a(href="./index.html")
               span 主頁
-          li 
-            a(href="javascript:;")
-              span 我們的業務
+          li
+            span 我們的業務
       // footer
       include ../layouts/_footer.pug
   //引入的script

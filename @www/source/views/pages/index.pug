@@ -85,32 +85,56 @@
     {
       data: [
         {
-          photo: '../../uploads/index/news01-615X345.jpg',
-          title: '這是假字，這是假字這是假字。',
-          link: 'javascript:;'},
-        {
-          photo: '../../uploads/index/news02-615X345.jpg',
-          title: '啟勝應用智能抗疫 獲「抗逆貢獻嘉許大獎2021」榮譽大獎及多項殊榮獲「抗逆貢獻嘉許大獎2021」榮譽大獎及多項殊榮',
-          link: 'javascript:;'},
-        {
-          photo: '../../uploads/index/other04-800X605.jpg',
-          title: '啟勝應用智能抗疫 獲「抗逆貢獻嘉許大獎2021」榮譽大獎及多項殊榮',
-          link: 'javascript:;'},
+      photo: '../../uploads/news/01.jpg',
+      date: '2024年7月18日',
+      title: '啟勝及超卓領先物管業界於「香港綠色和可持續貢獻大獎 2024」獲逾六十項大獎',
+      link: './detailNews01.html'},
+    {
+      photo: '../../uploads/news/02-1.jpg',
+      date: '2024年7月18日',
+      title: '環球貿易廣場（ICC）榮膺 WiredScore 最高「鉑金級」認證 成獲認證的亞洲最高建築物',
+      link: './detailNews02.html'},
+    {
+      photo: '../../uploads/news/03.jpg',
+      date: '2024年7月18日',
+      title: '啟勝在「賽馬會長者友善屋苑計劃」中榮獲兩金三銀佳績',
+      link: './detailNews03.html'},
       ]},
     {
       data: [
         {
-          photo: '../../uploads/index/other01-800X605.jpg',
-          title: '啟勝應用智能抗疫 獲「抗逆貢獻嘉許大獎2021」榮譽大獎及多項殊榮',
-          link: 'javascript:;'},
+      photo: '../../uploads/news/04.jpg',
+      date: '2024年7月18日',
+      title: '啟勝於「第十一屆最佳職安健物業管理大獎」中勇奪三項銀獎',
+      link: './detailNews04.html'},
+    {
+      photo: '../../uploads/news/05-1.jpg',
+      date: '2024年7月18日',
+      title: '啟勝及超卓旗下管理逾30個處所均榮獲最高級別「卓越級」室內空氣質素認證',
+      link: './detailNews05.html'},
+    {
+      photo: '../../uploads/news/06-1.jpg',
+      date: '2024年7月18日',
+      title: '啟勝奪「住宅會所管理大獎2023」半數大獎 首獲雙金創佳績',
+      link: './detailNews06.html'},
+      ]},
+    {
+      data: [
         {
-          photo: '../../uploads/index/other04-800X605.jpg',
-          title: '啟勝應用智能抗疫 獲「抗逆貢獻嘉許大獎2021」榮譽大獎及多項殊榮',
-          link: 'javascript:;'},
-        {
-          photo: '../../uploads/index/news02-615X345.jpg',
-          title: '啟勝應用智能抗疫 獲「抗逆貢獻嘉許大獎2021」榮譽大獎及多項殊榮獲「抗逆貢獻嘉許大獎2021」榮譽大獎及多項殊榮',
-          link: 'javascript:;'},
+      photo: '../../uploads/news/07.jpg',
+      date: '2024年7月18日',
+      title: '啟勝榮獲 JobsDB 頒發「最受歡迎僱主 - 物業管理」獎項',
+      link: './detailNews07.html'},
+    {
+      photo: '../../uploads/news/08.jpg',
+      date: '2024年7月18日',
+      title: '上水廣場獲頒發「香港無煙領先企業大獎2023」金獎',
+      link: './detailNews08.html'},
+    {
+      photo: '../../uploads/news/09.jpg',
+      date: '2024年7月18日',
+      title: '啟勝榮獲「PropTech Excellence Awards 2024」之「年度最佳房地產科技獎項 – 物業管理 （企業鑽石獎）」',
+      link: './detailNews09.html'},
       ]},
   ]
 
@@ -202,7 +226,7 @@ html(lang="zh-Hant-HK")
                       each slide in val.data
                         .slide-box
                           // 圖片建議尺寸 615X345
-                          .photo(style=`background-image: url(${slide.photo}`)
+                          .photo(style=`background-image: url(${slide.photo})`)
                           // 標題超過兩行出現 ...
                           h2 !{slide.title}
                           a.btn-more(href= slide.link target="_blank") 
@@ -220,8 +244,7 @@ html(lang="zh-Hant-HK")
       .breadcrumb.waypoint(style="background-color: #faf7f1")
         ul.common-width
           li
-            a(href="javascript:;")
-              span 主頁
+            span 主頁
       // footer
       include ../layouts/_footer.pug
 

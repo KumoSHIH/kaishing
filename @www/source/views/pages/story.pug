@@ -52,7 +52,7 @@ html(lang="zh-Hant-HK")
     //獨立CSS
     link(rel="stylesheet", href="../../assets/css/story.css")
 
-  body.story(data-page="story")
+  body.story(data-page="story" data-lang="tc")
     .main-wrapper
       // 導覽列
       include ../layouts/_navbar.pug
@@ -89,9 +89,8 @@ html(lang="zh-Hant-HK")
           li
             a(href="./index.html")
               span 主頁
-          li 
-            a(href="javascript:;")
-              span 人物故事
+          li
+            span 人物故事
       // footer
       include ../layouts/_footer.pug
   //引入的script

@@ -1,65 +1,50 @@
 -
-  var news = [
+  var info = [
     {
-      photo: '../../uploads/news/news01-475X265.jpg',
-      title: '這是假字',
-      desc: '這是假字，這是假字，這是假字。',
-      link: './news_detail.html'},
+      photo: '../../uploads/news/01.jpg',
+      date: '2024年7月11日',
+      title: '啟勝及超卓領先物管業界於「香港綠色和可持續貢獻大獎 2024」獲逾六十項大獎',
+      link: './detailNews01.html'},
     {
-      photo: '../../uploads/news/news02-475X265.jpg',
-      title: '這是假字',
-      desc: '這是假字，這是假字，這是假字。<br>這是假字，這是假字，這是假字。',
-      link: './news_detail.html'},
+      photo: '../../uploads/news/02-1.jpg',
+      date: '2024年6月30日',
+      title: '環球貿易廣場（ICC）榮膺 WiredScore 最高「鉑金級」認證 成獲認證的亞洲最高建築物',
+      link: './detailNews02.html'},
     {
-      photo: '../../uploads/news/news03-475X265.jpg',
-      title: '這是假字',
-      desc: '這是假字，這是假字，這是假字。',
-      link: './news_detail.html'},
+      photo: '../../uploads/news/03.jpg',
+      date: '2024年6月28日',
+      title: '啟勝在「賽馬會長者友善屋苑計劃」中榮獲兩金三銀佳績',
+      link: './detailNews03.html'},
     {
-      photo: '../../uploads/news/news04-475X265.jpg',
-      title: '這是假字',
-      desc: '這是假字，這是假字，這是假字。',
-      link: './news_detail.html'},
+      photo: '../../uploads/news/04.jpg',
+      date: '2024年6月27日',
+      title: '啟勝於「第十一屆最佳職安健物業管理大獎」中勇奪三項銀獎',
+      link: './detailNews04.html'},
     {
-      photo: '../../uploads/news/news05-475X265.jpg',
-      title: '這是假字',
-      desc: '這是假字，這是假字，這是假字。<br>這是假字，這是假字，這是假字。',
-      link: './news_detail.html'},
+      photo: '../../uploads/news/05-1.jpg',
+      date: '2024年6月18日',
+      title: '啟勝及超卓旗下管理逾30個處所均榮獲最高級別「卓越級」室內空氣質素認證',
+      link: './detailNews05.html'},
     {
-      photo: '../../uploads/news/news06-475X265.jpg',
-      title: '這是假字',
-      desc: '這是假字，這是假字，這是假字。',
-      link: './news_detail.html'},
+      photo: '../../uploads/news/06-1.jpg',
+      date: '2024年5月2日',
+      title: '啟勝奪「住宅會所管理大獎2023」半數大獎 首獲雙金創佳績',
+      link: './detailNews06.html'},
     {
-      photo: '../../uploads/news/news07-475X265.jpg',
-      title: '這是假字',
-      desc: '這是假字，這是假字，這是假字。',
-      link: './news_detail.html'},
+      photo: '../../uploads/news/07.jpg',
+      date: '2024年4月16日',
+      title: '啟勝榮獲 JobsDB 頒發「最受歡迎僱主 - 物業管理」獎項',
+      link: './detailNews07.html'},
     {
-      photo: '../../uploads/news/news08-475X265.jpg',
-      title: '這是假字',
-      desc: '這是假字，這是假字，這是假字。<br>這是假字，這是假字，這是假字。',
-      link: './news_detail.html'},
+      photo: '../../uploads/news/08.jpg',
+      date: '2024年4月16日',
+      title: '上水廣場獲頒發「香港無煙領先企業大獎2023」金獎',
+      link: './detailNews08.html'},
     {
-      photo: '../../uploads/news/news09-475X265.jpg',
-      title: '這是假字',
-      desc: '這是假字，這是假字，這是假字。',
-      link: './news_detail.html'},
-    {
-      photo: '../../uploads/news/news10-475X265.jpg',
-      title: '這是假字',
-      desc: '這是假字，這是假字，這是假字。',
-      link: './news_detail.html'},
-    {
-      photo: '../../uploads/news/news11-475X265.jpg',
-      title: '這是假字',
-      desc: '這是假字，這是假字，這是假字。<br>這是假字，這是假字，這是假字。',
-      link: './news_detail.html'},
-    {
-      photo: '../../uploads/news/news12-475X265.jpg',
-      title: '這是假字',
-      desc: '這是假字，這是假字，這是假字。',
-      link: './news_detail.html'},
+      photo: '../../uploads/news/09.jpg',
+      date: '2024年4月5日',
+      title: '啟勝榮獲「PropTech Excellence Awards 2024」之「年度最佳房地產科技獎項 – 物業管理 （企業鑽石獎）」',
+      link: './detailNews09.html'},
   ]
 
 
@@ -72,7 +57,7 @@ html(lang="zh-Hant-HK")
     //獨立CSS
     link(rel="stylesheet", href="../../assets/css/news.css")
 
-  body.news(data-page="news")
+  body.news(data-page="news" data-lang="tc")
     .main-wrapper
       // 導覽列
       include ../layouts/_navbar.pug
@@ -85,36 +70,60 @@ html(lang="zh-Hant-HK")
           p 這是假字，這是假字這是假字。這是假字這是假字這是假字。這是假字，這是假字這是假字。<br><br>這是假字這是假字這是假字。這是假字，這是假字這是假字。這是假字這是假字這是假字。這是假字，這是假字這是假字。<br><br>這是假字這是假字這是假字。這是假字，這是假字這是假字。這是假字這是假字這是假字。
         // 篩選排序
         .dropdown.common-width
-          div
-            .form-select.type-fullbox
+          .d-flex
+            .form-select.type-fullbox.mr-1
               .select-head
                 p.option 
-                  span 按日期排序
+                  span 年份
                 i.icon-keyboard_arrow_down
               .select-content
                 ul.scrollbar-inner
-                  li 2022 9月
-                  li 2022 8月 
-                  li 2022 7月
-                  li 2022 6月
+                  li 2024
+                  li 2023
+                  li 2022
+                  li 2021
+                  li 2020
+                  li 2019
+                  li 2018
+            .form-select.type-fullbox
+              .select-head
+                p.option 
+                  span 月份
+                i.icon-keyboard_arrow_down
+              .select-content
+                ul.scrollbar-inner
+                  li 1
+                  li 2
+                  li 3
+                  li 4
+                  li 5
+                  li 6
+                  li 7
+                  li 8
+                  li 9
+                  li 10
+                  li 11
+                  li 12
         
         // 後端callback: _news.backendCallback();
         .container-fluid.common-width
-          .row
-            each val in news
-              .col-12.col-md-6.col-lg-4
+          .row.info-block-wrap
+            each val in info
+              .col-12.col-md-6.col-lg-4.mb-4
                 .info-block.waypoint
                   .photo
                     .photo-box
-                      img.b-lazy(src="../assets/img/blazy.gif" data-src= val.photo, alt="")
-                  // 標題超過兩行出現 ...
-                  h2= val.title
-                  // 敘述超過兩行出現 ...
-                  p !{val.desc}
-                  a.btn-more(href= val.link target="_blank") 
-                    span 了解更多
-                    .circle-right.main
-                      div
+                      img.b-lazy(src="../../assets/img/blazy.gif" data-src= val.photo, alt="")
+                  .text
+                    span.date= val.date
+                    //- // 標題超過兩行出現 ...
+                    h2= val.title
+                    //- // 敘述超過兩行出現 ...
+                    //- p !{val.desc}
+                    a.btn-more(href= val.link target="_blank") 
+                      span 了解更多
+                      .circle-right.main
+                        div
 
         // 載入更多按鈕
         .btn.waypoint
@@ -126,9 +135,8 @@ html(lang="zh-Hant-HK")
           li
             a(href="./index.html")
               span 主頁
-          li 
-            a(href="javascript:;")
-              span 新聞及資源
+          li
+            span 新聞及資源
       // footer
       include ../layouts/_footer.pug
   //引入的script

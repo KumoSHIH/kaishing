@@ -20,7 +20,7 @@
     <!--獨立CSS-->
     <link rel="stylesheet" href="../../assets/css/service.css">
   </head>
-  <body class="service" data-page="service">
+  <body class="service" data-page="service" data-lang="tc">
     <div class="main-wrapper">
       <!-- 導覽列-->
       <header class="hd">
@@ -62,8 +62,8 @@
                 </div>
                 <div class="hd-tools hd-lang"><i class="icon-globe"></i>
                   <ul>
-                    <li><a href="javascript:;">EN</a></li>
-                    <li><a href="javascript:;">简</a></li>
+                    <li class="btn-lang" data-btn-lang="en"><a href="javascript:;">EN</a></li>
+                    <li class="btn-lang" data-btn-lang="sc"><a href="javascript:;">简</a></li>
                   </ul>
                 </div>
               </div>
@@ -72,10 +72,10 @@
                   <input type="text" placeholder="請輸入文字"><a href="javascript:;"><i class="icon-search"></i></a>
                 </div>
                 <ul>
-                  <li><a href="./blank.html">影片庫</a></li>
+                  <li style="display: none"><a href="./videos.html">影片庫</a></li>
                   <li><a href="./news.html">新聞及資源</a></li>
                   <li><a href="./contact.html">聯繫我們</a></li>
-                  <li><a href="./blank.html">加入我們</a></li>
+                  <li><a href="https://career.kaishing.hk/">加入我們</a></li>
                 </ul>
               </div>
             </div>
@@ -112,138 +112,163 @@
           <p>啟勝在業界內成就卓越，歷年來獲獎無數。<br>憑藉多年專業的服務經驗，我們的團隊用心、創新，策動超越所想的服務，<br>開拓非一般視野，為客戶創造長遠價值，打造理想生活環境。</p>
         </section>
         <!-- 篩選排序-->
+        <div class="common-width">
+          <div class="dropdown common-width">
+            <div class="d-flex">
+              <div class="form-select type-fullbox mr-1">
+                <div class="select-head">
+                  <p class="option"> <span>年份</span></p><i class="icon-keyboard_arrow_down"></i>
+                </div>
+                <div class="select-content">
+                  <ul class="scrollbar-inner">
+                    <li>2024</li>
+                    <li>2023</li>
+                    <li>2022</li>
+                    <li>2021</li>
+                    <li>2020</li>
+                    <li>2019</li>
+                    <li>2018</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="form-select type-fullbox">
+                <div class="select-head">
+                  <p class="option"> <span>月份</span></p><i class="icon-keyboard_arrow_down"></i>
+                </div>
+                <div class="select-content">
+                  <ul class="scrollbar-inner">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                    <li>11</li>
+                    <li>12</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <section class="section-content">
           <div class="container-fluid common-width">
-            <div class="row">
-              <div class="col-12 col-md-6 col-xl-4">
+            <div class="row info-block-wrap">
+              <div class="col-12 col-md-6 col-xl-4 mb-4">
                 <div class="info-block waypoint">
                   <div class="photo">
-                    <div class="photo-box"><img class="b-lazy" src="../../assets/img/blazy.gif" data-src="../../uploads/news/news01-475X265.jpg" alt=""></div>
+                    <div class="photo-box"><img class="b-lazy" src="../../assets/img/blazy.gif" data-src="../../uploads/news/01.jpg" alt=""></div>
                   </div>
-                  <div class="text">
-                    <h2>啟勝榮獲JobsDB頒發「最受歡迎僱主 - 物業管理」獎項</h2>
-                    <!-- 敘述超過三行出現 ...-->
-                    <p>啟勝管理服務有限公司（啟勝）重視員工身心健康，積極推動職場健康文化，讓員工能保持工作與生活平衡。憑藉出色的人才管理策略，啟勝成功於JobsDB舉辦的「The Hong Kong HR Awards 2023/24」中脫穎而出，獲頒發「最受歡迎僱主 - 物業管理」獎項。獎項一直被公認為香港頂尖的人力資源盛事之一，旨在表彰個人和機構在人力資源領域的卓越成就。評審由各行業的人力資源總監和領袖組成，部分更經由公眾投票參與，評審結果得到各界廣泛認受。</p><a class="btn-more" href="javascript:;" target="_blank"> <span>了解更多</span>
+                  <div class="text"><span class="date">2024年7月11日</span>
+                    <h2>啟勝及超卓領先物管業界於「香港綠色和可持續貢獻大獎 2024」獲逾六十項大獎</h2><a class="btn-more" href="./detailService01.html" target="_blank"> <span>了解更多</span>
                       <div class="circle-right main">
                         <div></div>
                       </div></a>
                   </div>
                 </div>
               </div>
-              <div class="col-12 col-md-6 col-xl-4">
+              <div class="col-12 col-md-6 col-xl-4 mb-4">
                 <div class="info-block waypoint">
                   <div class="photo">
-                    <div class="photo-box"><img class="b-lazy" src="../../assets/img/blazy.gif" data-src="../../uploads/news/news02-475X265.jpg" alt=""></div>
+                    <div class="photo-box"><img class="b-lazy" src="../../assets/img/blazy.gif" data-src="../../uploads/news/02-1.jpg" alt=""></div>
                   </div>
-                  <div class="text">
-                    <h2>上水廣場獲頒發「香港無煙領先企業大獎2023」金獎</h2>
-                    <!-- 敘述超過三行出現 ...-->
-                    <p>啟勝管理服務有限公司（啟勝）除積極為客戶創造更美好的生活環境外，亦非常關顧員工的身心靈健康，致力營造一個健康及安全的工作環境。最近，啟勝旗下管理的上水廣場便成功勇奪由香港吸煙與健康委員會舉辦的「香港無煙領先企業大獎2023」金獎，肯定了物業的管理團隊在推廣無煙文化，建立健康工作間的貢獻，為團隊帶來極大鼓舞。同時，啟勝旗下管理的四個物業，包括新城市廣場、絲寶國際大廈、荔欣苑及鯉安苑，亦成功得到評審認可，在頒獎典禮上獲得優異獎，以表揚團隊在推廣無煙文化的努力。</p><a class="btn-more" href="javascript:;" target="_blank"> <span>了解更多</span>
+                  <div class="text"><span class="date">2024年6月30日</span>
+                    <h2>環球貿易廣場（ICC）榮膺 WiredScore 最高「鉑金級」認證 成獲認證的亞洲最高建築物</h2><a class="btn-more" href="./detailService02.html" target="_blank"> <span>了解更多</span>
                       <div class="circle-right main">
                         <div></div>
                       </div></a>
                   </div>
                 </div>
               </div>
-              <div class="col-12 col-md-6 col-xl-4">
+              <div class="col-12 col-md-6 col-xl-4 mb-4">
                 <div class="info-block waypoint">
                   <div class="photo">
-                    <div class="photo-box"><img class="b-lazy" src="../../assets/img/blazy.gif" data-src="../../uploads/news/news03-475X265.jpg" alt=""></div>
+                    <div class="photo-box"><img class="b-lazy" src="../../assets/img/blazy.gif" data-src="../../uploads/news/03.jpg" alt=""></div>
                   </div>
-                  <div class="text">
-                    <h2>啟勝榮獲「PropTech Excellence Awards 2024」之「年度最佳房地產科技獎項 – 物業管理 （企業鑽石獎）」</h2>
-                    <!-- 敘述超過三行出現 ...-->
-                    <p>啟勝管理服務有限公司（啟勝）致力探索創新科技，為旗下管理物業引入創新科技解決方案，優化物業管理工作。最近，啟勝更榮獲由香港房地產科技協會首屆舉辦的「PropTech Excellence Awards 2024」頒發「年度最佳房地產科技獎項 - 物業管理（企業鑽石獎）」，以表揚啟勝推動物業管理科技的傑出表現。</p><a class="btn-more" href="javascript:;" target="_blank"> <span>了解更多</span>
+                  <div class="text"><span class="date">2024年6月28日</span>
+                    <h2>啟勝在「賽馬會長者友善屋苑計劃」中榮獲兩金三銀佳績</h2><a class="btn-more" href="./detailService03.html" target="_blank"> <span>了解更多</span>
                       <div class="circle-right main">
                         <div></div>
                       </div></a>
                   </div>
                 </div>
               </div>
-              <div class="col-12 col-md-6 col-xl-4">
+              <div class="col-12 col-md-6 col-xl-4 mb-4">
                 <div class="info-block waypoint">
                   <div class="photo">
-                    <div class="photo-box"><img class="b-lazy" src="../../assets/img/blazy.gif" data-src="../../uploads/news/news04-475X265.jpg" alt=""></div>
+                    <div class="photo-box"><img class="b-lazy" src="../../assets/img/blazy.gif" data-src="../../uploads/news/04.jpg" alt=""></div>
                   </div>
-                  <div class="text">
-                    <h2>啟勝在香港零售管理協會「傑出服務獎2023」勇奪三項金獎及多個殊榮</h2>
-                    <!-- 敘述超過三行出現 ...-->
-                    <p>今年，啟勝在香港零售管理協會舉辦、有零售業「奧斯卡」之稱的「傑出服務獎2023」中，共榮獲十六個獎項，當中更勇奪三項金獎，成績驕人。物業獎項方面，啟勝旗下管理的創紀之城第一、二、三及六期在「傑出服務策劃大獎」中憑出色的表現榮獲金獎，而形點今年再下一城勇奪銀獎，新世紀廣場則獲得優秀獎。另外，有七個物業奪得「傑出旗艦服務品牌」，其中五個物業更第三年蟬聯該獎項，力證啟勝致力維持專業及卓越的服務標準。</p><a class="btn-more" href="javascript:;" target="_blank"> <span>了解更多</span>
+                  <div class="text"><span class="date">2024年6月27日</span>
+                    <h2>啟勝於「第十一屆最佳職安健物業管理大獎」中勇奪三項銀獎</h2><a class="btn-more" href="./detailService04.html" target="_blank"> <span>了解更多</span>
                       <div class="circle-right main">
                         <div></div>
                       </div></a>
                   </div>
                 </div>
               </div>
-              <div class="col-12 col-md-6 col-xl-4">
+              <div class="col-12 col-md-6 col-xl-4 mb-4">
                 <div class="info-block waypoint">
                   <div class="photo">
-                    <div class="photo-box"><img class="b-lazy" src="../../assets/img/blazy.gif" data-src="../../uploads/news/news05-475X265.jpg" alt=""></div>
+                    <div class="photo-box"><img class="b-lazy" src="../../assets/img/blazy.gif" data-src="../../uploads/news/05-1.jpg" alt=""></div>
                   </div>
-                  <div class="text">
-                    <h2>環球貿易廣場（ICC）榮獲「英國屋宇裝備工程師學會大獎 2023」之「年度項目大獎 （商業/工業建築類別）」</h2>
-                    <!-- 敘述超過三行出現 ...-->
-                    <p>啟勝管理服務有限公司（啟勝）致力引入創新科技，以提升旗下各物業的可持續發展表現，為香港打造綠色未來。啟勝旗下管理的環球貿易廣場（ICC），榮獲英國屋宇裝備工程師學會（香港分會）頒發「英國屋宇裝備工程師學會大獎 2023」之「年度項目大獎 （商業/工業建築類別）」中的大獎，以肯定ICC於效率、表現和建築環境中的卓越成就，並在屋宇裝備工程中利用有效和可持續的解決方案，為智慧城市作出貢獻。</p><a class="btn-more" href="javascript:;" target="_blank"> <span>了解更多</span>
+                  <div class="text"><span class="date">2024年6月18日</span>
+                    <h2>啟勝及超卓旗下管理逾30個處所均榮獲最高級別「卓越級」室內空氣質素認證</h2><a class="btn-more" href="./detailService05.html" target="_blank"> <span>了解更多</span>
                       <div class="circle-right main">
                         <div></div>
                       </div></a>
                   </div>
                 </div>
               </div>
-              <div class="col-12 col-md-6 col-xl-4">
+              <div class="col-12 col-md-6 col-xl-4 mb-4">
                 <div class="info-block waypoint">
                   <div class="photo">
-                    <div class="photo-box"><img class="b-lazy" src="../../assets/img/blazy.gif" data-src="../../uploads/news/news06-475X265.jpg" alt=""></div>
+                    <div class="photo-box"><img class="b-lazy" src="../../assets/img/blazy.gif" data-src="../../uploads/news/06-1.jpg" alt=""></div>
                   </div>
-                  <div class="text">
-                    <h2>啟勝於「環保建築大獎2023」中再度獲獎 卓越環保表現備受肯定</h2>
-                    <!-- 敘述超過三行出現 ...-->
-                    <p>啟勝管理服務有限公司（啟勝）旗下管理的物業皆視可持續發展為願景，一直積極引入多個智能科技和尋求不同環保方案，提升物業的能源效益和減少碳排放，減緩氣候變化。今年，啟勝於被譽為香港綠色建築界奧斯卡、由香港綠色建築議會舉辦的「環保建築大獎2023」中榮獲三項殊榮，當中包括旗下管理的新都會廣場於「既有建築類別（設施管理）」中獲頒優異獎，而V Walk及新城市廣場亦分別獲得入圍項目的嘉許，再次認證公司在打造可持續的優質生活環境方面表現卓越。</p><a class="btn-more" href="javascript:;" target="_blank"> <span>了解更多</span>
+                  <div class="text"><span class="date">2024年5月2日</span>
+                    <h2>啟勝奪「住宅會所管理大獎2023」半數大獎 首獲雙金創佳績</h2><a class="btn-more" href="./detailService06.html" target="_blank"> <span>了解更多</span>
                       <div class="circle-right main">
                         <div></div>
                       </div></a>
                   </div>
                 </div>
               </div>
-              <div class="col-12 col-md-6 col-xl-4">
+              <div class="col-12 col-md-6 col-xl-4 mb-4">
                 <div class="info-block waypoint">
                   <div class="photo">
-                    <div class="photo-box"><img class="b-lazy" src="../../assets/img/blazy.gif" data-src="../../uploads/news/news07-475X265.jpg" alt=""></div>
+                    <div class="photo-box"><img class="b-lazy" src="../../assets/img/blazy.gif" data-src="../../uploads/news/07.jpg" alt=""></div>
                   </div>
-                  <div class="text">
-                    <h2>啟勝於中電「創新節能企業大獎2023」中榮膺三大殊榮</h2>
-                    <!-- 敘述超過三行出現 ...-->
-                    <p>啟勝管理服務有限公司（啟勝）致力推動可持續發展理念，配合大數據及人工智能科技，實施不同的環保節能措施，以提升物業的能源效益。啟勝每年均在中電舉辦的「創新節能企業大獎」中取得佳績。今年啟勝再下一城，在中電舉辦的「創新節能企業大獎2023」中獲得三大殊榮，包括旗下管理的環球貿易廣場（ICC）在企業／政府部門組別獲得最高榮譽 —「創新方案卓越大獎」；而啟勝更在「慳電任務 – 炎夏慳住賞」計劃中獲得「2023積極慳電大獎」銀獎，當中包括共29個物業獲得獎項，當中旗下管理的天晉II更在計劃中獲得「2023慳電推廣先鋒大獎」，充份肯定團隊在節能減碳方面的成就及付出。</p><a class="btn-more" href="javascript:;" target="_blank"> <span>了解更多</span>
+                  <div class="text"><span class="date">2024年4月16日</span>
+                    <h2>啟勝榮獲 JobsDB 頒發「最受歡迎僱主 - 物業管理」獎項</h2><a class="btn-more" href="./detailService07.html" target="_blank"> <span>了解更多</span>
                       <div class="circle-right main">
                         <div></div>
                       </div></a>
                   </div>
                 </div>
               </div>
-              <div class="col-12 col-md-6 col-xl-4">
+              <div class="col-12 col-md-6 col-xl-4 mb-4">
                 <div class="info-block waypoint">
                   <div class="photo">
-                    <div class="photo-box"><img class="b-lazy" src="../../assets/img/blazy.gif" data-src="../../uploads/news/news08-475X265.jpg" alt=""></div>
+                    <div class="photo-box"><img class="b-lazy" src="../../assets/img/blazy.gif" data-src="../../uploads/news/08.jpg" alt=""></div>
                   </div>
-                  <div class="text">
-                    <h2>啟勝於「減少使用/派發雨傘膠袋」審核認證計劃2023獲得「行業先驅獎 - 卓越大獎」</h2>
-                    <!-- 敘述超過三行出現 ...-->
-                    <p>啟勝管理服務有限公司（啟勝）及超卓管理服務有限公司（超卓）一直致力推行環保減廢措施，以促進可持續發展表現。今年，啟勝已連續第七年參加由綠領行動舉辦的「減少使用/派發雨傘膠袋」審核認證計劃，並取得48個獎項的佳績，而啟勝更特別獲頒發「行業先驅獎—卓越大獎」，表揚公司對計劃的長期支持及卓越表現。</p><a class="btn-more" href="javascript:;" target="_blank"> <span>了解更多</span>
+                  <div class="text"><span class="date">2024年4月16日</span>
+                    <h2>上水廣場獲頒發「香港無煙領先企業大獎2023」金獎</h2><a class="btn-more" href="./detailService08.html" target="_blank"> <span>了解更多</span>
                       <div class="circle-right main">
                         <div></div>
                       </div></a>
                   </div>
                 </div>
               </div>
-              <div class="col-12 col-md-6 col-xl-4">
+              <div class="col-12 col-md-6 col-xl-4 mb-4">
                 <div class="info-block waypoint">
                   <div class="photo">
-                    <div class="photo-box"><img class="b-lazy" src="../../assets/img/blazy.gif" data-src="../../uploads/news/news09-475X265.jpg" alt=""></div>
+                    <div class="photo-box"><img class="b-lazy" src="../../assets/img/blazy.gif" data-src="../../uploads/news/09.jpg" alt=""></div>
                   </div>
-                  <div class="text">
-                    <h2>啟勝及超卓於「香港綠色和可持續貢獻大獎2023」囊括逾五十多個獎項</h2>
-                    <!-- 敘述超過三行出現 ...-->
-                    <p>啟勝管理服務有限公司（啟勝）及超卓管理服務有限公司（超卓）一直致力實踐綠色管理，履行社會責任，為客戶締造優質美好生活。今年，啟勝及超卓旗下管理物業於香港品質保證局舉辦的「香港綠色和可持續貢獻大獎2023」中囊括共54個獎項，成績驕人。當中更獲得「傑出可持續發展物業超卓貢獻大獎（物業管理）- 推動綠色環保」、「傑出可持續發展物業超卓貢獻大獎（物業管理）- 推動社區關懷」和「ESG披露優化先鋒機構」等大獎，為啟勝管理團隊在推動可持續發展工作方面給予了莫大鼓勵。</p><a class="btn-more" href="javascript:;" target="_blank"> <span>了解更多</span>
+                  <div class="text"><span class="date">2024年4月5日</span>
+                    <h2>啟勝榮獲「PropTech Excellence Awards 2024」之「年度最佳房地產科技獎項 – 物業管理 （企業鑽石獎）」</h2><a class="btn-more" href="./detailService09.html" target="_blank"> <span>了解更多</span>
                       <div class="circle-right main">
                         <div></div>
                       </div></a>
@@ -253,6 +278,7 @@
             </div>
             <!-- 載入更多按鈕-->
             <!-- 後端callback: _service.backendCallback();-->
+            <div class="btn waypoint"><a class="btn-more border" href="javascript:;"><span>載入更多</span></a></div>
           </div>
         </section>
         <!-- 業界獎項-->
@@ -505,7 +531,7 @@
       <div class="breadcrumb">
         <ul class="common-width">
           <li><a href="./index.html"><span>主頁</span></a></li>
-          <li> <a href="javascript:;"><span>卓越服務</span></a></li>
+          <li><span>卓越服務</span></li>
         </ul>
       </div>
       <!-- footer-->
@@ -519,21 +545,22 @@
             <!-- commonSwiper.slideTo(index,800,true)-->
             <!-- $('.hd').addClass('down');-->
             <ul>
-              <li data-index="1"><a href="./property.html#slider-1"><img src="../../assets/img/logo-main.png" alt=""></a></li>
-              <li data-index="2"><a href="./property.html#slider-2"><img src="../../assets/img/logo06.png" alt=""></a></li>
-              <li data-index="3"><a href="./property.html#slider-3"><img src="../../assets/img/logo02.png" alt=""></a></li>
-              <li data-index="4"><a href="./property.html#slider-4"><img src="../../assets/img/logo01.png" alt=""></a></li>
-              <li data-index="5"><a href="./property.html#slider-5"><img src="../../assets/img/logo05.png" alt=""></a></li>
-              <li data-index="6"><a href="./property.html#slider-6"><img src="../../assets/img/logo04.png" alt=""></a></li>
+              <li data-index="1"><a href="./property.html#slider-1"><img src="../../assets/img/logo06.png" alt=""></a></li>
+              <li data-index="2"><a href="./property.html#slider-2"><img src="../../assets/img/logo02.png" alt=""></a></li>
+              <li data-index="3"><a href="./property.html#slider-3"><img src="../../assets/img/logo-main.png" alt=""></a></li>
+              <li data-index="4"><a href="./property.html#slider-4"><img src="../../assets/img/r03.jpg" alt=""></a></li>
+              <li data-index="5"><a href="./property.html#slider-5"><img src="../../assets/img/logo01.png" alt=""></a></li>
+              <li data-index="6"><a href="./property.html#slider-6"><img src="../../assets/img/logo05.png" alt=""></a></li>
+              <li data-index="7"><a href="./property.html#slider-7"><img src="../../assets/img/logo04.png" alt=""></a></li>
             </ul>
           </div>
           <div class="footer-other">
             <p>© 2024 啟勝管理服務有限公司</p>
             <ul class="footer-link">
-              <li><a href="javascript:;">版權與商標</a></li>
-              <li><a href="javascript:;">相關連結</a></li>
-              <li><a href="javascript:;">免責聲明</a></li>
-              <li><a href="javascript:;">個人資料(私隱)政策</a></li>
+              <li><a href="./copyright.html">版權與商標</a></li>
+              <li><a href="./relate.html">相關連結</a></li>
+              <li><a href="./disclaimer.html">免責聲明</a></li>
+              <li><a href="./privacy.html">個人資料(私隱)政策</a></li>
             </ul>
           </div>
         </div>

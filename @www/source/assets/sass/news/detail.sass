@@ -72,7 +72,43 @@
           width: 100%
           float: none
           margin: 0 10px 20px
-
+      .photo-column
+        float: left
+        width: 100%
+        margin: 0 40px 40px 0
+        &.right
+          float: right
+          margin: 0 0px 40px 40px
+        &.w-500
+          max-width: 500px
+      table
+        border: solid 1px
+        width: 100%
+        max-width: 600px
+        text-align: left
+        tr
+          border: solid 1px #333
+        th,td
+          padding: 10px
+          line-height: 1.2
+          border: solid 1px #333
+        th 
+          background-color: #f3f3f3
+    .photo-row
+      display: flex
+      .photo
+        width: 100%
+        margin-right: 20px
+        &:last-child
+          margin-right: 0
+    .photo-column
+      max-width: 400px
+      >div
+        display: flex
+        flex-direction: column
+        .photo
+          margin: 0 0 20px 0
+          max-width: none
     +rwdmax(1200)
       padding-top: 80px
       h2
@@ -81,7 +117,6 @@
         padding-top: 30px
         .photo
           margin-left: 20px
-          margin-bottom: 20px
           max-width: 400px
         &.row-two
           padding-top: 30px
@@ -89,7 +124,21 @@
           align-items: center
           .photo
             margin: 0 0 10px
-
+        .photo-column
+          margin-right: 20px
+          &.right
+            margin-left: 20px
+            max-width: 300px
+      .photo-row
+        .photo
+          margin-right: 10px
+      .photo-column
+        max-width: 300px
+        >div
+          .photo
+            margin-bottom: 10px
+            &:last-child
+              margin-bottom: 0
     +rwdmax(767)
       article
         padding-top: 20px
@@ -97,4 +146,18 @@
           line-height: 30px
         &.row-two
           padding-top: 20px
+        .photo-column
+          max-width: none
+          &.right
+            margin-left: 0
+            margin-bottom: 20px
+      .photo-row
+        flex-direction: column
+        .photo
+          margin-right: 0
+          margin-bottom: 10px
+          &:last-child
+            margin-bottom: 0
+      .photo-column
+        max-width: none
           

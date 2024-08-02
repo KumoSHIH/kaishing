@@ -5,9 +5,9 @@ html(lang="zh-Hant-HK")
     //共用設定
     include ../layouts/_head.pug
     //獨立CSS
-    link(rel="stylesheet", href="../assets/css/contact.css")
+    link(rel="stylesheet", href="../../assets/css/contact.css")
 
-  body.contact(data-page="contact")
+  body.contact(data-page="contact" data-lang="tc")
     .main-wrapper
       // 導覽列
       include ../layouts/_navbar.pug
@@ -129,9 +129,8 @@ html(lang="zh-Hant-HK")
           li
             a(href="./index.html")
               span 主頁
-          li 
-            a(href="javascript:;")
-              span 聯繫我們
+          li
+            span 聯繫我們
       // footer
       include ../layouts/_footer.pug
   //引入的script

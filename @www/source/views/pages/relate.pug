@@ -1,0 +1,53 @@
+-
+  var relate = [
+    {
+      photo: '../../assets/img/r01.svg',
+      link: 'https://www.shkp.com/zh-HK'},
+    {
+      photo: '../../assets/img/logo06.png',
+      link: 'https://www.supreme-mgt.hk/'},
+    {
+      photo: '../../assets/img/r03.jpg',
+      link: 'https://www.kaishing-china.cn/gz/zh/main.html'},
+    {
+      photo: '../../assets/img/r04.png',
+      link: 'https://www.shkpclub.com/'}
+  ]
+
+doctype html
+html(lang="zh-Hant-HK")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+
+  body.ftPage(data-page="ftPage" data-lang="tc")
+    .main-wrapper
+      // 導覽列
+      include ../layouts/_navbar.pug
+      // 主要內容
+      main
+        section.normal-banner
+          .bg
+            .normal-title.small
+              h6 相關連結
+        section.section-relate
+          ul 
+            each val in relate
+              li 
+                a(href= val.link)
+                  .photo 
+                    img(src= val.photo, alt="")
+                  p= val.link
+      // breadcrumb
+      .breadcrumb
+        ul.common-width
+          li
+            a(href="./index.html")
+              span 主頁
+          li
+            span 相關連結
+      // footer
+      include ../layouts/_footer.pug
+  //引入的script
+  include ../layouts/_script.pug

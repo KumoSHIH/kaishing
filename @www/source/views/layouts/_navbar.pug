@@ -56,7 +56,7 @@
     {
       ch: '影片庫',
       en: 'VIDEOS',
-      url: './blank.html'},
+      url: './videos.html'},
     {
       ch: '新聞及資源',
       en: 'NEWS',
@@ -68,7 +68,7 @@
     {
       ch: '加入我們',
       en: 'JOIN US',
-      url: './blank.html'}
+      url: 'https://career.kaishing.hk/'}
   ]
 
 header.hd
@@ -104,9 +104,9 @@ header.hd
           .hd-tools.hd-lang
             i.icon-globe
             ul
-              li
+              li.btn-lang(data-btn-lang="en")
                 a(href="javascript:;") EN
-              li
+              li.btn-lang(data-btn-lang="sc")
                 a(href="javascript:;") 简
         .hd-other
           .mobile-search
@@ -115,8 +115,12 @@ header.hd
               i.icon-search
           ul
             each val,index in other
-              li
-                a(href= val.url)= val.ch
+              if(index === 0)
+                li(style="display: none")
+                  a(href= val.url)= val.ch
+              else
+                li
+                  a(href= val.url)= val.ch
                 //- if (index === 0 || index === 3)
                 //-   a(href= val.url target="_blank")= val.ch
                 //- else

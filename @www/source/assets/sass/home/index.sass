@@ -246,7 +246,7 @@
       font-family: $JhengHeiBold
       +ellipsis(2, 34px)
       height: 68px
-      +rwdmax(767)
+      +rwdmax(1200)
         padding-left: 15px
         padding-right: 15px
         line-height: 26px
@@ -256,7 +256,7 @@
     a
       margin-top: 20px
       padding-bottom: 5px
-      +rwdmax(767)
+      +rwdmax(1200)
         padding-left: 15px
         padding-right: 15px
 
@@ -264,3 +264,43 @@
     +rwdmax(1200)
       padding-top: 30px
       background-color: #fafafa !important
+      
+  &[data-lang="en"]
+    .section-banner
+      .link-box
+        a
+          letter-spacing: 5px
+    .swiper-title
+      .title
+        h6
+          letter-spacing: 15px
+          font-size: px(84)
+        &-bg
+          letter-spacing: 15px
+          font-size: px(100)
+        +rwdmax(1500)
+          h6
+            letter-spacing: 6px
+            font-size: px(64)
+          &-bg
+            letter-spacing: 8px
+            font-size: px(70)
+        +rwdmax(1200)
+          h6
+            font-size: px(58)
+          &-bg
+            letter-spacing: 6px
+            font-size: px(70)
+        +rwdmax(900)
+          h6
+            letter-spacing: 8px
+            font-size: px(60)
+          &-bg
+            font-size: px(74)
+        +rwdmax(767)
+          h6
+            letter-spacing: 2px
+            font-size: px(36)
+          &-bg
+            letter-spacing: 3px
+            font-size: px(40)

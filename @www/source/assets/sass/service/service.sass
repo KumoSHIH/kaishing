@@ -53,16 +53,11 @@
         margin-bottom: 35px
   .info-block
     margin: 0 auto
-    .text
-      padding: 12px 40px 20px
-      background-color: #fff
+    
     p
       +ellipsis(3, 28px)
     .btn-more
-      margin-top: 20px
-    +rwdmax(767)
-      .text
-        padding: 20px
+      
     
   
   
@@ -234,3 +229,40 @@
     margin: 0 auto
     +rwdmax(767)
       width: 100%
+
+
+
+  &[data-lang="en"]
+    .banner-title 
+      .title-center
+        h6
+          letter-spacing: 12px
+          font-size: px(84)
+          text-shadow: 0 0 15px #fff
+      .title-bg
+        h6 
+          letter-spacing: 15px
+          font-size: px(110)
+      +rwdmax(1200)
+        .title-center h6
+          font-size: px(70)
+        .title-bg h6
+          font-size: px(88)
+      +rwdmax(900)
+        .title-center h6
+          letter-spacing: 18px
+          font-size: px(66)
+        .title-bg h6
+          font-size: px(78)
+      +rwdmax(767)
+        .title-center h6
+          letter-spacing: 4px
+          font-size: px(44)
+        .title-bg h6
+          letter-spacing: 8px
+          font-size: px(52)
+
+    .service-certified
+      h6.section-title
+        +rwdmax(767)
+          text-align: center

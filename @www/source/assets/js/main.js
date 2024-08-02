@@ -66,6 +66,22 @@ let _common = {
       });
     });
   },
+  // 切換語系
+  switchLang() {
+    let btn = $(".btn-lang");
+    let nowLang = $('body').attr('data-lang');
+    let href = window.location.href;
+    let str = '';
+    btn.on('click',function(){
+      let lang = $(this).attr("data-btn-lang");
+      str = href.replace(
+        new RegExp("/" + nowLang + "/", "g"),
+        "/" + lang + "/"
+      );
+      // console.log(str);
+      window.location = str;
+    })
+  }
 };
 
 //表單
@@ -813,8 +829,6 @@ const readyFunction = {
     }
   },
 
-
-
   //呼叫共用function
   common(pagename) {
     // console.log(`Now page is ${pagename}!`);
@@ -841,6 +855,8 @@ const readyFunction = {
     _common.blazyInit();
     // waypoint
     _common.eachWaypoint(".waypoint", "90%");
+
+    // _common.switchLang();
   },
 
   //呼叫各頁面function
@@ -889,10 +905,14 @@ const readyFunction = {
     _swiper.property();
     _swiper.common();
     _common.resizeFun(_property.resize);
-    _property.slideTo(3,800,true);
-    $('.hd').addClass('down');
+    _property.slideTo(3, 800, true);
+    $(".hd").addClass("down");
   },
-  detail(){}
+  detail() {},
+  ftPage() {},
+  videos() {
+    $("[data-video]").video();
+  },
 };
 
 $(document).ready(function () {
