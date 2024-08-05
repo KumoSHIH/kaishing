@@ -37,6 +37,19 @@
           overflow: initial
           -webkit-line-clamp: unset
           max-height: unset
+        .btn-more
+          .circle-right div:after
+            transform: rotate(90deg)
+          &:hover 
+            .circle-right
+              div:after
+                animation: unset
+          &.active
+            .circle-right div:after
+              transform: rotate(-90deg)
+      .hide-text
+        margin-top: 20px
+        display: none
     +rwdmax(1200)
       width: 60%
       #content1

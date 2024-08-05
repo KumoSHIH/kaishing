@@ -594,6 +594,22 @@ let _property = {
   // </script>
 };
 
+let _development = {
+  openText() {
+    let btn = $(".btn-more");
+    btn.on('click',function(){
+      if(!$(this).hasClass('active')){
+        $(this).addClass('active');
+        $(this).siblings(".hide-text").slideDown(500);
+      }
+      else{
+        $(this).removeClass("active");
+        $(this).siblings(".hide-text").slideUp(500);
+      }
+    })
+  }
+}
+
 // swiper
 let _swiper = {
   homeTitle() {
@@ -856,7 +872,7 @@ const readyFunction = {
     // waypoint
     _common.eachWaypoint(".waypoint", "90%");
 
-    // _common.switchLang();
+    _common.switchLang();
   },
 
   //呼叫各頁面function
@@ -881,8 +897,9 @@ const readyFunction = {
   management() {
     _swiper.common();
   },
-  development() {},
-  development_detail() {},
+  development() {
+    _development.openText();
+  },
   privacy() {},
   disclaimer() {},
   story() {},

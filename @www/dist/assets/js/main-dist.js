@@ -593,6 +593,21 @@ var _property = {
 
 };
 
+var _development = {
+  openText: function openText() {
+    var btn = $(".btn-more");
+    btn.on('click', function () {
+      if (!$(this).hasClass('active')) {
+        $(this).addClass('active');
+        $(this).siblings(".hide-text").slideDown(500);
+      } else {
+        $(this).removeClass("active");
+        $(this).siblings(".hide-text").slideUp(500);
+      }
+    });
+  }
+};
+
 // swiper
 var _swiper = {
   homeTitle: function homeTitle() {
@@ -824,7 +839,7 @@ var readyFunction = {
     // waypoint
     _common.eachWaypoint(".waypoint", "90%");
 
-    // _common.switchLang();
+    _common.switchLang();
   },
 
 
@@ -850,8 +865,9 @@ var readyFunction = {
   management: function management() {
     _swiper.common();
   },
-  development: function development() {},
-  development_detail: function development_detail() {},
+  development: function development() {
+    _development.openText();
+  },
   privacy: function privacy() {},
   disclaimer: function disclaimer() {},
   story: function story() {},
