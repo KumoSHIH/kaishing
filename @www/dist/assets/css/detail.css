@@ -172,6 +172,8 @@
         .detail-content article .photo-column.right {
           margin-left: 0;
           margin-bottom: 20px; }
+        .detail-content article .photo-column.right, .detail-content article .photo-column.left {
+          max-width: none; }
     .detail-content .photo-row {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
