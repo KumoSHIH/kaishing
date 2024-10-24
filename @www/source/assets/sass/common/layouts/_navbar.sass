@@ -11,25 +11,12 @@
     background-color: #fff
   &.down
     background-color: #fff
-    .logo
-      max-width: 150px
-      margin-top: 10px
-  +rwdmax(1500)
-    &.down
-      .logo
-        max-width: 160px
   +rwdmax(1200)
     background-color: #fff
     padding: 15px 0
     height: 80px
-    &.down
-      .logo
-        margin-top: 0
   +rwdmax(767)
     height: 74px
-    &.down
-      .logo
-        max-width: 140px
   &-container
     max-width: calc(100% - 80px)
     width: 100%
@@ -129,13 +116,15 @@
       >li
         position: relative
         padding: 0 20px
+        +rwdmax(1500)
+          padding: 0 10px
         >a 
           padding: 20px 25px
           font-size: $fontHeader
           span 
             padding-bottom: 3px
             position: relative
-            font-weight: bold
+            // font-weight: bold
             font-family: $JhengHeiBold
             &::after
               content: ''
@@ -155,6 +144,8 @@
           +rwdmax(1700)
             padding-top: 18px
             padding-bottom: 18px
+          +rwdmax(1440)
+            padding: 18px 10px
           +rwdmax(767)
             padding: 20px 10px 
         &:hover
@@ -200,6 +191,7 @@
       transform: translateX(0)
       padding-top: 0
       padding-bottom: 20px
+      display: none
       a 
         text-align: left
         padding: 15px 25px
@@ -455,8 +447,8 @@
     img
       position: absolute
       right: -5px
-      top: 10px
-      max-width: 240px
+      top: 5px
+      max-width: 225px
       opacity: .3
     +rwdmax(1700)
       // top: 109px

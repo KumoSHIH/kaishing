@@ -29,6 +29,8 @@
             <div class="hd-right">
               <div class="hd-menu">
                 <ul>
+                  <!-- 後端注意：人物故事的子項目要打開使用時（目前隱藏），li + class: hasBg-->
+                  <!-- 請參照 可持續發展 這一項-->
                   <li><a href="./about.html"><span>關於我們</span></a>
                   </li>
                   <li><a href="./property.html"><span>我們的業務</span></a>
@@ -43,8 +45,8 @@
                   </li>
                   <li><a href="./service.html"><span>卓越服務</span></a>
                   </li>
-                  <li class="hasBg"><a href="./story.html"><span>人物故事</span></a>
-                    <ul class="hd-second">
+                  <li><a href="./story.html"><span>人物故事</span></a>
+                    <ul class="hd-second" style="display: none">
                       <li><a href="./story.html#content1">公司員工的核心價值</a></li>
                       <li><a href="./story.html#content2">員工故事分享</a></li>
                     </ul>
@@ -93,12 +95,13 @@
       <!-- 主要內容-->
       <main>
         <section class="detail-banner">
-          <div class="detail-width">
+          <div class="detail-width"><a href="./service.html"><i class="icon-keyboard_arrow_left"></i><span>返回</span></a>
             <h6 class="section-title">獎項及成就</h6>
           </div>
         </section>
         <section class="detail-content detail-width">
           <h2>上水環球貿易廣場（ICC）榮膺 WiredScore 最高「鉑金級」認證 成獲認證的亞洲最高建築物</h2>
+          <p class="date pt-1">2024年6月30日</p>
           <article>
             <div class="photo"><img src="../../uploads/news/02-1.jpg" alt=""></div>
             <p>啟勝管理服務有限公司（啟勝）積極在旗下管理的物業中推動智慧科技。最近，環球貿易廣場（ICC）榮獲WiredScore樓宇通訊最高級別的「鉑金級」認證，同時更成為全亞洲取得認證的最高建築物，標誌著ICC擁有國際級的數碼基礎建設，全面滿足租戶最高標準的數碼科技需求，迎合現今、未來的數碼需要。<br><br>ICC是繼The Millennity及即將落成的高鐵站上蓋商業發展項目後，第三個物業取得認證。ICC具備世界級的領先基礎建設，可靈活配合不同高端通訊網絡及設備。早於營運初期，ICC已率先設有多個光纖入口位置，確保無阻隔及有彈性的寬頻連接外，更可容納多個不同網絡服務供應商供租戶選擇。<br><br>此外，ICC亦採用了嚴格的保安系統，以維護整幢大樓的數碼通訊設備，包括提供後備電源維持電訊系統運作，確保有足夠的措施避免通訊中斷所帶來的影響，令物業的整體通訊穩健度得以提升，為租戶締造更安穩的數碼連接體驗。<br><br>今次ICC能獲得WiredScore頒發的最高級別認證，再次確立物業和團隊在提供優質數碼網絡水平的能力，亦肯定了ICC為企業設立及擴展業務的理想地點。團隊將會繼續優化物業內的設施及數碼通訊方案，為客戶提供更高速、更可靠、更高品質的數碼通訊體驗。<br><br>WiredScore成立於2013年，是一間國際樓宇通訊認證機構，致力於審核全球各地物業的樓宇通訊標準。要獲得最高級別的「鉑金級」認證，物業必須通過多個範疇的評核內容，包括物業內數碼通訊的連通性、基礎建設、租戶體驗、機動性、服務供應商和前瞻性等。</p>
@@ -122,18 +125,14 @@
         <div class="footer common-width waypoint">
           <div class="footer-relative"> 
             <h6>相關公司</h6>
-            <!-- 點擊 前往property.html -->
-            <!-- 並切換下方相對應的輪播-->
-            <!-- callback function:-->
-            <!-- commonSwiper.slideTo(index,800,true)-->
-            <!-- $('.hd').addClass('down');-->
             <ul>
-              <li data-index="1"><a href="./property.html#slider-3"><img src="../../assets/img/logo-main.png" alt=""></a></li>
-              <li data-index="2"><a href="./property.html#slider-1"><img src="../../assets/img/ft-logo02.png" alt=""></a></li>
-              <li data-index="3"><a href="./property.html#slider-2"><img src="../../assets/img/ft-logo03.png" alt=""></a></li>
-              <li data-index="4"><a href="./property.html#slider-5"><img src="../../assets/img/ft-logo04.png" alt=""></a></li>
-              <li data-index="5"><a href="./property.html#slider-6"><img src="../../assets/img/ft-logo05.png" alt=""></a></li>
-              <li data-index="6"><a href="./property.html#slider-7"><img src="../../assets/img/ft-logo06.png" alt=""></a></li>
+              <li><a href="./property.html#slider-1" data-index="1"><img src="../../assets/img/ft-logo02.png" alt=""></a></li>
+              <li><a href="./property.html#slider-2" data-index="2"><img src="../../assets/img/ft-logo03.png" alt=""></a></li>
+              <li><a href="./property.html#slider-5" data-index="3"><img src="../../assets/img/ft-logo04.png" alt=""></a></li>
+              <li><a href="./property.html#slider-6" data-index="4"><img src="../../assets/img/ft-logo05.png" alt=""></a></li>
+              <li><a href="./property.html#slider-7" data-index="5"><img src="../../assets/img/ft-logo06.png" alt=""></a></li>
+              <li><a href="./property.html#slider-3" data-index="6"><img src="../../assets/img/logo08.png" alt=""></a></li>
+              <li><a href="./property.html#slider-4" data-index="7"><img src="../../assets/img/logo07.png" alt=""></a></li>
             </ul>
           </div>
           <div class="footer-other">

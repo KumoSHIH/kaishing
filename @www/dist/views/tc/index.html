@@ -29,6 +29,8 @@
             <div class="hd-right">
               <div class="hd-menu">
                 <ul>
+                  <!-- 後端注意：人物故事的子項目要打開使用時（目前隱藏），li + class: hasBg-->
+                  <!-- 請參照 可持續發展 這一項-->
                   <li><a href="./about.html"><span>關於我們</span></a>
                   </li>
                   <li><a href="./property.html"><span>我們的業務</span></a>
@@ -43,8 +45,8 @@
                   </li>
                   <li><a href="./service.html"><span>卓越服務</span></a>
                   </li>
-                  <li class="hasBg"><a href="./story.html"><span>人物故事</span></a>
-                    <ul class="hd-second">
+                  <li><a href="./story.html"><span>人物故事</span></a>
+                    <ul class="hd-second" style="display: none">
                       <li><a href="./story.html#content1">公司員工的核心價值</a></li>
                       <li><a href="./story.html#content2">員工故事分享</a></li>
                     </ul>
@@ -102,9 +104,9 @@
                   <div class="slide-box white">
                     <div class="title">
                       <div class="title-main">
-                        <h6>盡心服務</h6>
+                        <h6>以心創新</h6>
                       </div>
-                      <div class="title-bg">盡心服務</div>
+                      <div class="title-bg">以心創新</div>
                     </div>
                   </div>
                 </div>
@@ -112,9 +114,9 @@
                   <div class="slide-box white">
                     <div class="title">
                       <div class="title-main">
-                        <h6>以心創新</h6>
+                        <h6>盡心服務</h6>
                       </div>
-                      <div class="title-bg">以心創新</div>
+                      <div class="title-bg">盡心服務</div>
                     </div>
                   </div>
                 </div>
@@ -146,27 +148,27 @@
           <div class="banner-photo">
             <div class="photo" data-photo-index="0">
               <!-- 電腦版圖片建議尺寸 1920X945-->
-              <div class="photo-desktop" style="background-image: url(../../uploads/index/index01-1920X945.jpg)"></div>
-              <!-- 手機板圖片建議尺寸 780X820-->
-              <div class="photo-mobile" style="background-image: url(../../uploads/index/index01-1920X945.jpg)"></div>
-            </div>
-            <div class="photo" data-photo-index="1">
-              <!-- 電腦版圖片建議尺寸 1920X945-->
               <div class="photo-desktop" style="background-image: url(../../uploads/index/index02-1920X945.jpg)"></div>
               <!-- 手機板圖片建議尺寸 780X820-->
               <div class="photo-mobile" style="background-image: url(../../uploads/index/index02-1920X945.jpg)"></div>
             </div>
+            <div class="photo" data-photo-index="1">
+              <!-- 電腦版圖片建議尺寸 1920X945-->
+              <div class="photo-desktop" style="background-image: url(../../uploads/index/index01-1920X945.jpg)"></div>
+              <!-- 手機板圖片建議尺寸 780X820-->
+              <div class="photo-mobile" style="background-image: url(../../uploads/index/index01-1920X945.jpg)"></div>
+            </div>
             <div class="photo" data-photo-index="2">
               <!-- 電腦版圖片建議尺寸 1920X945-->
-              <div class="photo-desktop" style="background-image: url(../../uploads/index/test4.jpg)"></div>
+              <div class="photo-desktop" style="background-image: url(../../uploads/index/banner03.jpg)"></div>
               <!-- 手機板圖片建議尺寸 780X820-->
-              <div class="photo-mobile" style="background-image: url(../../uploads/index/test4.jpg)"></div>
+              <div class="photo-mobile" style="background-image: url(../../uploads/index/banner03.jpg)"></div>
             </div>
             <div class="photo" data-photo-index="3">
               <!-- 電腦版圖片建議尺寸 1920X945-->
-              <div class="photo-desktop" style="background-image: url(../../uploads/index/test5.jpg)"></div>
+              <div class="photo-desktop" style="background-image: url(../../uploads/index/banner04.jpg)"></div>
               <!-- 手機板圖片建議尺寸 780X820-->
-              <div class="photo-mobile" style="background-image: url(../../uploads/index/test5.jpg)"></div>
+              <div class="photo-mobile" style="background-image: url(../../uploads/index/banner04.jpg)"></div>
             </div>
           </div>
           <!-- link -->
@@ -231,7 +233,7 @@
             <div class="text-block waypoint">
               <h6 class="section-title">我們的業務</h6>
               <!-- 文字區域最多九行，超過將出現 ...-->
-              <p>我們的物業管理服務範圍遍佈香港及中國內地，管理的住宅及商業項目多元化，包括辦公大樓、大型購物商場、高級豪宅及大型住宅等，為業戶提供全面、優質的專業物業管理服務。</p><a class="btn-more" href="javascript:;" target="_blank"><span>了解更多</span>
+              <p>我們的物業管理服務範圍遍佈香港及中國內地，管理的住宅及商業項目多元化，包括辦公大樓、大型購物商場、高級豪宅及大型住宅等，為業戶提供全面、優質的專業物業管理服務。</p><a class="btn-more" href="./property.html" target="_blank"><span>了解更多</span>
                 <div class="circle-right main">
                   <div></div>
                 </div></a>
@@ -284,7 +286,7 @@
             <div class="text-block waypoint">
               <h6 class="section-title">可持續發展</h6>
               <!-- 文字區域最多九行，超過將出現 ...-->
-              <p>我們在推廣可持續發展方面持續成為業界內表現領先的物業管理服務公司。為減少碳排放，我們的團隊從不同層面出發，積極尋求不同方案，提升物業的整體能源使用效益，達致節能減碳。</p><a class="btn-more" href="javascript:;" target="_blank"><span>了解更多</span>
+              <p>我們在推廣可持續發展方面持續成為業界內表現領先的物業管理服務公司。為減少碳排放，我們的團隊從不同層面出發，積極尋求不同方案，提升物業的整體能源使用效益，達致節能減碳。</p><a class="btn-more" href="./development.html" target="_blank"><span>了解更多</span>
                 <div class="circle-right main">
                   <div></div>
                 </div></a>
@@ -337,7 +339,7 @@
             <div class="text-block waypoint">
               <h6 class="section-title">卓越服務</h6>
               <!-- 文字區域最多九行，超過將出現 ...-->
-              <p>啟勝在業界內成就卓越，歷年來獲獎無數。憑藉多年專業的服務經驗，我們的團隊用心、創新，策動超越所想的服務，開拓非一般視野，為客戶創造長遠價值，打造理想生活環境。</p><a class="btn-more" href="javascript:;" target="_blank"><span>了解更多</span>
+              <p>啟勝在業界內成就卓越，歷年來獲獎無數。憑藉多年專業的服務經驗，我們的團隊用心、創新，策動超越所想的服務，開拓非一般視野，為客戶創造長遠價值，打造理想生活環境。</p><a class="btn-more" href="./service.html" target="_blank"><span>了解更多</span>
                 <div class="circle-right main">
                   <div></div>
                 </div></a>
@@ -390,7 +392,7 @@
             <div class="text-block waypoint">
               <h6 class="section-title">客戶故事</h6>
               <!-- 文字區域最多九行，超過將出現 ...-->
-              <p>啟勝以客戶的需求為出發點，耐心聆聽客戶需要，致力為他們提供最優質的服務，打造理想的生活空間。<br>啟勝的服務一直以來都得到不少客戶的信賴和讚賞。來看看我們與客戶之間的真實故事，一同細味貼心服務帶來的喜悅吧!</p><a class="btn-more" href="javascript:;" target="_blank"><span>了解更多</span>
+              <p>啟勝以客戶的需求為出發點，耐心聆聽客戶需要，致力為他們提供最優質的服務，打造理想的生活空間。<br>啟勝的服務一直以來都得到不少客戶的信賴和讚賞。來看看我們與客戶之間的真實故事，一同細味貼心服務帶來的喜悅吧!</p><a class="btn-more" href="./story.html" target="_blank"><span>了解更多</span>
                 <div class="circle-right main">
                   <div></div>
                 </div></a>
@@ -411,7 +413,7 @@
                       <!-- 圖片建議尺寸 615X345-->
                       <div class="photo" style="background-image: url(../../uploads/news/01.jpg)"></div>
                       <!-- 標題超過兩行出現 ...-->
-                      <h2>啟勝及超卓領先物管業界於「香港綠色和可持續貢獻大獎 2024」獲逾六十項大獎</h2><a class="btn-more" href="./detailNews01.html" target="_blank"> <span>更多消息</span>
+                      <h2>啟勝及超卓領先物管業界於「香港綠色和可持續貢獻大獎 2024」獲逾六十項大獎</h2><a class="btn-more" href="./detailNews01.html" target="_blank"> <span>了解更多</span>
                         <div class="circle-right main">
                           <div></div>
                         </div></a>
@@ -420,7 +422,7 @@
                       <!-- 圖片建議尺寸 615X345-->
                       <div class="photo" style="background-image: url(../../uploads/news/02-1.jpg)"></div>
                       <!-- 標題超過兩行出現 ...-->
-                      <h2>環球貿易廣場（ICC）榮膺 WiredScore 最高「鉑金級」認證 成獲認證的亞洲最高建築物</h2><a class="btn-more" href="./detailNews02.html" target="_blank"> <span>更多消息</span>
+                      <h2>環球貿易廣場（ICC）榮膺 WiredScore 最高「鉑金級」認證 成獲認證的亞洲最高建築物</h2><a class="btn-more" href="./detailNews02.html" target="_blank"> <span>了解更多</span>
                         <div class="circle-right main">
                           <div></div>
                         </div></a>
@@ -429,7 +431,7 @@
                       <!-- 圖片建議尺寸 615X345-->
                       <div class="photo" style="background-image: url(../../uploads/news/03.jpg)"></div>
                       <!-- 標題超過兩行出現 ...-->
-                      <h2>啟勝在「賽馬會長者友善屋苑計劃」中榮獲兩金三銀佳績</h2><a class="btn-more" href="./detailNews03.html" target="_blank"> <span>更多消息</span>
+                      <h2>啟勝在「賽馬會長者友善屋苑計劃」中榮獲兩金三銀佳績</h2><a class="btn-more" href="./detailNews03.html" target="_blank"> <span>了解更多</span>
                         <div class="circle-right main">
                           <div></div>
                         </div></a>
@@ -441,7 +443,7 @@
                       <!-- 圖片建議尺寸 615X345-->
                       <div class="photo" style="background-image: url(../../uploads/news/04.jpg)"></div>
                       <!-- 標題超過兩行出現 ...-->
-                      <h2>啟勝於「第十一屆最佳職安健物業管理大獎」中勇奪三項銀獎</h2><a class="btn-more" href="./detailNews04.html" target="_blank"> <span>更多消息</span>
+                      <h2>啟勝於「第十一屆最佳職安健物業管理大獎」中勇奪三項銀獎</h2><a class="btn-more" href="./detailNews04.html" target="_blank"> <span>了解更多</span>
                         <div class="circle-right main">
                           <div></div>
                         </div></a>
@@ -450,7 +452,7 @@
                       <!-- 圖片建議尺寸 615X345-->
                       <div class="photo" style="background-image: url(../../uploads/news/05-1.jpg)"></div>
                       <!-- 標題超過兩行出現 ...-->
-                      <h2>啟勝及超卓旗下管理逾30個處所均榮獲最高級別「卓越級」室內空氣質素認證</h2><a class="btn-more" href="./detailNews05.html" target="_blank"> <span>更多消息</span>
+                      <h2>啟勝及超卓旗下管理逾30個處所均榮獲最高級別「卓越級」室內空氣質素認證</h2><a class="btn-more" href="./detailNews05.html" target="_blank"> <span>了解更多</span>
                         <div class="circle-right main">
                           <div></div>
                         </div></a>
@@ -459,7 +461,7 @@
                       <!-- 圖片建議尺寸 615X345-->
                       <div class="photo" style="background-image: url(../../uploads/news/06-1.jpg)"></div>
                       <!-- 標題超過兩行出現 ...-->
-                      <h2>啟勝奪「住宅會所管理大獎2023」半數大獎 首獲雙金創佳績</h2><a class="btn-more" href="./detailNews06.html" target="_blank"> <span>更多消息</span>
+                      <h2>啟勝奪「住宅會所管理大獎2023」半數大獎 首獲雙金創佳績</h2><a class="btn-more" href="./detailNews06.html" target="_blank"> <span>了解更多</span>
                         <div class="circle-right main">
                           <div></div>
                         </div></a>
@@ -471,7 +473,7 @@
                       <!-- 圖片建議尺寸 615X345-->
                       <div class="photo" style="background-image: url(../../uploads/news/07.jpg)"></div>
                       <!-- 標題超過兩行出現 ...-->
-                      <h2>啟勝榮獲 JobsDB 頒發「最受歡迎僱主 - 物業管理」獎項</h2><a class="btn-more" href="./detailNews07.html" target="_blank"> <span>更多消息</span>
+                      <h2>啟勝榮獲 JobsDB 頒發「最受歡迎僱主 - 物業管理」獎項</h2><a class="btn-more" href="./detailNews07.html" target="_blank"> <span>了解更多</span>
                         <div class="circle-right main">
                           <div></div>
                         </div></a>
@@ -480,7 +482,7 @@
                       <!-- 圖片建議尺寸 615X345-->
                       <div class="photo" style="background-image: url(../../uploads/news/08.jpg)"></div>
                       <!-- 標題超過兩行出現 ...-->
-                      <h2>上水廣場獲頒發「香港無煙領先企業大獎2023」金獎</h2><a class="btn-more" href="./detailNews08.html" target="_blank"> <span>更多消息</span>
+                      <h2>上水廣場獲頒發「香港無煙領先企業大獎2023」金獎</h2><a class="btn-more" href="./detailNews08.html" target="_blank"> <span>了解更多</span>
                         <div class="circle-right main">
                           <div></div>
                         </div></a>
@@ -489,7 +491,7 @@
                       <!-- 圖片建議尺寸 615X345-->
                       <div class="photo" style="background-image: url(../../uploads/news/09.jpg)"></div>
                       <!-- 標題超過兩行出現 ...-->
-                      <h2>啟勝榮獲「PropTech Excellence Awards 2024」之「年度最佳房地產科技獎項 – 物業管理 （企業鑽石獎）」</h2><a class="btn-more" href="./detailNews09.html" target="_blank"> <span>更多消息</span>
+                      <h2>啟勝榮獲「PropTech Excellence Awards 2024」之「年度最佳房地產科技獎項 – 物業管理 （企業鑽石獎）」</h2><a class="btn-more" href="./detailNews09.html" target="_blank"> <span>了解更多</span>
                         <div class="circle-right main">
                           <div></div>
                         </div></a>
@@ -518,18 +520,14 @@
         <div class="footer common-width waypoint">
           <div class="footer-relative"> 
             <h6>相關公司</h6>
-            <!-- 點擊 前往property.html -->
-            <!-- 並切換下方相對應的輪播-->
-            <!-- callback function:-->
-            <!-- commonSwiper.slideTo(index,800,true)-->
-            <!-- $('.hd').addClass('down');-->
             <ul>
-              <li data-index="1"><a href="./property.html#slider-3"><img src="../../assets/img/logo-main.png" alt=""></a></li>
-              <li data-index="2"><a href="./property.html#slider-1"><img src="../../assets/img/ft-logo02.png" alt=""></a></li>
-              <li data-index="3"><a href="./property.html#slider-2"><img src="../../assets/img/ft-logo03.png" alt=""></a></li>
-              <li data-index="4"><a href="./property.html#slider-5"><img src="../../assets/img/ft-logo04.png" alt=""></a></li>
-              <li data-index="5"><a href="./property.html#slider-6"><img src="../../assets/img/ft-logo05.png" alt=""></a></li>
-              <li data-index="6"><a href="./property.html#slider-7"><img src="../../assets/img/ft-logo06.png" alt=""></a></li>
+              <li><a href="./property.html#slider-1" data-index="1"><img src="../../assets/img/ft-logo02.png" alt=""></a></li>
+              <li><a href="./property.html#slider-2" data-index="2"><img src="../../assets/img/ft-logo03.png" alt=""></a></li>
+              <li><a href="./property.html#slider-5" data-index="3"><img src="../../assets/img/ft-logo04.png" alt=""></a></li>
+              <li><a href="./property.html#slider-6" data-index="4"><img src="../../assets/img/ft-logo05.png" alt=""></a></li>
+              <li><a href="./property.html#slider-7" data-index="5"><img src="../../assets/img/ft-logo06.png" alt=""></a></li>
+              <li><a href="./property.html#slider-3" data-index="6"><img src="../../assets/img/logo08.png" alt=""></a></li>
+              <li><a href="./property.html#slider-4" data-index="7"><img src="../../assets/img/logo07.png" alt=""></a></li>
             </ul>
           </div>
           <div class="footer-other">

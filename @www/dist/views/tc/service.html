@@ -29,6 +29,8 @@
             <div class="hd-right">
               <div class="hd-menu">
                 <ul>
+                  <!-- 後端注意：人物故事的子項目要打開使用時（目前隱藏），li + class: hasBg-->
+                  <!-- 請參照 可持續發展 這一項-->
                   <li><a href="./about.html"><span>關於我們</span></a>
                   </li>
                   <li><a href="./property.html"><span>我們的業務</span></a>
@@ -43,8 +45,8 @@
                   </li>
                   <li><a href="./service.html"><span>卓越服務</span></a>
                   </li>
-                  <li class="hasBg"><a href="./story.html"><span>人物故事</span></a>
-                    <ul class="hd-second">
+                  <li><a href="./story.html"><span>人物故事</span></a>
+                    <ul class="hd-second" style="display: none">
                       <li><a href="./story.html#content1">公司員工的核心價值</a></li>
                       <li><a href="./story.html#content2">員工故事分享</a></li>
                     </ul>
@@ -112,46 +114,47 @@
           <p>啟勝在業界內成就卓越，歷年來獲獎無數。<br>憑藉多年專業的服務經驗，我們的團隊用心、創新，策動超越所想的服務，<br>開拓非一般視野，為客戶創造長遠價值，打造理想生活環境。</p>
         </section>
         <!-- 篩選排序-->
-        <div class="common-width">
-          <div class="dropdown common-width">
-            <div class="d-flex">
-              <div class="form-select type-fullbox mr-1">
-                <div class="select-head">
-                  <p class="option"> <span>年份</span></p><i class="icon-keyboard_arrow_down"></i>
-                </div>
-                <div class="select-content">
-                  <ul class="scrollbar-inner">
-                    <li>2024</li>
-                    <li>2023</li>
-                    <li>2022</li>
-                    <li>2021</li>
-                    <li>2020</li>
-                    <li>2019</li>
-                    <li>2018</li>
-                  </ul>
-                </div>
+        <div class="dropdown common-width">
+          <div class="d-flex">
+            <div class="form-select type-fullbox mr-1">
+              <div class="select-head">
+                <p class="option"> <span>年份</span></p><i class="icon-keyboard_arrow_down"></i>
               </div>
-              <div class="form-select type-fullbox">
-                <div class="select-head">
-                  <p class="option"> <span>月份</span></p><i class="icon-keyboard_arrow_down"></i>
-                </div>
-                <div class="select-content">
-                  <ul class="scrollbar-inner">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
-                    <li>6</li>
-                    <li>7</li>
-                    <li>8</li>
-                    <li>9</li>
-                    <li>10</li>
-                    <li>11</li>
-                    <li>12</li>
-                  </ul>
-                </div>
+              <div class="select-content">
+                <ul class="scrollbar-inner">
+                  <li>2024</li>
+                  <li>2023</li>
+                  <li>2022</li>
+                  <li>2021</li>
+                  <li>2020</li>
+                  <li>2019</li>
+                  <li>2018</li>
+                </ul>
               </div>
+            </div>
+            <div class="form-select type-fullbox">
+              <div class="select-head">
+                <p class="option"> <span>月份</span></p><i class="icon-keyboard_arrow_down"></i>
+              </div>
+              <div class="select-content">
+                <ul class="scrollbar-inner">
+                  <li>1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                  <li>5</li>
+                  <li>6</li>
+                  <li>7</li>
+                  <li>8</li>
+                  <li>9</li>
+                  <li>10</li>
+                  <li>11</li>
+                  <li>12</li>
+                </ul>
+              </div>
+            </div>
+            <div class="btn">
+              <div class="btn-more border"><span>前往</span></div>
             </div>
           </div>
         </div>
@@ -290,9 +293,9 @@
               <div class="awards-block col-12 col-md-6 col-xxl-4 d-flex flex-column waypoint">
                 <div class="top-block d-flex">
                   <!-- 圖片建議尺寸 175X175-->
-                  <div class="photo"><img src="../../uploads/service/m01.png" alt=""></div>
+                  <div class="photo"><img src="../../uploads/service/香港環境卓越大獎.jpg" alt=""></div>
                   <div class="main">
-                    <div> <span class="fz-14">獎項</span>
+                    <div> 
                       <h6 class="fz-18 font-bold">香港環境卓越大獎</h6>
                     </div>
                     <div> <span class="fz-14">頒發機構</span>
@@ -300,7 +303,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="cir-btn"> <i class="icon-keyboard_arrow_down"></i></div>
+                <div class="btn" data-btn-awards><a class="btn-more border" href="javascript:;"><span>了解更多</span></a></div>
                 <div class="bottom-block">
                   <ul>
                     <li>啟勝由獎項設立十多年至今，每年均在「香港環境卓越大獎」中獲得佳績，在採納環境管理及推動可持續發展的工作被受業界肯定。</li>
@@ -310,9 +313,9 @@
               <div class="awards-block col-12 col-md-6 col-xxl-4 d-flex flex-column waypoint">
                 <div class="top-block d-flex">
                   <!-- 圖片建議尺寸 175X175-->
-                  <div class="photo"><img src="../../uploads/service/m02.png" alt=""></div>
+                  <div class="photo"><img src="../../uploads/service/優質物業設施管理大獎.jpg" alt=""></div>
                   <div class="main">
-                    <div> <span class="fz-14">獎項</span>
+                    <div> 
                       <h6 class="fz-18 font-bold">優質物業設施管理大獎</h6>
                     </div>
                     <div> <span class="fz-14">頒發機構</span>
@@ -320,7 +323,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="cir-btn"> <i class="icon-keyboard_arrow_down"></i></div>
+                <div class="btn" data-btn-awards><a class="btn-more border" href="javascript:;"><span>了解更多</span></a></div>
                 <div class="bottom-block">
                   <ul>
                     <li>啟勝和超卓每年均在「優質物業設施管理大獎」中表現突出，多個旗下管理的物業多年來均能於評審中脫𩒠而出，足證團隊傑出的物業管理表現獲得各界認同。</li>
@@ -330,9 +333,9 @@
               <div class="awards-block col-12 col-md-6 col-xxl-4 d-flex flex-column waypoint">
                 <div class="top-block d-flex">
                   <!-- 圖片建議尺寸 175X175-->
-                  <div class="photo"><img src="../../uploads/service/m03.png" alt=""></div>
+                  <div class="photo"><img src="../../uploads/service/傑出服務獎.jpg" alt=""></div>
                   <div class="main">
-                    <div> <span class="fz-14">獎項</span>
+                    <div> 
                       <h6 class="fz-18 font-bold">傑出服務獎</h6>
                     </div>
                     <div> <span class="fz-14">頒發機構</span>
@@ -340,7 +343,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="cir-btn"> <i class="icon-keyboard_arrow_down"></i></div>
+                <div class="btn" data-btn-awards><a class="btn-more border" href="javascript:;"><span>了解更多</span></a></div>
                 <div class="bottom-block">
                   <ul>
                     <li>「傑出服務獎」向來被譽為服務界的「奧斯卡」，多年來，啟勝不但獲得多個公司獎項，旗下管理物業及團隊更於每年的頒獎典禮上勇奪多項服務及品牌大獎，其專業的服務品質備受各界認可。</li>
@@ -350,9 +353,9 @@
               <div class="awards-block col-12 col-md-6 col-xxl-4 d-flex flex-column waypoint">
                 <div class="top-block d-flex">
                   <!-- 圖片建議尺寸 175X175-->
-                  <div class="photo"><img src="../../uploads/service/m04.png" alt=""></div>
+                  <div class="photo"><img src="../../uploads/service/香港房屋經理學會精英大獎.jpg" alt=""></div>
                   <div class="main">
-                    <div> <span class="fz-14">獎項</span>
+                    <div> 
                       <h6 class="fz-18 font-bold">香港房屋經理學會精英大獎</h6>
                     </div>
                     <div> <span class="fz-14">頒發機構</span>
@@ -360,7 +363,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="cir-btn"> <i class="icon-keyboard_arrow_down"></i></div>
+                <div class="btn" data-btn-awards><a class="btn-more border" href="javascript:;"><span>了解更多</span></a></div>
                 <div class="bottom-block">
                   <ul>
                     <li>啟勝多年來積極參與「香港房屋經理學會精英大獎」，更在不同界別中獲得多個獎項，包括「傑出團隊 (私營房屋 – 非住宅)」及「最佳創新概念」卓越獎等，足見啟勝前線團隊專業及卓越的服務水平。</li>
@@ -370,9 +373,9 @@
               <div class="awards-block col-12 col-md-6 col-xxl-4 d-flex flex-column waypoint">
                 <div class="top-block d-flex">
                   <!-- 圖片建議尺寸 175X175-->
-                  <div class="photo"><img src="../../uploads/service/m05.png" alt=""></div>
+                  <div class="photo"><img src="../../uploads/service/卓越設施管理獎.jpg" alt=""></div>
                   <div class="main">
-                    <div> <span class="fz-14">獎項</span>
+                    <div> 
                       <h6 class="fz-18 font-bold">卓越設施管理獎</h6>
                     </div>
                     <div> <span class="fz-14">頒發機構</span>
@@ -380,7 +383,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="cir-btn"> <i class="icon-keyboard_arrow_down"></i></div>
+                <div class="btn" data-btn-awards><a class="btn-more border" href="javascript:;"><span>了解更多</span></a></div>
                 <div class="bottom-block">
                   <ul>
                     <li>啟勝每年均在「卓越設施管理獎」均獲得多個大獎，成績更屢創新高，彰顯啟勝在提供設施管理服務方面表現專業，並擁有優秀的設施管理團隊。</li>
@@ -390,9 +393,9 @@
               <div class="awards-block col-12 col-md-6 col-xxl-4 d-flex flex-column waypoint">
                 <div class="top-block d-flex">
                   <!-- 圖片建議尺寸 175X175-->
-                  <div class="photo"><img src="../../uploads/service/m05.png" alt=""></div>
+                  <div class="photo"><img src="" alt=""></div>
                   <div class="main">
-                    <div> <span class="fz-14">獎項</span>
+                    <div> 
                       <h6 class="fz-18 font-bold">住宅會所管理大獎</h6>
                     </div>
                     <div> <span class="fz-14">頒發機構</span>
@@ -400,7 +403,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="cir-btn"> <i class="icon-keyboard_arrow_down"></i></div>
+                <div class="btn" data-btn-awards><a class="btn-more border" href="javascript:;"><span>了解更多</span></a></div>
                 <div class="bottom-block">
                   <ul>
                     <li>作為開創住宅會所的先驅，啟勝每年均參與競逐「住宅會所管理大獎」，並屢創佳績，除印證旗下管理的物業會所服務表現持續卓越外，更為業界樹立楷模。</li>
@@ -410,9 +413,9 @@
               <div class="awards-block col-12 col-md-6 col-xxl-4 d-flex flex-column waypoint">
                 <div class="top-block d-flex">
                   <!-- 圖片建議尺寸 175X175-->
-                  <div class="photo"><img src="../../uploads/service/m05.png" alt=""></div>
+                  <div class="photo"><img src="" alt=""></div>
                   <div class="main">
-                    <div> <span class="fz-14">獎項</span>
+                    <div> 
                       <h6 class="fz-18 font-bold">卓越建築大獎</h6>
                     </div>
                     <div> <span class="fz-14">頒發機構</span>
@@ -420,7 +423,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="cir-btn"> <i class="icon-keyboard_arrow_down"></i></div>
+                <div class="btn" data-btn-awards><a class="btn-more border" href="javascript:;"><span>了解更多</span></a></div>
                 <div class="bottom-block">
                   <ul>
                     <li>啟勝在提升物業營運效能方面屢獲認可，於「卓越建築選舉大獎」中更獲頒「卓越建築大獎（現有建築項目）」及「卓越碳中和成就獎（現有建築項目）」。</li>
@@ -430,9 +433,9 @@
               <div class="awards-block col-12 col-md-6 col-xxl-4 d-flex flex-column waypoint">
                 <div class="top-block d-flex">
                   <!-- 圖片建議尺寸 175X175-->
-                  <div class="photo"><img src="../../uploads/service/m05.png" alt=""></div>
+                  <div class="photo"><img src="" alt=""></div>
                   <div class="main">
-                    <div> <span class="fz-14">獎項</span>
+                    <div> 
                       <h6 class="fz-18 font-bold">創新節能企業大獎</h6>
                     </div>
                     <div> <span class="fz-14">頒發機構</span>
@@ -440,7 +443,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="cir-btn"> <i class="icon-keyboard_arrow_down"></i></div>
+                <div class="btn" data-btn-awards><a class="btn-more border" href="javascript:;"><span>了解更多</span></a></div>
                 <div class="bottom-block">
                   <ul>
                     <li>啟勝積極在旗下管理的物業實現綠色管理和減少碳排放，在中電舉辦的「創新節能企業大獎」更獲頒「能源管理大獎」，更曾在「慳電任務—積極慳電大獎」中勇奪金獎，充份肯定了團隊在環境管理和節能減排的成就及努力。</li>
@@ -450,9 +453,9 @@
               <div class="awards-block col-12 col-md-6 col-xxl-4 d-flex flex-column waypoint">
                 <div class="top-block d-flex">
                   <!-- 圖片建議尺寸 175X175-->
-                  <div class="photo"><img src="../../uploads/service/m05.png" alt=""></div>
+                  <div class="photo"><img src="../../uploads/service/亞太區卓越獎.jpg" alt=""></div>
                   <div class="main">
-                    <div> <span class="fz-14">獎項</span>
+                    <div> 
                       <h6 class="fz-18 font-bold">亞太區卓越獎</h6>
                     </div>
                     <div> <span class="fz-14">頒發機構</span>
@@ -460,7 +463,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="cir-btn"> <i class="icon-keyboard_arrow_down"></i></div>
+                <div class="btn" data-btn-awards><a class="btn-more border" href="javascript:;"><span>了解更多</span></a></div>
                 <div class="bottom-block">
                   <ul>
                     <li>啟勝的物業管理服務不僅在香港及內地屢獲認可，在亞太區內更是享負盛名，在每屆「亞太區卓越獎」中均得多項佳績，不斷領導行業訂立更高標準。</li>
@@ -539,18 +542,14 @@
         <div class="footer common-width waypoint">
           <div class="footer-relative"> 
             <h6>相關公司</h6>
-            <!-- 點擊 前往property.html -->
-            <!-- 並切換下方相對應的輪播-->
-            <!-- callback function:-->
-            <!-- commonSwiper.slideTo(index,800,true)-->
-            <!-- $('.hd').addClass('down');-->
             <ul>
-              <li data-index="1"><a href="./property.html#slider-3"><img src="../../assets/img/logo-main.png" alt=""></a></li>
-              <li data-index="2"><a href="./property.html#slider-1"><img src="../../assets/img/ft-logo02.png" alt=""></a></li>
-              <li data-index="3"><a href="./property.html#slider-2"><img src="../../assets/img/ft-logo03.png" alt=""></a></li>
-              <li data-index="4"><a href="./property.html#slider-5"><img src="../../assets/img/ft-logo04.png" alt=""></a></li>
-              <li data-index="5"><a href="./property.html#slider-6"><img src="../../assets/img/ft-logo05.png" alt=""></a></li>
-              <li data-index="6"><a href="./property.html#slider-7"><img src="../../assets/img/ft-logo06.png" alt=""></a></li>
+              <li><a href="./property.html#slider-1" data-index="1"><img src="../../assets/img/ft-logo02.png" alt=""></a></li>
+              <li><a href="./property.html#slider-2" data-index="2"><img src="../../assets/img/ft-logo03.png" alt=""></a></li>
+              <li><a href="./property.html#slider-5" data-index="3"><img src="../../assets/img/ft-logo04.png" alt=""></a></li>
+              <li><a href="./property.html#slider-6" data-index="4"><img src="../../assets/img/ft-logo05.png" alt=""></a></li>
+              <li><a href="./property.html#slider-7" data-index="5"><img src="../../assets/img/ft-logo06.png" alt=""></a></li>
+              <li><a href="./property.html#slider-3" data-index="6"><img src="../../assets/img/logo08.png" alt=""></a></li>
+              <li><a href="./property.html#slider-4" data-index="7"><img src="../../assets/img/logo07.png" alt=""></a></li>
             </ul>
           </div>
           <div class="footer-other">

@@ -1,11 +1,11 @@
 -
   var ft = [
-    {
-      logo: '../../assets/img/logo-main.png',
-      url: './property.html#slider-3'},
+    //- {
+    //-   logo: '../../assets/img/logo-main.png',
+    //-   url: './property.html#slider-3'},
     {
       logo: '../../assets/img/ft-logo02.png',
-      url: './property.html#slider-1'},
+      url: './property.html#slider-1',},
     {
       logo: '../../assets/img/ft-logo03.png',
       url: './property.html#slider-2'},
@@ -18,6 +18,12 @@
     {
       logo: '../../assets/img/ft-logo06.png',
       url: './property.html#slider-7'},
+    {
+      logo: '../../assets/img/logo08.png',
+      url: './property.html#slider-3'},
+    {
+      logo: '../../assets/img/logo07.png',
+      url: './property.html#slider-4'},
   ]
 
   var ftOther = [
@@ -39,16 +45,22 @@ footer
   .footer.common-width.waypoint
     .footer-relative 
       h6 相關公司
-      // 點擊 前往property.html 
-      // 並切換下方相對應的輪播
-      // callback function:
-      // commonSwiper.slideTo(index,800,true)
-      // $('.hd').addClass('down');
       ul
         each val,index in ft
-          li(data-index= index+1)
-            a(href= val.url)
+          li
+            a(href= val.url data-index= index+1)
               img(src= val.logo, alt="")
+      
+      //- .footer-swiper
+      //-   .swiper-container 
+      //-     .swiper-wrapper
+      //-       each val,index in ft
+      //-         .swiper-slide 
+      //-           a(href= val.url data-index= index+1)
+      //-             img(src= val.logo, alt="")
+      //-   .swiper-tools
+      //-     .swiper-button-prev
+      //-     .swiper-button-next
     .footer-other
       p © 2024 啟勝管理服務有限公司
       ul.footer-link

@@ -29,6 +29,8 @@
             <div class="hd-right">
               <div class="hd-menu">
                 <ul>
+                  <!-- 後端注意：人物故事的子項目要打開使用時（目前隱藏），li + class: hasBg-->
+                  <!-- 請參照 可持續發展 這一項-->
                   <li><a href="./about.html"><span>關於我們</span></a>
                   </li>
                   <li><a href="./property.html"><span>我們的業務</span></a>
@@ -43,8 +45,8 @@
                   </li>
                   <li><a href="./service.html"><span>卓越服務</span></a>
                   </li>
-                  <li class="hasBg"><a href="./story.html"><span>人物故事</span></a>
-                    <ul class="hd-second">
+                  <li><a href="./story.html"><span>人物故事</span></a>
+                    <ul class="hd-second" style="display: none">
                       <li><a href="./story.html#content1">公司員工的核心價值</a></li>
                       <li><a href="./story.html#content2">員工故事分享</a></li>
                     </ul>
@@ -93,12 +95,13 @@
       <!-- 主要內容-->
       <main>
         <section class="detail-banner">
-          <div class="detail-width">
+          <div class="detail-width"><a href="./service.html"><i class="icon-keyboard_arrow_left"></i><span>返回</span></a>
             <h6 class="section-title">獎項及成就</h6>
           </div>
         </section>
         <section class="detail-content detail-width">
           <h2>啟勝及超卓旗下管理逾30個處所均榮獲最高級別「卓越級」室內空氣質素認證</h2>
+          <p class="date pt-1">2024年6月18日</p>
           <article>
             <div class="photo-column right w-500">
               <div class="d-flex">
@@ -271,18 +274,14 @@
         <div class="footer common-width waypoint">
           <div class="footer-relative"> 
             <h6>相關公司</h6>
-            <!-- 點擊 前往property.html -->
-            <!-- 並切換下方相對應的輪播-->
-            <!-- callback function:-->
-            <!-- commonSwiper.slideTo(index,800,true)-->
-            <!-- $('.hd').addClass('down');-->
             <ul>
-              <li data-index="1"><a href="./property.html#slider-3"><img src="../../assets/img/logo-main.png" alt=""></a></li>
-              <li data-index="2"><a href="./property.html#slider-1"><img src="../../assets/img/ft-logo02.png" alt=""></a></li>
-              <li data-index="3"><a href="./property.html#slider-2"><img src="../../assets/img/ft-logo03.png" alt=""></a></li>
-              <li data-index="4"><a href="./property.html#slider-5"><img src="../../assets/img/ft-logo04.png" alt=""></a></li>
-              <li data-index="5"><a href="./property.html#slider-6"><img src="../../assets/img/ft-logo05.png" alt=""></a></li>
-              <li data-index="6"><a href="./property.html#slider-7"><img src="../../assets/img/ft-logo06.png" alt=""></a></li>
+              <li><a href="./property.html#slider-1" data-index="1"><img src="../../assets/img/ft-logo02.png" alt=""></a></li>
+              <li><a href="./property.html#slider-2" data-index="2"><img src="../../assets/img/ft-logo03.png" alt=""></a></li>
+              <li><a href="./property.html#slider-5" data-index="3"><img src="../../assets/img/ft-logo04.png" alt=""></a></li>
+              <li><a href="./property.html#slider-6" data-index="4"><img src="../../assets/img/ft-logo05.png" alt=""></a></li>
+              <li><a href="./property.html#slider-7" data-index="5"><img src="../../assets/img/ft-logo06.png" alt=""></a></li>
+              <li><a href="./property.html#slider-3" data-index="6"><img src="../../assets/img/logo08.png" alt=""></a></li>
+              <li><a href="./property.html#slider-4" data-index="7"><img src="../../assets/img/logo07.png" alt=""></a></li>
             </ul>
           </div>
           <div class="footer-other">

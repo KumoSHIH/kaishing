@@ -1,13 +1,6 @@
 -
   var swiper = [
     {
-      ch: '盡心服務',
-      en: '',
-      desktop: '../../uploads/index/index01-1920X945.jpg',
-      mobile: '../../uploads/index/index01-1920X945.jpg',
-      linkName: '關於我們',
-      link: './about.html'},
-    {
       ch: '以心創新',
       en: '',
       desktop: '../../uploads/index/index02-1920X945.jpg',
@@ -15,17 +8,24 @@
       linkName: '我們的業務',
       link: 'javascript:;'},
     {
+      ch: '盡心服務',
+      en: '',
+      desktop: '../../uploads/index/index01-1920X945.jpg',
+      mobile: '../../uploads/index/index01-1920X945.jpg',
+      linkName: '關於我們',
+      link: './about.html'},
+    {
       ch: '連繫人心',
       en: '',
-      desktop: '../../uploads/index/test4.jpg',
-      mobile: '../../uploads/index/test4.jpg',
+      desktop: '../../uploads/index/banner03.jpg',
+      mobile: '../../uploads/index/banner03.jpg',
       linkName: '可持續發展',
       link: 'javascript:;'},
     {
       ch: '永續未來',
       en: '',
-      desktop: '../../uploads/index/test5.jpg',
-      mobile: '../../uploads/index/test5.jpg',
+      desktop: '../../uploads/index/banner04.jpg',
+      mobile: '../../uploads/index/banner04.jpg',
       linkName: '卓越服務',
       link: 'javascript:;'}
   ]
@@ -41,7 +41,7 @@
       ],
       title: '我們的業務',
       text: '我們的物業管理服務範圍遍佈香港及中國內地，管理的住宅及商業項目多元化，包括辦公大樓、大型購物商場、高級豪宅及大型住宅等，為業戶提供全面、優質的專業物業管理服務。',
-      link: 'javascript:;',
+      link: './property.html',
       speed: '1200'},
     {
       photo: [
@@ -53,7 +53,7 @@
       ],
       title: '可持續發展',
       text: '我們在推廣可持續發展方面持續成為業界內表現領先的物業管理服務公司。為減少碳排放，我們的團隊從不同層面出發，積極尋求不同方案，提升物業的整體能源使用效益，達致節能減碳。',
-      link: 'javascript:;',
+      link: './development.html',
       speed: '1200'},
     {
       photo: [
@@ -65,7 +65,7 @@
       ],
       title: '卓越服務',
       text: '啟勝在業界內成就卓越，歷年來獲獎無數。憑藉多年專業的服務經驗，我們的團隊用心、創新，策動超越所想的服務，開拓非一般視野，為客戶創造長遠價值，打造理想生活環境。',
-      link: 'javascript:;',
+      link: './service.html',
       speed: '1200'},
     {
       photo: [
@@ -77,7 +77,7 @@
       ],
       title: '客戶故事',
       text: '啟勝以客戶的需求為出發點，耐心聆聽客戶需要，致力為他們提供最優質的服務，打造理想的生活空間。<br>啟勝的服務一直以來都得到不少客戶的信賴和讚賞。來看看我們與客戶之間的真實故事，一同細味貼心服務帶來的喜悅吧!',
-      link: 'javascript:;',
+      link: './story.html',
       speed: '1200'},
   ]
 
@@ -230,7 +230,7 @@ html(lang="zh-Hant-HK")
                           // 標題超過兩行出現 ...
                           h2 !{slide.title}
                           a.btn-more(href= slide.link target="_blank") 
-                            span 更多消息
+                            span 了解更多
                             .circle-right.main
                               div
               .swiper-tools

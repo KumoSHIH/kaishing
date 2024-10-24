@@ -60,15 +60,14 @@ html(lang="zh-Hant-HK")
       main
         section.section-banner.bg-banner
           .banner-photo
-            .photo-desktop.b-lazy(src="../../assets/img/blazy.gif" data-src="../../uploads/story/banner-1920X715.jpg")
-            .photo-mobile.b-lazy(src="../../assets/img/blazy.gif" data-src="../../uploads/story/banner-1920X715.jpg")
+            .photo-desktop.b-lazy(src="../../assets/img/blazy.gif" data-src="../../uploads/story/banner04.jpg")
+            .photo-mobile.b-lazy(src="../../assets/img/blazy.gif" data-src="../../uploads/story/banner04.jpg")
           .banner-title.waypoint
             .title-center
               h6 人物故事
             .title-bg
               h6 人物故事
-        section.section-icon#content1
-          h6.section-title.center 員工特質
+        section.section-icon#content1(style="display: none")
           ul.icon-wrap.waypoint
             each val in icon
               li.color-main
@@ -79,10 +78,16 @@ html(lang="zh-Hant-HK")
                 span= val.span
         section.section-content.common-width#content2
           ul
-            each val in story
-              li.text
-                h6= val.title
-                p= val.content
+            each val,index in story
+              li
+                .num= index+1
+                .text
+                  h6= val.title
+                  p= val.content
+                  a.btn-more(href="javascript:;" target="_blank") 
+                    span 了解更多
+                    .circle-right.main
+                      div
       // breadcrumb
       .breadcrumb
         ul.common-width

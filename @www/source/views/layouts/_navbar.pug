@@ -41,7 +41,7 @@
       ch: '人物故事',
       en: 'develope',
       url: './story.html',
-      class: 'hasBg',
+      class: '',
       list: [
         {
           name: '公司員工的核心價值',
@@ -79,18 +79,19 @@ header.hd
       .hd-right
         .hd-menu
           ul
-            each val in header
+            // 後端注意：人物故事的子項目要打開使用時（目前隱藏），li + class: hasBg
+            // 請參照 可持續發展 這一項
+            each val,index in header
               li(class= val.class)
                 a(href= val.url)
                   span= val.ch
-                //- if (val.class === '')
-                //-   a(href= val.url target="_blank")
-                //-     span= val.ch
-                //- else 
-                //-   a(href= val.url)
-                //-     span= val.ch
-                if (val.list !== '')
+                if (index === 2)
                   ul.hd-second
+                    each item in val.list
+                      li
+                        a(href= item.url)= item.name
+                if (index === 4)
+                  ul.hd-second(style="display: none")
                     each item in val.list
                       li
                         a(href= item.url)= item.name

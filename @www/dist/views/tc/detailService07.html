@@ -29,6 +29,8 @@
             <div class="hd-right">
               <div class="hd-menu">
                 <ul>
+                  <!-- 後端注意：人物故事的子項目要打開使用時（目前隱藏），li + class: hasBg-->
+                  <!-- 請參照 可持續發展 這一項-->
                   <li><a href="./about.html"><span>關於我們</span></a>
                   </li>
                   <li><a href="./property.html"><span>我們的業務</span></a>
@@ -43,8 +45,8 @@
                   </li>
                   <li><a href="./service.html"><span>卓越服務</span></a>
                   </li>
-                  <li class="hasBg"><a href="./story.html"><span>人物故事</span></a>
-                    <ul class="hd-second">
+                  <li><a href="./story.html"><span>人物故事</span></a>
+                    <ul class="hd-second" style="display: none">
                       <li><a href="./story.html#content1">公司員工的核心價值</a></li>
                       <li><a href="./story.html#content2">員工故事分享</a></li>
                     </ul>
@@ -93,12 +95,13 @@
       <!-- 主要內容-->
       <main>
         <section class="detail-banner">
-          <div class="detail-width">
+          <div class="detail-width"><a href="./service.html"><i class="icon-keyboard_arrow_left"></i><span>返回</span></a>
             <h6 class="section-title">獎項及成就</h6>
           </div>
         </section>
         <section class="detail-content detail-width">
           <h2>啟勝榮獲 JobsDB 頒發「最受歡迎僱主 - 物業管理」獎項</h2>
+          <p class="date pt-1">2024年4月16日</p>
           <article>
             <div class="photo"><img src="../../uploads/news/07.jpg" alt=""></div>
             <p>啟勝管理服務有限公司（啟勝）重視員工身心健康，積極推動職場健康文化，讓員工能保持工作與生活平衡。憑藉出色的人才管理策略，啟勝成功於JobsDB舉辦的「The Hong Kong HR Awards 2023/24」中脫穎而出，獲頒發「最受歡迎僱主 - 物業管理」獎項。獎項一直被公認為香港頂尖的人力資源盛事之一，旨在表彰個人和機構在人力資源領域的卓越成就。評審由各行業的人力資源總監和領袖組成，部分更經由公眾投票參與，評審結果得到各界廣泛認受。<br><br>這項殊榮再度肯定了啟勝「以人為本」的管理方針。啟勝一直致力投放資源培育人才，推出人才發展計劃「KS NOVA」，通過度身訂造在職培訓計劃，提升管理人員各方面的領導才能，推動管理人員建立創新思維和靈活變革的能力。同時，啟勝亦非常關注員工身心靈健康，積極推動職場健康文化，讓員工能保持工作與生活平衡，更成立「員工活動委員會」，收集員工喜好，舉辦多元化又合適的員工活動，滿足不同年齡層和家庭崗位的同事需求。為了促進職場健康文化，啟勝近年更多次舉辦以身心靈健康為主題的活動，包括「健康生活節」及「養生月」等，為員工提供全方位的健康資訊及支援，以涵蓋員工身心靈不同層面的需要，當中包括向員工派發水果及健康飲品、舉辦養生講座及於線上學習平台發放健康小貼士等，以提升員工身心靈健康意識。啟勝相信，開心的員工能為客戶帶來喜悅，而在愉悅及積極的工作氛圍下，員工的工作效率及團隊協作能力必能有所提升，令客戶享受更優質的服務。<br><br>啟勝非常榮幸能在人力資源管理上得到業界和公眾的廣泛認可，我們將繼續努力建立一個和諧、健康及可持續發展的工作環境，讓團隊能與公司一同成長、進步。</p>
@@ -118,18 +121,14 @@
         <div class="footer common-width waypoint">
           <div class="footer-relative"> 
             <h6>相關公司</h6>
-            <!-- 點擊 前往property.html -->
-            <!-- 並切換下方相對應的輪播-->
-            <!-- callback function:-->
-            <!-- commonSwiper.slideTo(index,800,true)-->
-            <!-- $('.hd').addClass('down');-->
             <ul>
-              <li data-index="1"><a href="./property.html#slider-3"><img src="../../assets/img/logo-main.png" alt=""></a></li>
-              <li data-index="2"><a href="./property.html#slider-1"><img src="../../assets/img/ft-logo02.png" alt=""></a></li>
-              <li data-index="3"><a href="./property.html#slider-2"><img src="../../assets/img/ft-logo03.png" alt=""></a></li>
-              <li data-index="4"><a href="./property.html#slider-5"><img src="../../assets/img/ft-logo04.png" alt=""></a></li>
-              <li data-index="5"><a href="./property.html#slider-6"><img src="../../assets/img/ft-logo05.png" alt=""></a></li>
-              <li data-index="6"><a href="./property.html#slider-7"><img src="../../assets/img/ft-logo06.png" alt=""></a></li>
+              <li><a href="./property.html#slider-1" data-index="1"><img src="../../assets/img/ft-logo02.png" alt=""></a></li>
+              <li><a href="./property.html#slider-2" data-index="2"><img src="../../assets/img/ft-logo03.png" alt=""></a></li>
+              <li><a href="./property.html#slider-5" data-index="3"><img src="../../assets/img/ft-logo04.png" alt=""></a></li>
+              <li><a href="./property.html#slider-6" data-index="4"><img src="../../assets/img/ft-logo05.png" alt=""></a></li>
+              <li><a href="./property.html#slider-7" data-index="5"><img src="../../assets/img/ft-logo06.png" alt=""></a></li>
+              <li><a href="./property.html#slider-3" data-index="6"><img src="../../assets/img/logo08.png" alt=""></a></li>
+              <li><a href="./property.html#slider-4" data-index="7"><img src="../../assets/img/logo07.png" alt=""></a></li>
             </ul>
           </div>
           <div class="footer-other">

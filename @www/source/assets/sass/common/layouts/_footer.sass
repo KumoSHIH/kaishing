@@ -17,11 +17,12 @@ footer
       flex-wrap: wrap
       justify-content: center
       align-items: center
+      // display: none
       li 
         a 
           padding: 10px
         img
-          max-width: 200px
+          max-width: 185px
           // max-width: 180px
           // max-height: 85px
       +rwdmax(1200)
@@ -45,6 +46,25 @@ footer
     +rwdmax(1200)
       h6 
         padding-bottom: 15px
+  &-swiper
+    position: relative
+    padding: 0 30px
+    .swiper-slide 
+      a 
+        max-width: 560px
+        width: 100%
+        position: relative
+        padding-bottom: 100%
+        img 
+          +posCenter
+    .swiper-tools
+      width: 100%
+      margin-top: 0
+      position: absolute
+      top: 50%
+      left: 0
+      transform: translateY(-50%)
+      justify-content: space-between
   &-other 
     padding-top: 50px
     display: flex
@@ -53,7 +73,7 @@ footer
     width: 100%
     margin: 0 auto
     +rwdmax(1200)
-      padding-top: 20px
+      padding-top: 80px
       flex-direction: column-reverse
       p 
         padding-top: 20px

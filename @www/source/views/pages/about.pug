@@ -45,19 +45,19 @@
       logo: '../../assets/img/logo02.png',
       url: './property.html#slider-2'},
     {
-      logo: '../../assets/img/logo-main.png',
+      logo: '../../assets/img/logo01.png',
       url: './property.html#slider-3'},
     {
-      logo: '../../assets/img/r03.jpg',
+      logo: '../../assets/img/logo05.png',
       url: './property.html#slider-4'},
     {
-      logo: '../../assets/img/logo01.png',
+      logo: '../../assets/img/logo04.png',
       url: './property.html#slider-5'},
     {
-      logo: '../../assets/img/logo05.png',
+      logo: '../../assets/img/logo08.png',
       url: './property.html#slider-6'},
     {
-      logo: '../../assets/img/logo04.png',
+      logo: '../../assets/img/logo07.png',
       url: './property.html#slider-7'},
   ]
 
@@ -65,19 +65,19 @@
     {
       title: '盡心服務',
       text: ' 啟勝以客戶的需求為出發點，耐心聆聽客戶需要，致力為他們提供最優質的服務，打造理想的生活空間。',
-      photo: '../../uploads/about/swiper01-940X710.jpg'},
+      photo: '../../uploads/index/index01-1920X945.jpg'},
     {
       title: '以心創新',
       text: '在科技日新月異的時代，客戶對環境保護及優質生活的期望亦不斷提高。因此，啟勝時刻創新，引入更多嶄新科技，滿足新一代對物業管理服務的要求，讓客戶能得到更貼心的生活體驗。',
-      photo: '../../uploads/about/swiper01-940X710.jpg'},
+      photo: '../../uploads/index/index02-1920X945.jpg'},
     {
       title: '連繫人心',
       text: '啟勝相信生活品質，源自人與人的關係。我們視提供優質的物業管理服務為己任，更用心關懷及連繫每位客戶，貼心為他們提供所需設施及服務，讓啟勝與客戶，或客戶與客戶之間，都能走得更近，達至和諧共融。',
-      photo: '../../uploads/about/swiper01-940X710.jpg'},
+      photo: '../../uploads/index/banner03.jpg'},
     {
       title: '永續未來',
       text: '「家」不單單代表居所，更代表我們共同生活的地方。啟勝致力與員工、客戶一同打造優質生活圈，共同創造可持續發展的未來。',
-      photo: '../../uploads/about/swiper01-940X710.jpg'}
+      photo: '../../uploads/index/banner04.jpg'}
   ]
 
   //- var video = [
@@ -180,7 +180,7 @@ html(lang="zh-Hant-HK")
         section.section-story.common-width.center.waypoint
           h6.section-title 我們的品牌
           .logo
-            img(src="../../assets/img/logo03.png", alt="")
+            img(src="../../assets/img/logo-main.png", alt="")
           p 全新品牌標誌的形態及顏色，重新演繹了啟勝時刻向前的企業精神，以嶄新視覺展示啟勝服務的初心，<br>本著「以心建家」的核心價值，在物業管理服務注入創新元素，為客戶締造美好新生活!<br><br>顏色方面則選用了明亮而穩重的銅黃色，並以同色調的不同層次展示，盡顯品牌穩重低調的個性中，不泛靈活、多變的可能性，<br>整體呈現出專業可靠、具彈性且高雅的品牌氣質。<br>富標誌性的「K」則代表著啟勝，其上揚線條形成箭咀，彰顯了啟勝即使在業界穩紮領導地位，但仍持續求進的服務精神。<br>啟勝期待以可靠而富活力的品牌個性，為客戶實踐專業用心的服務承諾。
         // 業務範圍
         section.section-story.common-width.center.waypoint
@@ -231,7 +231,8 @@ html(lang="zh-Hant-HK")
                           p= val.text
                         // 圖片建議尺寸 850X560
                         .photo
-                          img(src= val.photo, alt="")
+                          .photo-wrap
+                            img(src= val.photo, alt="")
           .swiper-pagination.horizon
           .swiper-button-prev
             img(src="../../assets/img/arr-left.png", alt="")
@@ -256,6 +257,42 @@ html(lang="zh-Hant-HK")
             .swiper-videos.swiper-article
               .swiper-container
                 .swiper-wrapper
+                  // 一個slide 塞三則消息
+                  .swiper-slide
+                    // mp4 
+                    // video-src 影片路徑
+                    // video-type= "video"
+                    .slide-box
+                      .video(video-src="../../assets/img/mp4.mp4"
+                        video-type= "video"
+                        video-player-type="onBox"
+                        video-image= "../../uploads/index/other04-800X605.jpg"
+                        data-video)
+                      .text
+                        h5 mp4. TEST
+                        p 需要放一張預設圖片
+                    // youtube
+                    // video-id: youtube 影片ID
+                    // video-image: 預設圖片建議尺寸 615X345
+                    .slide-box
+                      .video(video-id= "e69jHUyhqZk"
+                        video-type="youtubeAPI"
+                        video-player-type="onBox"
+                        video-image= "../../uploads/index/news01-615X345.jpg"
+                        data-video)
+                      .text
+                        h5 youtube 這是假字
+                        p 這是假字，這是假字，這是假字。
+                    .slide-box
+                      .video(video-src="../../assets/img/mp4.mp4"
+                        video-type= "video"
+                        video-player-type="onBox"
+                        video-image= "../../uploads/index/other04-800X605.jpg"
+                        data-video)
+                      .text
+                        h5 mp4. TEST
+                        p 需要放一張預設圖片
+                    
                   each val in video
                     // 一個slide 塞三則消息
                     .swiper-slide

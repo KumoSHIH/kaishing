@@ -5,15 +5,15 @@
       photo: '../../uploads/development/img01-800X605.jpg',
       title: '我們的承諾',
       text: '啟勝以「用心開創．攜手建未來」作為可持續發展願景，並在決策時以五大支柱作為考量因素，包括環境、人才、客戶、供應鏈和社區。',
-      hide: '為致力實行環保管理工作，我們訂立以下可持續發展目標：<br><br>環境<br>我們積極主動保護環境，因應物業的實際情況採用不同環保方案，致力減低環境污染，並遵從及配合一切相關法例及監管的要求，實行環保管理工作。<br>人才<br>我們為員工提供合適的環保管理相關培訓，確保員工對環保工作的認知，以及提高員工的環保意識。同時，我們亦成立品質監控機制，確保員工將環保措施確切地應用於工作範疇上。<br>客戶<br>透過一連串環保管理，如減少污染、廢物、耗電量及用水量，並推行廢物回收及循環再用計劃，以防止及減少物業產生的污染，達致節約能源的目標，為客戶的生活環境把關。<br>供應鏈<br>與供應商、承辦商、住戶及租戶攜手合作，宣揚環保訊息及推行環保計劃。<br>社區<br>加強相關措施的管理，定期檢討和修訂，以確保各環保方案能有效、靈活及持之以恆地運作，並能持續改善環保管理質素，令社區得益。',
-      link: './development_detail.html',},
+      hide: '為致力實行環保管理工作，我們訂立以下可持續發展目標：<br><br><strong>環境</strong><br>我們積極主動保護環境，因應物業的實際情況採用不同環保方案，致力減低環境污染，並遵從及配合一切相關法例及監管的要求，實行環保管理工作。<br><strong>人才</strong><br>我們為員工提供合適的環保管理相關培訓，確保員工對環保工作的認知，以及提高員工的環保意識。同時，我們亦成立品質監控機制，確保員工將環保措施確切地應用於工作範疇上。<br><strong>客戶</strong><br>透過一連串環保管理，如減少污染、廢物、耗電量及用水量，並推行廢物回收及循環再用計劃，以防止及減少物業產生的污染，達致節約能源的目標，為客戶的生活環境把關。<br><strong>供應鏈</strong><br>與供應商、承辦商、住戶及租戶攜手合作，宣揚環保訊息及推行環保計劃。<br><strong>社區</strong><br>加強相關措施的管理，定期檢討和修訂，以確保各環保方案能有效、靈活及持之以恆地運作，並能持續改善環保管理質素，令社區得益。',
+      link: './detailDevelopment01.html',},
     {
       id: 'content2',
       photo: '../../uploads/development/img02-800X605.jpg',
       title: '積極創新',
       text: '我們積極為物業管理服務引入不同創新技術，提升營運效率和服務質素。',
       hide: '作為物業管理服務的先驅，我們積極將不同創新科技融入物業的日常管理中，為客戶提供嶄新的智能體驗，將營運效率及服務質素提升至另一層次。',
-      link: './development_detail.html',},
+      link: './detailDevelopment02.html',},
     {
       id: 'content3',
       photo: '../../uploads/development/img03-800X605.jpg',
@@ -68,7 +68,7 @@ html(lang="zh-Hant-HK")
                 .text-block.waypoint
                   h6.section-title= val.title
                   p !{val.text}
-                  a.btn-more(href="javascript:;")
+                  a.btn-more(href= val.link)
                     span 了解更多
                     .circle-right.main
                       div
@@ -83,10 +83,10 @@ html(lang="zh-Hant-HK")
                 .text-block.waypoint
                   h6.section-title= val.title
                   p !{val.text}
-                  //- a.btn-more(href= val.link target="_blank")
-                  //-   span 了解更多
-                  //-   .circle-right.main
-                  //-     div
+                  a.btn-more(href= val.link)
+                    span 了解更多
+                    .circle-right.main
+                      div
       // breadcrumb
       .breadcrumb
         ul.common-width

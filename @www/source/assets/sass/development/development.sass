@@ -37,19 +37,21 @@
           overflow: initial
           -webkit-line-clamp: unset
           max-height: unset
+          strong
+            font-weight: bold
         .btn-more
           .circle-right div:after
-            transform: rotate(90deg)
+            // transform: rotate(90deg)
           &:hover 
             .circle-right
               div:after
-                animation: unset
-          &.active
-            .circle-right div:after
-              transform: rotate(-90deg)
+                // animation: unset
+          // &.active
+          //   .circle-right div:after
+          //     transform: rotate(-90deg)
       .hide-text
         margin-top: 20px
-        display: none
+        // display: none
     +rwdmax(1200)
       width: 60%
       #content1

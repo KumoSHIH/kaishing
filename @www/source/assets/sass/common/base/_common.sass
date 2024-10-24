@@ -131,7 +131,7 @@ main
 
 // X
 .cross
-  $w: 23px
+  $w: 30px
   $h: $w
 
   padding: 10px
@@ -301,7 +301,7 @@ main
     z-index: 1
     h6
       text-align: center
-      font-weight: bold
+      // font-weight: bold
       letter-spacing: 30px
       font-family: $JhengHeiBold
       font-size: px(80)
@@ -518,7 +518,14 @@ main
     text-align: center
   &.right
     text-align: right
+  &.de-detail
+    .section-title
+      padding-top: 50px
+      +rwdmax(767)
+        padding-top: 0
+
   p 
+    color: #000
     +spaceArticle
     +rwdmax(767)
       text-align: justify
@@ -714,6 +721,24 @@ main
           top: auto
           bottom: calc(30px - 6px)
 
+  .btn
+    margin-left: 10px
+  .btn-more
+    height: 42px
+    max-width: 100px
+    border-width: 1px
+    cursor: pointer
+    background-color: $main
+    transition: .3s ease-in-out
+    span 
+      font-size: px(16)
+      color: #fff
+    &:hover 
+      background-color: lighten($main, 5%)
+      span
+        opacity: 1
+    +rwdmax(767)
+      height: 38px
 // 共用消息
 .info-block-wrap
   align-items: stretch
@@ -799,7 +824,7 @@ main
       display: block
       letter-spacing: 6.8px
       font-size: px(64)
-      font-weight: bold
+      // font-weight: bold
       font-family: $JhengHeiBold
       color: $main
     .photo-logo 
@@ -1174,7 +1199,7 @@ main
         font-size: px(100)
         text-shadow: 0 0 15px #fff
     .title-bg
-      h6 
+      h6
         letter-spacing: 45px
         font-size: px(120)
     +rwdmax(1500)
@@ -1184,6 +1209,13 @@ main
       .title-bg h6
         letter-spacing: 44px
         font-size: px(110)
+    +rwdmax(1440)
+      .title-center h6
+        letter-spacing: 20px
+        font-size: px(74)
+      .title-bg h6
+        letter-spacing: 12px
+        font-size: px(108)
     +rwdmax(1200)
       .title-center h6
         font-size: px(70)

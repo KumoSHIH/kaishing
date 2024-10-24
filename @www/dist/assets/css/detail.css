@@ -1,3 +1,41 @@
+.libox {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  opacity: 0;
+  z-index: -999; }
+  .libox.active {
+    opacity: 1;
+    z-index: 9999; }
+  .libox-container {
+    width: 100vw;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .libox-close {
+    position: absolute;
+    right: 50px;
+    top: 50px; }
+  .libox-wrap {
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto; }
+
 .detail main {
   padding-bottom: 130px;
   overflow: hidden; }
@@ -28,6 +66,19 @@
   .detail-banner > div {
     position: relative;
     height: 250px; }
+    .detail-banner > div a {
+      position: absolute;
+      left: 0;
+      bottom: 60px;
+      z-index: 1;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .detail-banner > div a i {
+        font-size: 20px; }
     .detail-banner > div h6 {
       padding-bottom: 0;
       position: absolute;
@@ -37,6 +88,8 @@
   @media only screen and (max-width: 1200px) {
     .detail-banner > div {
       height: 200px; }
+      .detail-banner > div a {
+        bottom: 50px; }
       .detail-banner > div h6 {
         bottom: -20px; } }
   @media only screen and (max-width: 767px) {
@@ -70,6 +123,16 @@
       max-width: 500px;
       width: 100%;
       float: right; }
+    .detail-content article.photo-right .photo {
+      margin: 0 0 40px 40px;
+      max-width: 500px;
+      width: 100%;
+      float: right; }
+    .detail-content article.photo-left .photo {
+      margin: 0 40px 40px 0px;
+      max-width: 500px;
+      width: 100%;
+      float: left; }
     .detail-content article.row-two {
       padding-top: 50px;
       display: -webkit-box;
@@ -126,6 +189,8 @@
       .detail-content .photo-column > div .photo {
         margin: 0 0 20px 0;
         max-width: none; }
+  .detail-content .open-photo {
+    cursor: pointer; }
   @media only screen and (max-width: 1200px) {
     .detail-content {
       padding-top: 80px; }
@@ -135,6 +200,12 @@
         padding-top: 30px; }
         .detail-content article .photo {
           margin-left: 20px;
+          max-width: 400px; }
+        .detail-content article.photo-right {
+          margin-left: 20px;
+          max-width: 400px; }
+        .detail-content article.photo-left {
+          margin-right: 20px;
           max-width: 400px; }
         .detail-content article.row-two {
           padding-top: 30px;

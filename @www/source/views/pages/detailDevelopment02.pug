@@ -1,0 +1,134 @@
+-
+  var info = [
+    {
+      photo: '../../uploads/news/01.jpg',
+      date: '2024年7月11日',
+      title: '擴增實境（AR）技術',
+      desc: '啟勝管理服務有限公司（啟勝）重視員工身心健康，積極推動職場健康文化，讓員工能保持工作與生活平衡。憑藉出色的人才管理策略，啟勝成功於JobsDB舉辦的「The Hong Kong HR Awards 2023/24」中脫穎而出，獲頒發「最受歡迎僱主 - 物業管理」獎項。獎項一直被公認為香港頂尖的人力資源盛事之一，旨在表彰個人和機構在人力資源領域的卓越成就。評審由各行業的人力資源總監和領袖組成，部分更經由公眾投票參與，評審結果得到各界廣泛認受。',
+      link: './detailService01.html'},
+    {
+      photo: '../../uploads/news/02-1.jpg',
+      date: '2024年6月30日',
+      title: '智能讀表系統',
+      desc: '啟勝管理服務有限公司（啟勝）除積極為客戶創造更美好的生活環境外，亦非常關顧員工的身心靈健康，致力營造一個健康及安全的工作環境。最近，啟勝旗下管理的上水廣場便成功勇奪由香港吸煙與健康委員會舉辦的「香港無煙領先企業大獎2023」金獎，肯定了物業的管理團隊在推廣無煙文化，建立健康工作間的貢獻，為團隊帶來極大鼓舞。同時，啟勝旗下管理的四個物業，包括新城市廣場、絲寶國際大廈、荔欣苑及鯉安苑，亦成功得到評審認可，在頒獎典禮上獲得優異獎，以表揚團隊在推廣無煙文化的努力。',
+      link: './detailService02.html'},
+    {
+      photo: '../../uploads/news/03.jpg',
+      date: '2024年6月28日',
+      title: '建築訊息模型（BIM）',
+      desc: '啟勝管理服務有限公司（啟勝）致力探索創新科技，為旗下管理物業引入創新科技解決方案，優化物業管理工作。最近，啟勝更榮獲由香港房地產科技協會首屆舉辦的「PropTech Excellence Awards 2024」頒發「年度最佳房地產科技獎項 - 物業管理（企業鑽石獎）」，以表揚啟勝推動物業管理科技的傑出表現。',
+      link: './detailService03.html'},
+    {
+      photo: '../../uploads/news/04.jpg',
+      date: '2024年6月27日',
+      title: '數碼分身（Digital Twin）',
+      desc: '今年，啟勝在香港零售管理協會舉辦、有零售業「奧斯卡」之稱的「傑出服務獎2023」中，共榮獲十六個獎項，當中更勇奪三項金獎，成績驕人。物業獎項方面，啟勝旗下管理的創紀之城第一、二、三及六期在「傑出服務策劃大獎」中憑出色的表現榮獲金獎，而形點今年再下一城勇奪銀獎，新世紀廣場則獲得優秀獎。另外，有七個物業奪得「傑出旗艦服務品牌」，其中五個物業更第三年蟬聯該獎項，力證啟勝致力維持專業及卓越的服務標準。',
+      link: './detailService04.html'},
+    {
+      photo: '../../uploads/news/05-1.jpg',
+      date: '2024年6月18日',
+      title: '物聯網（IoT）照明裝置控制平台',
+      desc: '啟勝管理服務有限公司（啟勝）致力引入創新科技，以提升旗下各物業的可持續發展表現，為香港打造綠色未來。啟勝旗下管理的環球貿易廣場（ICC），榮獲英國屋宇裝備工程師學會（香港分會）頒發「英國屋宇裝備工程師學會大獎 2023」之「年度項目大獎 （商業/工業建築類別）」中的大獎，以肯定ICC於效率、表現和建築環境中的卓越成就，並在屋宇裝備工程中利用有效和可持續的解決方案，為智慧城市作出貢獻。',
+      link: './detailService05.html'},
+    
+  ]
+
+
+doctype html
+html(lang="zh-Hant-HK")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../assets/css/service.css")
+
+  body.service(data-page="service" data-lang="tc")
+    .main-wrapper
+      // 導覽列
+      include ../layouts/_navbar.pug
+      // 主要內容
+      main
+        // 獎項及成就
+        section.section-story.de-detail.common-width.center.waypoint
+          h6.section-title 積極創新
+          p 啟勝在業界內成就卓越，歷年來獲獎無數。<br>憑藉多年專業的服務經驗，我們的團隊用心、創新，策動超越所想的服務，<br>開拓非一般視野，為客戶創造長遠價值，打造理想生活環境。
+        // 篩選排序
+        .dropdown.common-width
+          .d-flex
+            .form-select.type-fullbox.mr-1
+              .select-head
+                p.option 
+                  span 年份
+                i.icon-keyboard_arrow_down
+              .select-content
+                ul.scrollbar-inner
+                  li 2024
+                  li 2023
+                  li 2022
+                  li 2021
+                  li 2020
+                  li 2019
+                  li 2018
+            .form-select.type-fullbox
+              .select-head
+                p.option 
+                  span 月份
+                i.icon-keyboard_arrow_down
+              .select-content
+                ul.scrollbar-inner
+                  li 1
+                  li 2
+                  li 3
+                  li 4
+                  li 5
+                  li 6
+                  li 7
+                  li 8
+                  li 9
+                  li 10
+                  li 11
+                  li 12
+            .btn
+              .btn-more.border
+                span 前往
+        section.section-content
+          .container-fluid.common-width
+            .row.info-block-wrap
+              each val in info
+                .col-12.col-md-6.col-xl-4.mb-4
+                  .info-block.waypoint
+                    .photo
+                      .photo-box
+                        img.b-lazy(src="../../assets/img/blazy.gif" data-src= val.photo, alt="")
+                    .text
+                      span.date= val.date
+                      //- // 標題超過兩行出現 ...
+                      h2= val.title
+                      //- // 敘述超過兩行出現 ...
+                      //- p !{val.desc}
+                      a.btn-more(href= val.link target="_blank") 
+                        span 了解更多
+                        .circle-right.main
+                          div
+            // 載入更多按鈕
+            // 後端callback: _service.backendCallback();
+            .btn.waypoint
+              a.btn-more.border(href="javascript:;")
+                span 載入更多
+
+      // breadcrumb
+      .breadcrumb
+        ul.common-width
+          li
+            a(href="./index.html")
+              span 主頁
+          li 
+            a(href="./development.html")
+              span 可持續發展
+          li 
+            span 積極創新
+      // footer
+      include ../layouts/_footer.pug
+  //引入的script
+  include ../layouts/_script.pug

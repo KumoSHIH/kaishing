@@ -311,10 +311,12 @@ let _header = {
     if($(window).outerWidth() > 1200) {
       $('.hd').removeClass('mobile').addClass('desktop');
       _header.showMenuBg();
+      $(".hd.mobile .hd-menu li.hasBg").removeClass("openItems");
     }
     else{
       $('.hd').removeClass('desktop').addClass('mobile');
       _header.mobileClick();
+      _header.mobileOpenItems();
     }
   },
   // hover出現背景色
@@ -409,6 +411,21 @@ let _header = {
       }
     });
   },
+  // 手機板點擊標題展開子項目
+  mobileOpenItems() {
+    $('.hd.mobile .hd-menu li.hasBg > a').attr('href', 'javascript:;').addClass('openItems');
+    
+    $(".hd.mobile .hd-menu li.hasBg .openItems").on('click',function(){
+      if(!$(this).hasClass('active')) {
+        $(this).addClass('active');
+        $(".hd.mobile .hd-menu li.hasBg ul").slideDown(500);
+      }
+      else {
+        $(this).removeClass("active");
+        $(".hd.mobile .hd-menu li.hasBg ul").slideUp(500);
+      }
+    });
+  },
   all() {
     _header.screen();
     _common.resizeFun(_header.screen);
@@ -423,13 +440,14 @@ let _header = {
 // footer
 let _footer = {
   hashTagSlideTo() {
-    let btn = $(".footer-relative ul li");
+    let btn = $(".footer-relative a");
+
     btn.on('click',function(){
       const HashTag = window.location.hash;
       const matchTag = HashTag.match(/#slider-(\d+)/);
       // console.log(matchTag);
+      const index = $(this).attr('data-index');
       if (matchTag) {
-        const index = $(this).attr('data-index');
         commonSwiper.slideTo(index, 800, true);
         _property.scrollPos(".section-swiper");
         $(".swiper-pagination-bullet:nth-child(" + index + ")").addClass(
@@ -498,7 +516,7 @@ let _news = {
 // service
 let _service = {
   openList() {
-    let btn = $('.service-awards .cir-btn');
+    let btn = $(".service-awards [data-btn-awards]");
     btn.on('click',function(){
       if(!$(this).hasClass('active')) {
         $(this).addClass('active');
@@ -519,7 +537,7 @@ let _service = {
 let _property = {
   showText() {
     let btn = $(".property-text li");
-    btn.on("mouseenter", function () {
+    btn.on("click", function () {
       let index = $(this).attr("data-target");
       if (!$(this).hasClass("active")) {
         $(this).siblings().removeClass("active");
@@ -528,12 +546,23 @@ let _property = {
         $(`[data-target-content="${index}"]`).fadeIn(200);
         $(".property-swiper").addClass("active");
       }
-      // else{
-      //   $(this).removeClass("active");
-      //   $(`[data-target-content="${index}"]`)
-      //     .slideUp(400);
-      //   $(".property-swiper").removeClass("active");
-      // }
+      else{
+        $(this).removeClass("active");
+        $(`[data-target-content="${index}"]`)
+          .slideUp(400);
+        $(".property-swiper").removeClass("active");
+      }
+    });
+  },
+  hideText() {
+    $('body').on('click',function() {
+      $(".property-text li").removeClass("active");
+      $('[data-target-content]').slideUp(400);
+      $(".property-swiper").removeClass("active");
+    });
+
+    $(".property-text").on('click',function(e){
+      e.stopPropagation()
     });
   },
   resize() {
@@ -578,20 +607,6 @@ let _property = {
     },500)
     
   }
-  // <script type="text/javascript">
-  //   $(function () {
-  //     const HashTag = window.location.hash;
-  //     const matchTag = HashTag.match(/#slider-(\d+)/);
-  //     if (matchTag) {
-  //       const number = parseInt(matchTag[0]);
-  //       const index = parseInt(matchTag[1]);
-  //       commonSwiper.slideTo(number,800,true);
-  //       // $('.hd').addClass('down');
-  //       _property.scrollPos(".section-swiper");
-  //       $('.swiper-pagination-bullet:nth-child('+ index +')').addClass('swiper-pagination-bullet-active')
-  //       }
-  //     });
-  // </script>
 };
 
 let _development = {
@@ -760,6 +775,7 @@ let _swiper = {
       },
       loop: true,
       speed: 800,
+      spaceBetween: 20,
       hashNavigation: true,
       pagination: {
         el: ".section-swiper .swiper-pagination",
@@ -828,8 +844,80 @@ let _swiper = {
       ".property-swiper .swiper-container",
       setting
     );
+  },
+  footer() {
+    const setting = {
+      on: {
+        init() {
+          const swiper = $(this)[0];
+          getSlidesCount(swiper);
+        },
+      },
+      loop: true,
+      speed: 800,
+      slidesPerView: 6,
+      spaceBetween: 10,
+      hashNavigation: true,
+      navigation: {
+        nextEl: ".footer-swiper .swiper-button-next",
+        prevEl: ".footer-swiper .swiper-button-prev",
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 3,
+        },
+        1200: {
+          slidesPerView: 4,
+        },
+        1400: {
+          slidesPerView: 5,
+        },
+        1500: {
+          slidesPerView: 6,
+        },
+      },
+    };
+    const footerSwiper = new Swiper(
+      ".footer-swiper .swiper-container",
+      setting
+    );
   }
 };
+
+// libox
+let _libox = {
+  open() {
+    let open = $('.open-photo');
+    open.on('click',function(){
+      let photo = $(this).attr('src');
+      if(!$('.libox').hasClass('active')) {
+        $('.libox').addClass('active')
+        $('.libox .libox-wrap img').attr('src', photo)
+      }
+    })
+  },
+  close() {
+    let close = $('.libox-close');
+    close.on('click',function(){
+      $('.libox').removeClass('active');
+      $('.libox .libox-wrap img').attr('src', '')
+    });
+    $('.libox-wrap').on('click',function(e){
+      e.stopPropagation();
+    })
+    $('.libox').on('click',function(){
+      $('.libox').removeClass('active');
+      $('.libox .libox-wrap img').attr('src', '')
+    })
+  },
+  all() {
+    _libox.open();
+    _libox.close();
+  }
+}
 
 //頁面讀取完執行
 const readyFunction = {
@@ -867,6 +955,7 @@ const readyFunction = {
     _header.all();
     // footer
     _footer.hashTagSlideTo();
+    // _swiper.footer();
     //Blazy
     _common.blazyInit();
     // waypoint
@@ -898,7 +987,7 @@ const readyFunction = {
     _swiper.common();
   },
   development() {
-    _development.openText();
+    // _development.openText();
   },
   privacy() {},
   disclaimer() {},
@@ -925,7 +1014,9 @@ const readyFunction = {
     _property.slideTo(3, 800, true);
     $(".hd").addClass("down");
   },
-  detail() {},
+  detail() {
+    _libox.all();
+  },
   ftPage() {},
   videos() {
     $("[data-video]").video();
