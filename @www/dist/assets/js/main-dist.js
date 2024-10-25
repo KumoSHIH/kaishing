@@ -4,6 +4,7 @@
 var articleSwiper = void 0;
 var propertySwiper = void 0;
 var commonSwiper = void 0;
+var propertyTextSwiper = void 0;
 
 var _common = {
   //鎖住卷軸
@@ -540,8 +541,8 @@ var _service = {
 
 var _property = {
   showText: function showText() {
-    var btn = $(".property-text li");
-    btn.on("click", function () {
+    var btn = $(".property-text li.desktop");
+    btn.off().on("click", function () {
       var index = $(this).attr("data-target");
       if (!$(this).hasClass("active")) {
         $(this).siblings().removeClass("active");
@@ -551,7 +552,7 @@ var _property = {
         $(".property-swiper").addClass("active");
       } else {
         $(this).removeClass("active");
-        $('[data-target-content="' + index + '"]').slideUp(400);
+        $('[data-target-content]').slideUp(400);
         $(".property-swiper").removeClass("active");
       }
     });
@@ -568,14 +569,22 @@ var _property = {
     });
   },
   resize: function resize() {
+    var btn = $(".property-text li");
     if ($(window).outerWidth() <= 1300) {
-      $(".property-swiper .swiper-container").removeClass("swiper-no-swiping");
+      // $(".property-swiper > .swiper-container").removeClass("swiper-no-swiping");
       _swiper.property();
+      _swiper.propertyText();
+      btn.removeClass("desktop");
     } else {
-      $(".property-swiper .swiper-container").addClass("swiper-no-swiping");
+      // $(".property-swiper > .swiper-container").addClass("swiper-no-swiping");
       if (propertySwiper !== undefined) {
         propertySwiper.destroy();
       }
+      if (propertyTextSwiper !== undefined) {
+        propertyTextSwiper.destroy();
+      }
+      btn.addClass("desktop");
+      _property.showText();
     }
   },
   slideTo: function slideTo(index) {
@@ -599,7 +608,7 @@ var _property = {
         var index = parseInt(matchTag[1]);
         commonSwiper.slideTo(number, 800, true);
         _property.scrollPos(".section-swiper");
-        $(".swiper-pagination-bullet:nth-child(" + index + ")").addClass("swiper-pagination-bullet-active");
+        $(".section-swiper .swiper-pagination-bullet:nth-child(" + index + ")").addClass("swiper-pagination-bullet-active");
       }
     }, 500);
   }
@@ -798,18 +807,67 @@ var _swiper = {
   property: function property() {
     var setting = {
       on: {
-        init: function init() {}
+        init: function init() {},
+        slideChangeTransitionEnd: function slideChangeTransitionEnd() {
+          var swiper = $(this)[0];
+          // console.log(swiper.realIndex);
+          if (propertyTextSwiper !== undefined) {
+            propertyTextSwiper.slideTo(swiper.realIndex, 500, true);
+          }
+        }
       },
-      slidesPerView: 1.25,
-      centeredSlides: true,
-      loop: true,
-      speed: 800,
+      // loop: true,
+      speed: 500,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true
+    };
+    propertySwiper = new Swiper(".property-swiper > .swiper-container", setting);
+  },
+  property2: function property2() {
+    function setting(ele) {
+      var settings = {
+        on: {
+          init: function init() {
+            var swiper = $(this)[0];
+            getSlidesCount(swiper);
+          }
+        },
+        loop: true,
+        speed: 800,
+        navigation: {
+          nextEl: ele + ' .swiper-button-next',
+          prevEl: ele + ' .swiper-button-prev'
+        },
+        pagination: {
+          el: ele + ' .swiper-pagination',
+          clickable: true
+        }
+      };
+      return settings;
+    }
+
+    var photoSwiper1 = new Swiper(".photo-swiper1 .swiper-container", setting(".photo-swiper1"));
+    var photoSwiper2 = new Swiper(".photo-swiper2 .swiper-container", setting(".photo-swiper2"));
+    var photoSwiper3 = new Swiper(".photo-swiper3 .swiper-container", setting(".photo-swiper3"));
+    var photoSwiper4 = new Swiper(".photo-swiper4 .swiper-container", setting(".photo-swiper4"));
+    var photoSwiper5 = new Swiper(".photo-swiper5 .swiper-container", setting(".photo-swiper5"));
+    var photoSwiper6 = new Swiper(".photo-swiper6 .swiper-container", setting(".photo-swiper6"));
+  },
+  propertyText: function propertyText() {
+    var setting = {
+      // loop: true,
+      speed: 500,
+      slidesPerView: 1,
+      effect: "fade",
       navigation: {
-        nextEl: ".property-swiper .swiper-button-next",
-        prevEl: ".property-swiper .swiper-button-prev"
+        nextEl: ".property-text-swiper .swiper-button-next",
+        prevEl: ".property-text-swiper .swiper-button-prev"
+      },
+      thumbs: {
+        swiper: propertySwiper
       }
     };
-    propertySwiper = new Swiper(".property-swiper .swiper-container", setting);
+    propertyTextSwiper = new Swiper(".property-text-swiper .swiper-container", setting);
   },
   footer: function footer() {
     var setting = {
@@ -961,20 +1019,11 @@ var readyFunction = {
   },
   property: function property() {
     _property.resize();
-    _property.showText();
+    // _property.showText();
     _property.hashTagSlideTo();
-    _swiper.property();
+    _swiper.property2();
     _swiper.common();
     _common.resizeFun(_property.resize);
-  },
-  propertyDemo: function propertyDemo() {
-    _property.resize();
-    _property.showText();
-    _swiper.property();
-    _swiper.common();
-    _common.resizeFun(_property.resize);
-    _property.slideTo(3, 800, true);
-    $(".hd").addClass("down");
   },
   detail: function detail() {
     _libox.all();

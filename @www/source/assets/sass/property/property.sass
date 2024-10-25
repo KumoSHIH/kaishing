@@ -18,12 +18,17 @@
       width: 100%
       margin: 0 auto
       position: relative
+      +rwdmax(1300)
+        display: flex
+        flex-direction: column-reverse
     .property-text
       position: absolute
       left: 0
       top: 0
       width: 100%
       height: 100%
+      +rwdmax(1300)
+        position: static
       ul 
         position: relative
         height: 490px
@@ -32,6 +37,9 @@
         margin: 0 auto
         +rwdmax(1400)
           height: 400px
+        +rwdmax(1300)
+          height:  auto
+          
       li
         display: flex
         align-items: center
@@ -43,7 +51,7 @@
           align-items: center
           color: #dcceb3
           transition: .3s ease-in-out
-          h6 
+          h6
             font-size: px(35)
             font-weight: bold
             letter-spacing: 3.5px
@@ -153,7 +161,50 @@
           &:nth-child(6)
             right: -85px
         +rwdmax(1300)
-          display: none
+          position: static
+          padding: 10px 0
+          // background-color: #dcceb3
+          &.active,
+          &:hover
+            .tit
+              color: #fff
+          .tit
+            color: #fff
+            i 
+              display: none
+          .icon
+            display: none
+    
+    .property-text-swiper
+      .swiper-container
+        overflow: unset
+        position: relative
+      .swiper-wrapper
+        // background-color: #dcceb3
+      .swiper-slide
+        width: auto
+        height: auto
+        +rwdmax(1300)
+          background-color: #dcceb3
+      .swiper-button-prev,
+      .swiper-button-next
+        top: 0
+        margin-top: 0
+        &::after
+          display: block
+          padding-top: 6px
+          font-family: 'icomoon'
+          color: #fff
+          font-size: px(22)
+      .swiper-button-prev
+        left: -5px
+        &::after
+          content: '\e903'
+          transform: translateX(5px)
+      .swiper-button-next
+        right: -5px
+        &::after
+          content: '\e902'
     .roll-box
       position: relative
       height: 490px
@@ -190,7 +241,12 @@
           max-width: 710px
           margin-top: 95px
       +rwdmax(1300)
-        display: none
+        height: 300px
+        .roll
+          display: none
+        .roll-photo
+          margin-top: 0
+      
   .property-swiper
     max-width: 1155px
     width: 100%
@@ -202,16 +258,6 @@
       background-color: transparent
     .swiper-slide
       padding: 0 10px
-      display: none
-      +rwdmax(1300)
-        display: flex
-        .swiper-button-prev,
-        .swiper-button-next
-          display: none
-        &.swiper-slide-active
-          .swiper-button-prev,
-          .swiper-button-next
-            display: flex
     .slide-box
       padding: 24px 28px
       width: 100%
@@ -219,9 +265,10 @@
       align-items: center
       justify-content: space-between
       .photo
-        max-width: 500px
         width: 100%
-        flex-shrink: 0
+        // max-width: 500px
+        // width: 100%
+        // flex-shrink: 0
         &-wrap 
           position: relative
           padding-bottom: 56%
@@ -243,8 +290,8 @@
           line-height: px(25)
           font-size: px(41)
         p
-          line-height: px(35)
-          font-size: px(14)
+          line-height: px(30)
+          font-size: px(16)
       +rwdmax(1300)
         flex-direction: column
         max-width: 600px
@@ -281,27 +328,51 @@
             line-height: px(30)
             font-size: px(16)
 
+    
+  .photo-swiper
+    padding-bottom: 30px
+    max-width: 500px
+    width: 100%
+    flex-shrink: 0
+    position: relative
+    .swiper-slide
+      flex-direction: column
+      align-items: flex-start
+      p
+        margin-top: 10px
+        text-align: left
+        line-height: px(22)
+        font-size: px(14)
     .swiper-button-prev,
     .swiper-button-next
-      display: none
+      top: 45%
       width: 35px
       height: 35px
       border-radius: 50%
       background-color: #fff
       &::after
+        display: block
+        padding-top: 6px
         font-family: 'icomoon'
         color: $second
         font-size: px(22)
+      +rwdmax(1300)
+        display: none !important
     .swiper-button-prev
-      left: -26px
+      left: -5px
       &::after
         content: '\e903'
         transform: translateX(5px)
     .swiper-button-next
-      right: -26px
+      right: -5px
       &::after
         content: '\e902'
-  
+    .swiper-pagination
+      width: 100%
+      bottom: 0
+      left: 50%
+      transform: translateX(-50%)
+
   .section-swiper
     position: relative
     .swiper-common

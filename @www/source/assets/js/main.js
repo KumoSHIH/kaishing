@@ -2,6 +2,7 @@
 let articleSwiper;
 let propertySwiper;
 let commonSwiper;
+let propertyTextSwiper;
 
 let _common = {
   //鎖住卷軸
@@ -536,8 +537,8 @@ let _service = {
 
 let _property = {
   showText() {
-    let btn = $(".property-text li");
-    btn.on("click", function () {
+    let btn = $(".property-text li.desktop");
+    btn.off().on("click", function () {
       let index = $(this).attr("data-target");
       if (!$(this).hasClass("active")) {
         $(this).siblings().removeClass("active");
@@ -548,7 +549,7 @@ let _property = {
       }
       else{
         $(this).removeClass("active");
-        $(`[data-target-content="${index}"]`)
+        $(`[data-target-content]`)
           .slideUp(400);
         $(".property-swiper").removeClass("active");
       }
@@ -566,14 +567,22 @@ let _property = {
     });
   },
   resize() {
+    let btn = $(".property-text li");
     if ($(window).outerWidth() <= 1300) {
-      $(".property-swiper .swiper-container").removeClass("swiper-no-swiping");
+      // $(".property-swiper > .swiper-container").removeClass("swiper-no-swiping");
       _swiper.property();
+      _swiper.propertyText();
+      btn.removeClass("desktop");
     } else {
-      $(".property-swiper .swiper-container").addClass("swiper-no-swiping");
+      // $(".property-swiper > .swiper-container").addClass("swiper-no-swiping");
       if (propertySwiper !== undefined) {
         propertySwiper.destroy();
       }
+      if(propertyTextSwiper !== undefined) {
+        propertyTextSwiper.destroy();
+      }
+      btn.addClass("desktop");
+      _property.showText();
     }
   },
   slideTo(index) {
@@ -600,12 +609,11 @@ let _property = {
         const index = parseInt(matchTag[1]);
         commonSwiper.slideTo(number, 800, true);
         _property.scrollPos(".section-swiper");
-        $(".swiper-pagination-bullet:nth-child(" + index + ")").addClass(
-          "swiper-pagination-bullet-active"
-        );
+        $(
+          ".section-swiper .swiper-pagination-bullet:nth-child(" + index + ")"
+        ).addClass("swiper-pagination-bullet-active");
       }
     },500)
-    
   }
 };
 
@@ -787,10 +795,7 @@ let _swiper = {
       },
     };
 
-    commonSwiper = new Swiper(
-      ".swiper-common .swiper-container",
-      setting
-    );
+    commonSwiper = new Swiper(".swiper-common .swiper-container", setting);
   },
   service() {
     const setting = {
@@ -827,21 +832,86 @@ let _swiper = {
   property() {
     const setting = {
       on: {
-        init(){
-          
-        }
+        init() {},
+        slideChangeTransitionEnd() {
+          const swiper = $(this)[0];
+          // console.log(swiper.realIndex);
+          if (propertyTextSwiper !== undefined) {
+            propertyTextSwiper.slideTo(swiper.realIndex, 500, true);
+          }
+        },
       },
-      slidesPerView: 1.25,
-      centeredSlides: true,
-      loop: true,
-      speed: 800,
+      // loop: true,
+      speed: 500,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+    };
+    propertySwiper = new Swiper(".property-swiper > .swiper-container", setting);
+  },
+  property2() {
+    function setting(ele) {
+      let settings = {
+        on: {
+          init() {
+            const swiper = $(this)[0];
+            getSlidesCount(swiper);
+          },
+        },
+        loop: true,
+        speed: 800,
+        navigation: {
+          nextEl: `${ele} .swiper-button-next`,
+          prevEl: `${ele} .swiper-button-prev`,
+        },
+        pagination: {
+          el: `${ele} .swiper-pagination`,
+          clickable: true,
+        },
+      };
+      return settings;
+    }
+
+    let photoSwiper1 = new Swiper(
+      ".photo-swiper1 .swiper-container",
+      setting(".photo-swiper1")
+    );
+    let photoSwiper2 = new Swiper(
+      ".photo-swiper2 .swiper-container",
+      setting(".photo-swiper2")
+    );
+    let photoSwiper3 = new Swiper(
+      ".photo-swiper3 .swiper-container",
+      setting(".photo-swiper3")
+    );
+    let photoSwiper4 = new Swiper(
+      ".photo-swiper4 .swiper-container",
+      setting(".photo-swiper4")
+    );
+    let photoSwiper5 = new Swiper(
+      ".photo-swiper5 .swiper-container",
+      setting(".photo-swiper5")
+    );
+    let photoSwiper6 = new Swiper(
+      ".photo-swiper6 .swiper-container",
+      setting(".photo-swiper6")
+    );
+  },
+  propertyText() {
+    const setting = {
+      // loop: true,
+      speed: 500,
+      slidesPerView: 1,
+      effect: "fade",
       navigation: {
-        nextEl: ".property-swiper .swiper-button-next",
-        prevEl: ".property-swiper .swiper-button-prev",
+        nextEl: ".property-text-swiper .swiper-button-next",
+        prevEl: ".property-text-swiper .swiper-button-prev",
+      },
+      thumbs: {
+        swiper: propertySwiper,
       },
     };
-    propertySwiper = new Swiper(
-      ".property-swiper .swiper-container",
+    propertyTextSwiper = new Swiper(
+      ".property-text-swiper .swiper-container",
       setting
     );
   },
@@ -884,7 +954,7 @@ let _swiper = {
       ".footer-swiper .swiper-container",
       setting
     );
-  }
+  },
 };
 
 // libox
@@ -999,20 +1069,11 @@ const readyFunction = {
   },
   property() {
     _property.resize();
-    _property.showText();
+    // _property.showText();
     _property.hashTagSlideTo();
-    _swiper.property();
+    _swiper.property2();
     _swiper.common();
     _common.resizeFun(_property.resize);
-  },
-  propertyDemo() {
-    _property.resize();
-    _property.showText();
-    _swiper.property();
-    _swiper.common();
-    _common.resizeFun(_property.resize);
-    _property.slideTo(3, 800, true);
-    $(".hd").addClass("down");
   },
   detail() {
     _libox.all();
