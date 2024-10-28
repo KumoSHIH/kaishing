@@ -124,29 +124,29 @@
 
   var certified = [
     {
-      photo: '../../uploads/service/i01.jpg',
+      photo: '../../uploads/service/ISO9001.png',
       number: 'ISO 9001',
       text: '品質管理體系認證'},
     {
-      photo: '../../uploads/service/i02.jpg',
-      number: 'ISO 14001: 2018',
+      photo: '../../uploads/service/ISO14001.png',
+      number: 'ISO 14001',
       text: '環境管理認證'},
     {
-      photo: '../../uploads/service/i03.jpg',
-      number: 'ISO 41001: 2018',
-      text: '設施管理 - 管理體系認證'},
-    {
-      photo: '../../uploads/service/i04.jpg',
+      photo: '../../uploads/service/ISO45001.png',
       number: 'ISO 45001',
       text: '職業安全健康管理體系認證'},
     {
-      photo: '../../uploads/service/i02.jpg',
+      photo: '../../uploads/service/ISO50001.png',
       number: 'ISO 50001',
       text: '能源管理系統認證'},
     {
-      photo: '../../uploads/service/i02.jpg',
-      number: 'ISO 22301: 2012 ',
-      text: '社會安全 ─ 營運持續管理體系認證'},
+      photo: '../../uploads/service/ISO22301.png',
+      number: 'ISO 22301',
+      text: '社會安全 – 營運持續管理體系認證'},
+    {
+      photo: '../../uploads/service/ISO41001.png',
+      number: 'ISO 41001',
+      text: '設施管理 – 管理體系認證'},
   ]
 
 
@@ -246,7 +246,7 @@ html(lang="zh-Hant-HK")
         // 業界獎項
         section.service-awards.section-story.common-width.center.waypoint
           h6.section-title 業界獎項
-          p 追求卓越<br>啟勝持續追求革新，為物業管理服務引入嶄新科技，及改進員工的服務質素，<br>以迎合不斷提升的服務需求，打造卓越的服務體驗。
+          //- p 追求卓越<br>啟勝持續追求革新，為物業管理服務引入嶄新科技，及改進員工的服務質素，<br>以迎合不斷提升的服務需求，打造卓越的服務體驗。
 
           .container-fluid
             .row
@@ -255,24 +255,25 @@ html(lang="zh-Hant-HK")
                   .top-block.d-flex
                     // 圖片建議尺寸 175X175
                     .photo
-                      img(src= val.photo, alt="")
+                      .photo-wrap
+                        img(src= val.photo, alt="")
                     .main
-                      div 
-                        //- span.fz-14 獎項
-                        h6.fz-18.font-bold= val.name
-                      div 
-                        span.fz-14 頒發機構
-                        h6.fz-14.font-bold= val.location
-                  //- .cir-btn 
-                  //-   i.icon-keyboard_arrow_down
-                  .btn(data-btn-awards)
-                    a.btn-more.border(href="javascript:;")
-                      span 了解更多
-                  .bottom-block
-                    ul
-                      each item in val.list
-                        li !{item}
-
+                      h6.fz-18.font-bold.pb-3= val.name
+                      span.fz-14 頒發機構
+                      h6.pt-2= val.location
+                  a.btn-more.pt-4(href="javascript:;")
+                    span 了解更多
+                    .circle-right.main
+                      div
+                  //- .bottom-block
+                  //-   ul
+                  //-     each item in val.list
+                  //-       li !{item}
+          
+          // 載入更多按鈕
+          .btn.waypoint.mt-5
+            a.btn-more.border(href="javascript:;")
+              span 載入更多
         // 專業及認證
         section.service-certified.waypoint
           h6.section-title 專業及認證

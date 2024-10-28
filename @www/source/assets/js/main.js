@@ -955,6 +955,33 @@ let _swiper = {
       setting
     );
   },
+  detail() {
+    const setting = {
+      loop: true,
+      speed: 500,
+      slidesPerView: 1.5,
+      centeredSlides: true,
+      spaceBetween: 20,
+      breakpoints: {
+        320: {
+          slidesPerView: 1.35,
+        },
+        767: {
+          slidesPerView: 1.5,
+        },
+      },
+      pagination: {
+        el: ".detail-swiper .swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".detail-swiper .swiper-button-next",
+        prevEl: ".detail-swiper .swiper-button-prev",
+      },
+    };
+
+    let detailSwiper = new Swiper(".detail-swiper  .swiper-container", setting);
+  }
 };
 
 // libox
@@ -1064,7 +1091,7 @@ const readyFunction = {
   story() {},
   service() {
     _form.formSelect();
-    _service.openList();
+    // _service.openList();
     _swiper.service();
   },
   property() {
@@ -1076,7 +1103,10 @@ const readyFunction = {
     _common.resizeFun(_property.resize);
   },
   detail() {
-    _libox.all();
+    // _libox.all();
+    if($('.detail-swiper').length > 0) {
+      _swiper.detail();
+    }
   },
   ftPage() {},
   videos() {

@@ -2,6 +2,9 @@
 @import ../common/base/_mixin
 
 .property
+  .section-title
+    +rwdmax(767)
+      text-align: left
   main 
     padding-bottom: 100px
     overflow: hidden
@@ -21,6 +24,8 @@
       +rwdmax(1300)
         display: flex
         flex-direction: column-reverse
+      +rwdmax(900)
+        max-width: 500px
     .property-text
       position: absolute
       left: 0
@@ -29,6 +34,10 @@
       height: 100%
       +rwdmax(1300)
         position: static
+        max-width: 600px
+        margin: 0 auto
+      
+
       ul 
         position: relative
         height: 490px
@@ -185,7 +194,8 @@
         width: auto
         height: auto
         +rwdmax(1300)
-          background-color: #dcceb3
+          // background-color: #dcceb3
+          background-color: $second
       .swiper-button-prev,
       .swiper-button-next
         top: 0
@@ -195,14 +205,14 @@
           padding-top: 6px
           font-family: 'icomoon'
           color: #fff
-          font-size: px(22)
+          font-size: px(26)
       .swiper-button-prev
-        left: -5px
+        left: 5px
         &::after
           content: '\e903'
           transform: translateX(5px)
       .swiper-button-next
-        right: -5px
+        right: 5px
         &::after
           content: '\e902'
     .roll-box
@@ -241,11 +251,20 @@
           max-width: 710px
           margin-top: 95px
       +rwdmax(1300)
-        height: 300px
+        height: 220px
         .roll
           display: none
         .roll-photo
           margin-top: 0
+          max-width: 500px
+      +rwdmax(900)
+        height: 180px
+        .roll-photo
+          max-width: 400px
+      +rwdmax(767)
+        height: 150px
+        .roll-photo
+          max-width: 350px
       
   .property-swiper
     max-width: 1155px
@@ -258,6 +277,8 @@
       background-color: transparent
     .swiper-slide
       padding: 0 10px
+      +rwdmax(1300)
+        padding: 0
     .slide-box
       padding: 24px 28px
       width: 100%
@@ -296,14 +317,11 @@
         flex-direction: column
         max-width: 600px
         padding: 0
+        background-color: #faf7f1
+        padding: 20px 20px 40px
         .photo
           position: relative
           max-width: none
-          &-wrap
-            padding-bottom: 0
-          img
-            position: static
-            transform: translate(0,0)
           h6
             display: block
             background-color: rgba($second,.7)
@@ -318,16 +336,17 @@
             padding: 7px 15px
             letter-spacing: 2.5px
         .text
-          padding: 20px 30px 40px
           max-width: none
           width: 100%
           background-color: #faf7f1
-          h6 
-            display: none
+          h6
+            padding-bottom: px(20)
+            font-size: px(24)
           p 
             line-height: px(30)
             font-size: px(16)
-
+      +rwdmax(900)
+        max-width: 500px
     
   .photo-swiper
     padding-bottom: 30px
@@ -335,6 +354,8 @@
     width: 100%
     flex-shrink: 0
     position: relative
+    +rwdmax(1300)
+      max-width: none
     .swiper-slide
       flex-direction: column
       align-items: flex-start
@@ -343,6 +364,10 @@
         text-align: left
         line-height: px(22)
         font-size: px(14)
+        +ellipsis(2, 22px)
+      +rwdmax(1300)
+        p 
+          margin-top: 20px
     .swiper-button-prev,
     .swiper-button-next
       top: 45%
@@ -352,7 +377,6 @@
       background-color: #fff
       &::after
         display: block
-        padding-top: 6px
         font-family: 'icomoon'
         color: $second
         font-size: px(22)
@@ -372,6 +396,12 @@
       bottom: 0
       left: 50%
       transform: translateX(-50%)
+      +rwdmax(1300)
+        bottom: 80px
+    .swiper-pagination-bullet
+      +rwdmax(767)
+        margin: 0 10px
+        
 
   .section-swiper
     position: relative

@@ -222,10 +222,12 @@ html(lang="zh-Hant-HK")
                       .swiper-container
                         .swiper-wrapper
                           each detail in val.photo
+                            // 圖片建議不要放超過7張
                             .swiper-slide
                               .photo
                                 .photo-wrap 
                                   img(src= detail.img, alt="")
+                              // 圖片敘述超過兩行，將顯示...
                               p.desc !{detail.desc}
                       .swiper-button-prev
                       .swiper-button-next
@@ -235,7 +237,6 @@ html(lang="zh-Hant-HK")
                       p !{val.text}
                     
 
-        // 背景色可設定
         section.section-swiper#section-swiper(style="background-color: #faf7f1")
           .section-wrap.common-width
             .swiper-common

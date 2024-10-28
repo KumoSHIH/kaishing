@@ -24,181 +24,269 @@
     >div
       position: relative
       height: 250px
-      a 
-        position: absolute
-        left: 0
-        bottom: 60px
-        z-index: 1
-        display: flex
-        align-items: center
-        i 
-          font-size: 20px
       h6
         padding-bottom: 0 
         position: absolute
         bottom: -30px
-        left: 0
+        left: 50%
+        transform: translateX(-50%)
         z-index: 1
     +rwdmax(1200)
       >div
         height: 200px
-        a 
-          bottom: 50px
         h6
           bottom: -20px
     +rwdmax(767)
       >div
         height: 150px
   &-content
-    padding-top: 100px
+    padding-top: 70px
+    p.date
+      padding-bottom: px(50)
+      text-align: right
+      font-weight: bold
+      font-size: px(18)
     h2
       font-weight: bold
-      color: $second
+      color: $main
       line-height: 1.3
       letter-spacing: 1.8px
-      font-size: px(26)
+      font-size: px(35)
     article
       padding-top: 50px
       width: 100%
-      box-sizing: border-box
-      &:before,&:after 
-        display: table
-        line-height: 0
-        content: ""
-      &::after
-        clear: both
+      // box-sizing: border-box
+      // &:before,&:after 
+      //   display: table
+      //   line-height: 0
+      //   content: ""
+      // &::after
+      //   clear: both
+      // .photo
+      //   margin: 0 0 40px 40px
+      //   max-width: 500px
+      //   width: 100%
+      //   float: right
+      .desc
+        max-width: 750px
+        width: 100%
+        font-weight: bold
+        padding-top: px(24)
+        color: $main
       p
         letter-spacing: 1.2px
-        line-height: 36px
-      .photo
-        margin: 0 0 40px 40px
-        max-width: 500px
-        width: 100%
-        float: right
-
+        line-height: px(36)
+        padding-top: px(50)
+        font-size: px(18)
       // 樣式
       // 文繞圖右
-      &.photo-right
-        .photo
-          margin: 0 0 40px 40px
-          max-width: 500px
-          width: 100%
-          float: right
-      // 文繞圖左
-      &.photo-left
-        .photo
-          margin: 0 40px 40px 0px
-          max-width: 500px
-          width: 100%
-          float: left
+      // &.photo-right
+      //   .photo
+      //     margin: 0 0 40px 40px
+      //     max-width: 500px
+      //     width: 100%
+      //     float: right
+      // // 文繞圖左
+      // &.photo-left
+      //   .photo
+      //     margin: 0 40px 40px 0px
+      //     max-width: 500px
+      //     width: 100%
+      //     float: left
       // 2圖
-      &.row-two
-        padding-top: 50px
-        display: flex
-        justify-content: center
-        .photo
-          width: 100%
-          float: none
-          margin: 0 10px 20px
-      .photo-column
-        float: left
-        width: 100%
-        margin: 0 40px 40px 0
-        &.right
-          float: right
-          margin: 0 0px 40px 40px
-        &.w-500
-          max-width: 500px
+      // &.row-two
+      //   padding-top: 50px
+      //   display: flex
+      //   justify-content: center
+      //   .photo
+      //     width: 100%
+      //     float: none
+      //     margin: 0 10px 20px
+      // .photo-column
+      //   float: left
+      //   width: 100%
+      //   margin: 0 40px 40px 0
+      //   &.right
+      //     float: right
+      //     margin: 0 0px 40px 40px
+      //   &.w-500
+      //     max-width: 500px
       table
-        border: solid 1px
+        // border: solid 1px
         width: 100%
-        max-width: 600px
+        max-width: 650px
         text-align: left
+        font-size: px(18)
         tr
-          border: solid 1px #333
+          // border: solid 1px #333
         th,td
           padding: 10px
+          padding-left: 0
           line-height: 1.2
-          border: solid 1px #333
+          // border: solid 1px #333
         th 
-          background-color: #f3f3f3
-    .photo-row
-      display: flex
-      .photo
-        width: 100%
-        margin-right: 20px
-        &:last-child
-          margin-right: 0
-    .photo-column
-      max-width: 400px
-      >div
-        display: flex
-        flex-direction: column
-        .photo
-          margin: 0 0 20px 0
-          max-width: none
-    .open-photo
-      cursor: pointer
+          // background-color: #f3f3f3
+    // .photo-row
+    //   display: flex
+    //   .photo
+    //     width: 100%
+    //     margin-right: 20px
+    //     &:last-child
+    //       margin-right: 0
+    // .photo-column
+    //   max-width: 400px
+    //   >div
+    //     display: flex
+    //     flex-direction: column
+    //     .photo
+    //       margin: 0 0 20px 0
+    //       max-width: none
+    // .open-photo
+    //   cursor: pointer
+    .detail-swiper
+      padding-top: px(60)
+      position: relative
+      .photo-wrap
+        position: relative
+        overflow: hidden
+        padding-bottom: 56%
+        img 
+          +posCenter
+      p.text
+        text-align: left
+        font-weight: bold
+        color: $main
+        line-height: px(24)
+        font-size: px(14)
+        padding-top: px(20)
+        letter-spacing: 0
+        opacity: 0
+        transition: .3s ease-in-out
+      .swiper-pagination
+        position: static
+        padding-top: px(50)
+      .swiper-button-prev,
+      .swiper-button-next
+        top: 38%
+        width: 55px
+        height: 55px
+        border-radius: 50%
+        background-color: #fff
+        &::after
+          display: block
+          font-family: 'icomoon'
+          color: $main
+          font-size: px(36)
+      .swiper-button-prev
+        left: pxTovw(180)
+        &::after
+          content: '\e903'
+          transform: translateX(5px)
+      .swiper-button-next
+        right: pxTovw(180)
+        &::after
+          content: '\e902'
+      .swiper-slide
+        &.swiper-slide-active
+          p.text
+            opacity: 1
+    .btn-back
+      padding-top: 150px
+    +rwdmax(1650)
+      .detail-swiper
+        .swiper-button-prev
+          left: pxTovw(200)
+        .swiper-button-next
+          right: pxTovw(200)
+    +rwdmax(1550)
+      .detail-swiper
+        .swiper-button-prev
+          left: pxTovw(210)
+        .swiper-button-next
+          right: pxTovw(210)
+    +rwdmax(1440)
+      .detail-swiper
+        .swiper-button-prev
+          left: pxTovw(230)
+        .swiper-button-next
+          right: pxTovw(230)
+    +rwdmax(1300)
+      .detail-swiper
+        .swiper-button-prev,
+        .swiper-button-next
+          // top: 35%
+        .swiper-button-prev
+          left: pxTovw(240)
+        .swiper-button-next
+          right: pxTovw(240)
+      .btn-back
+        padding-top: 100px
     +rwdmax(1200)
       padding-top: 80px
       h2
         font-size: px(20)
       article
         padding-top: 30px
-        .photo
-          margin-left: 20px
-          max-width: 400px
+      .detail-swiper
+        .swiper-button-prev,
+        .swiper-button-next
+          width: 50px
+          height: 50px
+          top: 33%
+        .swiper-button-prev
+          left: pxTovw(180)
+        .swiper-button-next
+          right: pxTovw(180)
+        // .photo
+        //   margin-left: 20px
+        //   max-width: 400px
 
-        &.photo-right
-          margin-left: 20px
-          max-width: 400px
-        &.photo-left
-          margin-right: 20px
-          max-width: 400px
-        &.row-two
-          padding-top: 30px
-          flex-direction: column
-          align-items: center
-          .photo
-            margin: 0 0 10px
-        .photo-column
-          margin-right: 20px
-          &.right
-            margin-left: 20px
-            max-width: 300px
-      .photo-row
-        .photo
-          margin-right: 10px
-      .photo-column
-        max-width: 300px
-        >div
-          .photo
-            margin-bottom: 10px
-            &:last-child
-              margin-bottom: 0
+      //   &.photo-right
+      //     margin-left: 20px
+      //     max-width: 400px
+      //   &.photo-left
+      //     margin-right: 20px
+      //     max-width: 400px
+      //   &.row-two
+      //     padding-top: 30px
+      //     flex-direction: column
+      //     align-items: center
+      //     .photo
+      //       margin: 0 0 10px
+      //   .photo-column
+      //     margin-right: 20px
+      //     &.right
+      //       margin-left: 20px
+      //       max-width: 300px
+      // .photo-row
+      //   .photo
+      //     margin-right: 10px
+      // .photo-column
+      //   max-width: 300px
+      //   >div
+      //     .photo
+      //       margin-bottom: 10px
+      //       &:last-child
+      //         margin-bottom: 0
+    +rwdmax(900)
+      .detail-swiper
+        .swiper-button-prev,
+        .swiper-button-next
+          top: 30%
     +rwdmax(767)
       article
         padding-top: 20px
         p 
-          line-height: 30px
-        &.row-two
-          padding-top: 20px
-        .photo-column
-          max-width: none
-          &.right
-            margin-left: 0
-            margin-bottom: 20px
-          &.right,
-          &.left
-            max-width: none
-
-      .photo-row
-        flex-direction: column
-        .photo
-          margin-right: 0
-          margin-bottom: 10px
-          &:last-child
-            margin-bottom: 0
-      .photo-column
-        max-width: none
-        
+          line-height: px(30)
+      .detail-swiper
+        .swiper-button-prev,
+        .swiper-button-next
+          width: 35px
+          height: 35px
+          top: 75px
+          &::after
+            font-size: px(24)
+        .swiper-button-prev
+          left: pxTovw(90)
+        .swiper-button-next
+          right: pxTovw(90)

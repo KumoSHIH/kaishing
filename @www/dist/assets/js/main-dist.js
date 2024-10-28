@@ -905,6 +905,33 @@ var _swiper = {
       }
     };
     var footerSwiper = new Swiper(".footer-swiper .swiper-container", setting);
+  },
+  detail: function detail() {
+    var setting = {
+      loop: true,
+      speed: 500,
+      slidesPerView: 1.5,
+      centeredSlides: true,
+      spaceBetween: 20,
+      breakpoints: {
+        320: {
+          slidesPerView: 1.35
+        },
+        767: {
+          slidesPerView: 1.5
+        }
+      },
+      pagination: {
+        el: ".detail-swiper .swiper-pagination",
+        clickable: true
+      },
+      navigation: {
+        nextEl: ".detail-swiper .swiper-button-next",
+        prevEl: ".detail-swiper .swiper-button-prev"
+      }
+    };
+
+    var detailSwiper = new Swiper(".detail-swiper  .swiper-container", setting);
   }
 };
 
@@ -1014,7 +1041,7 @@ var readyFunction = {
   story: function story() {},
   service: function service() {
     _form.formSelect();
-    _service.openList();
+    // _service.openList();
     _swiper.service();
   },
   property: function property() {
@@ -1026,7 +1053,10 @@ var readyFunction = {
     _common.resizeFun(_property.resize);
   },
   detail: function detail() {
-    _libox.all();
+    // _libox.all();
+    if ($('.detail-swiper').length > 0) {
+      _swiper.detail();
+    }
   },
   ftPage: function ftPage() {},
   videos: function videos() {
