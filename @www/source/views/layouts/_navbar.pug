@@ -116,12 +116,14 @@ header.hd
               i.icon-search
           ul
             each val,index in other
-              if(index === 0)
-                li(style="display: none")
-                  a(href= val.url)= val.ch
-              else
-                li
-                  a(href= val.url)= val.ch
+              li
+                a(href= val.url)= val.ch
+              //- if(index === 0)
+              //-   li(style="display: none")
+              //-     a(href= val.url)= val.ch
+              //- else
+              //-   li
+              //-     a(href= val.url)= val.ch
                 //- if (index === 0 || index === 3)
                 //-   a(href= val.url target="_blank")= val.ch
                 //- else

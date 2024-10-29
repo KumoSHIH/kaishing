@@ -402,6 +402,91 @@
       +rwdmax(767)
         margin: 0 10px
         
+  .property-swiper-mobile
+    padding: 0 20px
+    background-color: $info
+  .photo-swiper-mobile
+    position: relative
+    height: 350px
+    .swiper-container
+      position: absolute
+      left: 0
+      top: 0
+      opacity: 0
+      pointer-events: none
+      transition: opacity .3s ease-in-out
+      &.active
+        opacity: 1
+        pointer-events: auto
+    .slide-box
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      .photo
+        width: 100%
+        &-wrap
+          position: relative
+          padding-bottom: 56%
+          overflow: hidden
+        img
+          width: 100%
+          +posCenter
+      p
+        margin-top: 10px
+        text-align: left
+        line-height: px(22)
+        font-size: px(14)
+        +ellipsis(2, 22px)
+      +rwdmax(1300)
+        p 
+          margin-top: 20px
+    .swiper-button-prev,
+    .swiper-button-next
+      top: 45%
+      width: 35px
+      height: 35px
+      border-radius: 50%
+      background-color: #fff
+      &::after
+        display: block
+        font-family: 'icomoon'
+        color: $second
+        font-size: px(22)
+      +rwdmax(1300)
+        display: none !important
+    .swiper-button-prev
+      left: -5px
+      &::after
+        content: '\e903'
+        transform: translateX(5px)
+    .swiper-button-next
+      right: -5px
+      &::after
+        content: '\e902'
+    .swiper-pagination
+      width: 100%
+      bottom: 0
+      left: 50%
+      transform: translateX(-50%)
+      +rwdmax(1300)
+        bottom: 80px
+    .swiper-pagination-bullet
+      +rwdmax(767)
+        margin: 0 10px
+  .text-swiper-mobile
+    padding-bottom: px(30)
+    .slide-box
+      +rwdmax(1300)
+        text-align: left
+        h6
+          font-weight: bold
+          padding-bottom: px(20)
+          font-size: px(24)
+        p 
+          line-height: px(30)
+          font-size: px(16)
+
+
 
   .section-swiper
     position: relative

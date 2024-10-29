@@ -3,6 +3,7 @@ let articleSwiper;
 let propertySwiper;
 let commonSwiper;
 let propertyTextSwiper;
+let propertyTextMobSwiper;
 
 let _common = {
   //鎖住卷軸
@@ -846,7 +847,10 @@ let _swiper = {
       watchSlidesVisibility: true,
       watchSlidesProgress: true,
     };
-    propertySwiper = new Swiper(".property-swiper > .swiper-container", setting);
+    propertySwiper = new Swiper(
+      ".property-swiper > .swiper-container",
+      setting
+    );
   },
   property2() {
     function setting(ele) {
@@ -898,7 +902,21 @@ let _swiper = {
   },
   propertyText() {
     const setting = {
-      // loop: true,
+      on: {
+        init() {},
+        slideChangeTransitionStart() {
+          const swiper = $(this)[0];
+          console.log(swiper.activeIndex);
+          if (propertyTextMobSwiper !== undefined) {
+            propertyTextMobSwiper.slideTo(swiper.activeIndex, 500, true);
+          }
+          $(".photo-swiper-mobile .swiper-container").removeClass("active");
+          $(`.photo-swiper-mobile${Number(swiper.activeIndex) + 1}`).addClass(
+            "active"
+          );
+        },
+      },
+      // allowTouchMove: false,
       speed: 500,
       slidesPerView: 1,
       effect: "fade",
@@ -907,12 +925,85 @@ let _swiper = {
         prevEl: ".property-text-swiper .swiper-button-prev",
       },
       thumbs: {
-        swiper: propertySwiper,
+        // swiper: propertySwiper,
+        swiper: propertyTextMobSwiper,
       },
     };
     propertyTextSwiper = new Swiper(
       ".property-text-swiper .swiper-container",
       setting
+    );
+  },
+  propertyTextMobile() {
+    const setting = {
+      on: {
+        init() {},
+        slideChangeTransitionStart() {
+          const swiper = $(this)[0];
+          console.log(swiper.realIndex);
+          if (propertyTextSwiper !== undefined) {
+            propertyTextSwiper.slideTo(swiper.realIndex, 500, true);
+          }
+          $(".photo-swiper-mobile .swiper-container").removeClass('active');
+          $(`.photo-swiper-mobile${Number(swiper.realIndex) + 1}`).addClass('active');
+        },
+      },
+      // loop: true,
+      speed: 500,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+    };
+    propertyTextMobSwiper = new Swiper(
+      ".text-swiper-mobile .swiper-container",
+      setting
+    );
+  },
+  propertyPhotoMobile() {
+    function setting(ele) {
+      let settings = {
+        on: {
+          init() {
+            const swiper = $(this)[0];
+            getSlidesCount(swiper);
+          },
+        },
+        loop: true,
+        speed: 800,
+        navigation: {
+          nextEl: `${ele} .swiper-button-next`,
+          prevEl: `${ele} .swiper-button-prev`,
+        },
+        pagination: {
+          el: `${ele} .swiper-pagination`,
+          clickable: true,
+        },
+      };
+      return settings;
+    }
+
+    let photoSwiper1 = new Swiper(
+      ".photo-swiper-mobile1.swiper-container",
+      setting(".photo-swiper-mobile1")
+    );
+    let photoSwiper2 = new Swiper(
+      ".photo-swiper-mobile2.swiper-container",
+      setting(".photo-swiper-mobile2")
+    );
+    let photoSwiper3 = new Swiper(
+      ".photo-swiper-mobile3.swiper-container",
+      setting(".photo-swiper-mobile3")
+    );
+    let photoSwiper4 = new Swiper(
+      ".photo-swiper-mobile4.swiper-container",
+      setting(".photo-swiper-mobile4")
+    );
+    let photoSwiper5 = new Swiper(
+      ".photo-swiper-mobile5.swiper-container",
+      setting(".photo-swiper-mobile5")
+    );
+    let photoSwiper6 = new Swiper(
+      ".photo-swiper-mobile6.swiper-container",
+      setting(".photo-swiper-mobile6")
     );
   },
   footer() {
@@ -957,6 +1048,9 @@ let _swiper = {
   },
   detail() {
     const setting = {
+      on: {
+        slideChangeTransitionEnd() {},
+      },
       loop: true,
       speed: 500,
       slidesPerView: 1.5,
@@ -981,7 +1075,7 @@ let _swiper = {
     };
 
     let detailSwiper = new Swiper(".detail-swiper  .swiper-container", setting);
-  }
+  },
 };
 
 // libox
@@ -1100,7 +1194,9 @@ const readyFunction = {
     _property.hashTagSlideTo();
     _swiper.property2();
     _swiper.common();
+    _swiper.propertyPhotoMobile();
     _common.resizeFun(_property.resize);
+    _swiper.propertyTextMobile();
   },
   detail() {
     // _libox.all();

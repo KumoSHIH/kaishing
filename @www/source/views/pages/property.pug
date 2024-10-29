@@ -154,7 +154,6 @@
   ]
 
 
-
 doctype html
 html(lang="zh-Hant-HK")
   // head標籤 & 網站設定
@@ -198,7 +197,7 @@ html(lang="zh-Hant-HK")
                         .icon
                           .icon-img
                             img(src= val.icon, alt="")
-                    else 
+                    else
                       li.swiper-slide(data-target= index+1)
                         .tit 
                           h6= val.title
@@ -212,7 +211,7 @@ html(lang="zh-Hant-HK")
               .roll
               .roll-photo
                 img(src="../../uploads/property/photo-center.png", alt="")
-        .property-swiper
+        .property-swiper(style="display: none")
           .swiper-container
             .swiper-wrapper
               each val,index in property
@@ -235,8 +234,31 @@ html(lang="zh-Hant-HK")
                     .text
                       h6= val.title
                       p !{val.text}
-                    
-
+        .property-swiper-mobile
+          .photo-swiper-mobile
+            each val,index in property
+              .swiper-container(class=`photo-swiper-mobile${index+1}` class= (index === 0 ? 'active': ''))
+                .swiper-wrapper
+                  each detail in val.photo
+                    .swiper-slide
+                      .slide-box
+                        // 圖片建議不要放超過7張
+                        .photo
+                          .photo-wrap 
+                            img(src= detail.img, alt="")
+                        // 圖片敘述超過兩行，將顯示...
+                        p.desc !{detail.desc}
+                .swiper-button-prev
+                .swiper-button-next
+                .swiper-pagination
+          .text-swiper-mobile
+            .swiper-container
+              .swiper-wrapper
+                each val,index in property
+                  .swiper-slide
+                    .slide-box
+                      h6= val.title
+                      p !{val.text}
         section.section-swiper#section-swiper(style="background-color: #faf7f1")
           .section-wrap.common-width
             .swiper-common

@@ -1,3 +1,13 @@
+-
+  var swiper = [
+    {
+      img: '../../uploads/news/04.jpg',
+      text: '這是代用字，這是代用字這是代用字這是代用字。這是代用字，這是代用字這是代用字這是代用字。這是代用字，這是代用字這是代用字這是代用字。這是代用字，這是代用字這是代用字這是代用字。'},
+    {
+      img: '../../uploads/news/04-2.jpg',
+      text: '這是代用字，這是代用字這是代用字這是代用字。這是代用字，這是代用字這是代用字這是代用字。這是代用字，這是代用字這是代用字這是代用字。這是代用字，這是代用字這是代用字這是代用字。'},
+  ]
+
 doctype html
 html(lang="zh-Hant-HK")
   // head標籤 & 網站設定
@@ -89,6 +99,19 @@ html(lang="zh-Hant-HK")
                 td 英基工業中心
               tr 
                 td NOVO LAND
+          .detail-swiper
+            .swiper-container 
+              .swiper-wrapper 
+                each val in swiper
+                  .swiper-slide 
+                    .slide-box 
+                      .photo
+                        .photo-wrap 
+                          img(src= val.img, alt="")
+                      p.text= val.text
+              .swiper-button-prev
+              .swiper-button-next
+              .swiper-pagination
           .btn.btn-back.waypoint.text-center
             a.btn-more.border(href="./news.html")
               span 返回

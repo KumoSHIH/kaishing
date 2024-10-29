@@ -31,6 +31,10 @@
         left: 50%
         transform: translateX(-50%)
         z-index: 1
+        &.left
+          width: 100%
+          left: 0
+          transform: translateX(0)
     +rwdmax(1200)
       >div
         height: 200px
@@ -38,9 +42,13 @@
           bottom: -20px
     +rwdmax(767)
       >div
-        height: 150px
+        height: 100px
   &-content
     padding-top: 70px
+    +rwdmax(1200)
+      padding-top: 80px
+    +rwdmax(767)
+      padding-top: 30px
     p.date
       padding-bottom: px(50)
       text-align: right
@@ -52,21 +60,11 @@
       line-height: 1.3
       letter-spacing: 1.8px
       font-size: px(35)
+      +rwdmax(1200)
+        font-size: px(20)
     article
       padding-top: 50px
       width: 100%
-      // box-sizing: border-box
-      // &:before,&:after 
-      //   display: table
-      //   line-height: 0
-      //   content: ""
-      // &::after
-      //   clear: both
-      // .photo
-      //   margin: 0 0 40px 40px
-      //   max-width: 500px
-      //   width: 100%
-      //   float: right
       .desc
         max-width: 750px
         width: 100%
@@ -78,39 +76,6 @@
         line-height: px(36)
         padding-top: px(50)
         font-size: px(18)
-      // 樣式
-      // 文繞圖右
-      // &.photo-right
-      //   .photo
-      //     margin: 0 0 40px 40px
-      //     max-width: 500px
-      //     width: 100%
-      //     float: right
-      // // 文繞圖左
-      // &.photo-left
-      //   .photo
-      //     margin: 0 40px 40px 0px
-      //     max-width: 500px
-      //     width: 100%
-      //     float: left
-      // 2圖
-      // &.row-two
-      //   padding-top: 50px
-      //   display: flex
-      //   justify-content: center
-      //   .photo
-      //     width: 100%
-      //     float: none
-      //     margin: 0 10px 20px
-      // .photo-column
-      //   float: left
-      //   width: 100%
-      //   margin: 0 40px 40px 0
-      //   &.right
-      //     float: right
-      //     margin: 0 0px 40px 40px
-      //   &.w-500
-      //     max-width: 500px
       table
         // border: solid 1px
         width: 100%
@@ -126,23 +91,13 @@
           // border: solid 1px #333
         th 
           // background-color: #f3f3f3
-    // .photo-row
-    //   display: flex
-    //   .photo
-    //     width: 100%
-    //     margin-right: 20px
-    //     &:last-child
-    //       margin-right: 0
-    // .photo-column
-    //   max-width: 400px
-    //   >div
-    //     display: flex
-    //     flex-direction: column
-    //     .photo
-    //       margin: 0 0 20px 0
-    //       max-width: none
-    // .open-photo
-    //   cursor: pointer
+      +rwdmax(1200)
+        padding-top: 30px
+      +rwdmax(767)
+        padding-top: 20px
+        p 
+          line-height: px(30)
+          padding-top: px(30)
     .detail-swiper
       padding-top: px(60)
       position: relative
@@ -190,28 +145,22 @@
         &.swiper-slide-active
           p.text
             opacity: 1
-    .btn-back
-      padding-top: 150px
-    +rwdmax(1650)
-      .detail-swiper
+      +rwdmax(1650)
         .swiper-button-prev
           left: pxTovw(200)
         .swiper-button-next
           right: pxTovw(200)
-    +rwdmax(1550)
-      .detail-swiper
+      +rwdmax(1550)
         .swiper-button-prev
           left: pxTovw(210)
         .swiper-button-next
           right: pxTovw(210)
-    +rwdmax(1440)
-      .detail-swiper
+      +rwdmax(1440)
         .swiper-button-prev
           left: pxTovw(230)
         .swiper-button-next
           right: pxTovw(230)
-    +rwdmax(1300)
-      .detail-swiper
+      +rwdmax(1300)
         .swiper-button-prev,
         .swiper-button-next
           // top: 35%
@@ -219,15 +168,7 @@
           left: pxTovw(240)
         .swiper-button-next
           right: pxTovw(240)
-      .btn-back
-        padding-top: 100px
-    +rwdmax(1200)
-      padding-top: 80px
-      h2
-        font-size: px(20)
-      article
-        padding-top: 30px
-      .detail-swiper
+      +rwdmax(1200)
         .swiper-button-prev,
         .swiper-button-next
           width: 50px
@@ -237,48 +178,11 @@
           left: pxTovw(180)
         .swiper-button-next
           right: pxTovw(180)
-        // .photo
-        //   margin-left: 20px
-        //   max-width: 400px
-
-      //   &.photo-right
-      //     margin-left: 20px
-      //     max-width: 400px
-      //   &.photo-left
-      //     margin-right: 20px
-      //     max-width: 400px
-      //   &.row-two
-      //     padding-top: 30px
-      //     flex-direction: column
-      //     align-items: center
-      //     .photo
-      //       margin: 0 0 10px
-      //   .photo-column
-      //     margin-right: 20px
-      //     &.right
-      //       margin-left: 20px
-      //       max-width: 300px
-      // .photo-row
-      //   .photo
-      //     margin-right: 10px
-      // .photo-column
-      //   max-width: 300px
-      //   >div
-      //     .photo
-      //       margin-bottom: 10px
-      //       &:last-child
-      //         margin-bottom: 0
-    +rwdmax(900)
-      .detail-swiper
+      +rwdmax(900)
         .swiper-button-prev,
         .swiper-button-next
           top: 30%
-    +rwdmax(767)
-      article
-        padding-top: 20px
-        p 
-          line-height: px(30)
-      .detail-swiper
+      +rwdmax(767)
         .swiper-button-prev,
         .swiper-button-next
           width: 35px
@@ -290,3 +194,53 @@
           left: pxTovw(90)
         .swiper-button-next
           right: pxTovw(90)
+    .btn-back
+      padding-top: 150px
+      +rwdmax(1300)
+        padding-top: 100px
+    
+
+
+    // 文繞圖
+    article
+      &.photo-right,
+      &.photo-left
+        box-sizing: border-box
+        &:before,
+        &:after 
+          display: table
+          line-height: 0
+          content: ""
+        &::after
+          clear: both
+        p 
+          padding-top: 0
+      //文繞圖右
+      &.photo-right
+        .photo
+          margin: 0 0 40px 80px
+          max-width: 580px
+          width: 100%
+          float: right
+      // 文繞圖左
+      &.photo-left
+        .photo
+          margin: 0 80px 40px 0px
+          max-width: 580px
+          width: 100%
+          float: left
+      +rwdmax(1200)
+        &.photo-right,
+        &.photo-left
+          max-width: none
+          .photo
+            max-width: none
+            margin-right: 0
+            margin-left: 0
+        // &.photo-right
+        //   margin-left: 20px
+        //   max-width: 400px
+        // &.photo-left
+        //   margin-right: 20px
+        //   max-width: 400px
+      +rwdmax(767)

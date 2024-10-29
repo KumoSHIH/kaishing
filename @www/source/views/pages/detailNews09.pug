@@ -1,3 +1,12 @@
+-
+  var swiper = [
+    {
+      img: '../../uploads/news/09.jpg',
+      text: '這是代用字，這是代用字這是代用字這是代用字。這是代用字，這是代用字這是代用字這是代用字。這是代用字，這是代用字這是代用字這是代用字。這是代用字，這是代用字這是代用字這是代用字。'},
+    {
+      img: '../../uploads/news/09-2.jpg',
+      text: '這是代用字，這是代用字這是代用字這是代用字。這是代用字，這是代用字這是代用字這是代用字。這是代用字，這是代用字這是代用字這是代用字。這是代用字，這是代用字這是代用字這是代用字。'},
+  ]
 doctype html
 html(lang="zh-Hant-HK")
   // head標籤 & 網站設定
@@ -25,11 +34,23 @@ html(lang="zh-Hant-HK")
               // 圖片敘述
               .desc.lh.fz-14 啟勝管理服務有限公司（啟勝）致力探索創新科技，為旗下管理物業引入創新科技解決方案，優化物業管理工作。
             p 啟勝管理服務有限公司（啟勝）致力探索創新科技，為旗下管理物業引入創新科技解決方案，優化物業管理工作。最近，啟勝更榮獲由香港房地產科技協會首屆舉辦的「PropTech Excellence Awards 2024」頒發「年度最佳房地產科技獎項 - 物業管理（企業鑽石獎）」，以表揚啟勝推動物業管理科技的傑出表現。<br><br>頒獎典禮當日，啟勝旗下管理的環球貿易廣場（ICC）更獲邀與在場同業進行分享，講解為物業引入的擴增實境（AR）解決方案。作為本港具標誌性建築物之一，ICC積極引進多項創新科技，致力成為全港最高的綠色智慧建築物。為實現節能減碳的目標，ICC團隊將擴增實境（AR）技術引入物業管理系統中，精確地將整幢ICC 的內部及外部結構進行立體掃瞄，讓團隊能透過AR操作介面系統，遙距監察及操控各設施狀態，令營運變得更具效率及彈性。此外，新技術更能協助保安員在巡邏時制定巡邏路線圖，加強巡邏準確性及安全度，提升整體物業管理質素，為客戶創造更安全、舒適的環境。<br><br>啟勝對獲獎感到十分榮幸和鼓舞。憑藉過往豐富的物業管理經驗，我們一直積極為不同物業尋求創新的解決方案，力求結合先進科技及創新思維，以提高物業管理服務質素，為生活在啟勝物業的人打造更理想的生活及工作環境。
+          .detail-swiper
+            .swiper-container 
+              .swiper-wrapper 
+                each val in swiper
+                  .swiper-slide 
+                    .slide-box 
+                      .photo
+                        .photo-wrap 
+                          img(src= val.img, alt="")
+                      p.text= val.text
+              .swiper-button-prev
+              .swiper-button-next
+              .swiper-pagination
           .btn.btn-back.waypoint.text-center
             a.btn-more.border(href="./news.html")
               span 返回
 
-      
       include ../layouts/_newsBreadcrumb
       // footer
       include ../layouts/_footer.pug

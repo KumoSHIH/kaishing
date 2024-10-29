@@ -458,6 +458,7 @@ main
     // width: 90%
     +rwdmax(767)
       width: 85%
+      flex-wrap: wrap
   li
     padding-right: 15px
     margin-right: 15px
@@ -502,7 +503,8 @@ main
         height: 1px
         background-color: $main
         transition: width .3s ease-in-out
-
+    +rwdmax(767)
+      margin-bottom: 5px
 // 我們的故事
 .section-story
   padding: 120px 0
