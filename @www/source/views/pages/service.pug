@@ -56,6 +56,7 @@
       link: './detailService09.html'},
   ]
 
+  // 24/10修改
   var awards = [
     {
       photo: '../../uploads/service/香港環境卓越大獎.jpg',
@@ -122,6 +123,7 @@
       ]},
   ]
 
+  // 24/10修改
   var certified = [
     {
       photo: '../../uploads/service/ISO9001.png',
@@ -254,13 +256,14 @@ html(lang="zh-Hant-HK")
                 .awards-block.col-12.col-md-6.col-xxl-4.d-flex.flex-column.waypoint
                   .top-block.d-flex
                     // 圖片建議尺寸 175X175
+                    // 24/10修改
                     .photo
                       .photo-wrap
                         img(src= val.photo, alt="")
                     .main
                       h6.fz-18.font-bold.pb-3= val.name
                       span.fz-14 頒發機構
-                      h6.pt-2= val.location
+                      p.pt-2= val.location
                   a.btn-more.pt-4(href="javascript:;")
                     span 了解更多
                     .circle-right.main
@@ -271,6 +274,7 @@ html(lang="zh-Hant-HK")
                   //-       li !{item}
           
           // 載入更多按鈕
+          // 後端callback: _service.backendCallback();
           .btn.waypoint.mt-5
             a.btn-more.border(href="javascript:;")
               span 載入更多

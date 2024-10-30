@@ -1,4 +1,5 @@
 -
+  // 24/10修改
   var property = [
     {
       title: '辦公大樓',
@@ -105,6 +106,8 @@
     //-   photo: '../../uploads/property/img07.jpg',
     //-   text: '這是假字，這是假字，這是假字。這是假字，這是假字這是假字。<br>這是假字這是假字這是假字，這是假字，這是假字。這是假字，這是假字這是假字。<br>這是假字這是假字，這是假字。 這是假字這是假字這是假字。'},
   ]
+
+  // 24/10 修改
   var swiper = [
     {
       title: '超卓管理服務有限公司（Supreme）',
@@ -185,6 +188,7 @@ html(lang="zh-Hant-HK")
 
         .property-content
           .content
+            // 24/10修改
             .property-text.property-text-swiper
               .swiper-container
                 ul.swiper-wrapper
@@ -214,6 +218,7 @@ html(lang="zh-Hant-HK")
         .property-swiper(style="display: none")
           .swiper-container
             .swiper-wrapper
+              // 24/10修改
               each val,index in property
                 .swiper-slide(data-target-content= index+1)
                   .slide-box
@@ -259,7 +264,7 @@ html(lang="zh-Hant-HK")
                     .slide-box
                       h6= val.title
                       p !{val.text}
-        section.section-swiper#section-swiper(style="background-color: #faf7f1")
+        section.section-swiper#section-swiper
           .section-wrap.common-width
             .swiper-common
               .swiper-container 

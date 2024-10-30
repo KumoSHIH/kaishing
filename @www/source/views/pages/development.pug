@@ -1,4 +1,5 @@
 -
+  // 24/10修改
   var devData = [
     {
       id: 'content1',
@@ -68,6 +69,7 @@ html(lang="zh-Hant-HK")
                 .text-block.waypoint
                   h6.section-title= val.title
                   p !{val.text}
+                  // 24/10
                   a.btn-more(href= val.link target="_blank")
                     span 了解更多
                     .circle-right.main
@@ -80,6 +82,7 @@ html(lang="zh-Hant-HK")
                   // 圖片建議尺寸 800X605
                   .photo
                     img.b-lazy(src="../../assets/img/blazy.gif" data-src= val.photo)
+                // 24/10
                 .text-block.waypoint
                   h6.section-title= val.title
                   p !{val.text}
