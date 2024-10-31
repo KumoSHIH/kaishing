@@ -2,7 +2,6 @@
 let articleSwiper;
 let propertySwiper;
 let commonSwiper;
-let propertyTextSwiper;
 let propertyTextMobSwiper;
 
 let _common = {
@@ -571,16 +570,13 @@ let _property = {
     let btn = $(".property-text li");
     if ($(window).outerWidth() <= 1300) {
       // $(".property-swiper > .swiper-container").removeClass("swiper-no-swiping");
-      _swiper.property();
-      _swiper.propertyText();
+      // _swiper.property();
+      // _swiper.propertyText();
       btn.removeClass("desktop");
     } else {
       // $(".property-swiper > .swiper-container").addClass("swiper-no-swiping");
       if (propertySwiper !== undefined) {
         propertySwiper.destroy();
-      }
-      if(propertyTextSwiper !== undefined) {
-        propertyTextSwiper.destroy();
       }
       btn.addClass("desktop");
       _property.showText();
@@ -830,28 +826,28 @@ let _swiper = {
       setting
     );
   },
-  property() {
-    const setting = {
-      on: {
-        init() {},
-        slideChangeTransitionEnd() {
-          const swiper = $(this)[0];
-          // console.log(swiper.realIndex);
-          if (propertyTextSwiper !== undefined) {
-            propertyTextSwiper.slideTo(swiper.realIndex, 500, true);
-          }
-        },
-      },
-      // loop: true,
-      speed: 500,
-      watchSlidesVisibility: true,
-      watchSlidesProgress: true,
-    };
-    propertySwiper = new Swiper(
-      ".property-swiper > .swiper-container",
-      setting
-    );
-  },
+  // property() {
+  //   const setting = {
+  //     on: {
+  //       init() {},
+  //       slideChangeTransitionEnd() {
+  //         const swiper = $(this)[0];
+  //       },
+  //     },
+  //     // loop: true,
+  //     speed: 500,
+  //     navigation: {
+  //       nextEl: ".property-swiper > .swiper-container .swiper-button-next",
+  //       prevEl: ".property-swiper > .swiper-container .swiper-button-prev",
+  //     },
+  //   };
+  //   propertySwiper = new Swiper(
+  //     ".property-swiper > .swiper-container",
+  //     setting
+  //   );
+  // },
+
+  // 電腦版
   property2() {
     function setting(ele) {
       let settings = {
@@ -900,64 +896,66 @@ let _swiper = {
       setting(".photo-swiper6")
     );
   },
-  propertyText() {
-    const setting = {
-      on: {
-        init() {},
-        slideChangeTransitionStart() {
-          const swiper = $(this)[0];
-          console.log(swiper.activeIndex);
-          if (propertyTextMobSwiper !== undefined) {
-            propertyTextMobSwiper.slideTo(swiper.activeIndex, 500, true);
-          }
-          $(".photo-swiper-mobile .swiper-container").removeClass("active");
-          $(`.photo-swiper-mobile${Number(swiper.activeIndex) + 1}`).addClass(
-            "active"
-          );
-        },
-      },
-      // allowTouchMove: false,
-      speed: 500,
-      slidesPerView: 1,
-      effect: "fade",
-      navigation: {
-        nextEl: ".property-text-swiper .swiper-button-next",
-        prevEl: ".property-text-swiper .swiper-button-prev",
-      },
-      thumbs: {
-        // swiper: propertySwiper,
-        swiper: propertyTextMobSwiper,
-      },
-    };
-    propertyTextSwiper = new Swiper(
-      ".property-text-swiper .swiper-container",
-      setting
-    );
-  },
+  // propertyText() {
+  //   const setting = {
+  //     on: {
+  //       init() {},
+  //       slideChangeTransitionStart() {
+  //         const swiper = $(this)[0];
+  //         console.log(swiper.activeIndex);
+  //         if (propertyTextMobSwiper !== undefined) {
+  //           propertyTextMobSwiper.slideTo(swiper.activeIndex, 500, true);
+  //         }
+  //         $(".photo-swiper-mobile .swiper-container").removeClass("active");
+  //         $(`.photo-swiper-mobile${Number(swiper.activeIndex) + 1}`).addClass(
+  //           "active"
+  //         );
+  //       },
+  //     },
+  //     // allowTouchMove: false,
+  //     speed: 500,
+  //     slidesPerView: 1,
+  //     effect: "fade",
+  //     navigation: {
+  //       nextEl: ".property-text-swiper .swiper-button-next",
+  //       prevEl: ".property-text-swiper .swiper-button-prev",
+  //     },
+  //     thumbs: {
+  //       // swiper: propertySwiper,
+  //       swiper: propertyTextMobSwiper,
+  //     },
+  //   };
+  //   propertyTextSwiper = new Swiper(
+  //     ".property-text-swiper .swiper-container",
+  //     setting
+  //   );
+  // },
   propertyTextMobile() {
     const setting = {
       on: {
         init() {},
         slideChangeTransitionStart() {
           const swiper = $(this)[0];
-          console.log(swiper.realIndex);
-          if (propertyTextSwiper !== undefined) {
-            propertyTextSwiper.slideTo(swiper.realIndex, 500, true);
-          }
-          $(".photo-swiper-mobile .swiper-container").removeClass('active');
-          $(`.photo-swiper-mobile${Number(swiper.realIndex) + 1}`).addClass('active');
+          $(".photo-swiper-mobile .swiper-container").removeClass("active");
+          $(`.photo-swiper-mobile${Number(swiper.realIndex) + 1}`).addClass(
+            "active"
+          );
         },
       },
       // loop: true,
       speed: 500,
-      watchSlidesVisibility: true,
-      watchSlidesProgress: true,
+      navigation: {
+        nextEl: ".text-swiper-mobile .swiper-button-next",
+        prevEl: ".text-swiper-mobile .swiper-button-prev",
+      },
     };
     propertyTextMobSwiper = new Swiper(
       ".text-swiper-mobile .swiper-container",
       setting
     );
   },
+
+  // 手機版
   propertyPhotoMobile() {
     function setting(ele) {
       let settings = {

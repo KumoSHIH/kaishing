@@ -51,7 +51,7 @@
       icon: '../../uploads/property/icon03.png',
       photo: [
         {
-          img: '../../uploads/property/高級豪宅.jpg',
+          img: '../../uploads/property/高級豪宅.png',
           desc: '這是假字，這是假字，這是假字。這是假字，這是假字這是假字。<br>這是假字這是假字這是假字，這是假字，這是假字。'},
       ],
       text: '我們矢志提供多元化會所設施及服務，從餐飲宴會、娛樂康體以至兒童活動，包辦品味與窩心兼具的豐富居住體驗。我們亦會持續推出與時並進的會所服務和活動，務求滿足所有業戶一家大小的消閒娛樂所需。'},
@@ -189,33 +189,31 @@ html(lang="zh-Hant-HK")
         .property-content
           .content
             // 24/10修改
-            .property-text.property-text-swiper
-              .swiper-container
-                ul.swiper-wrapper
-                  each val,index in property
-                    if (index === 0)
-                      li.swiper-slide.active(data-target= index+1)
-                        .tit
-                          h6= val.title
-                          i.icon-circle-down
-                        .icon
-                          .icon-img
-                            img(src= val.icon, alt="")
-                    else
-                      li.swiper-slide(data-target= index+1)
-                        .tit 
-                          h6= val.title
-                          i.icon-circle-down
-                        .icon
-                          .icon-img
-                            img(src= val.icon, alt="")
-                .swiper-button-prev
-                .swiper-button-next
+            .property-text
+              ul
+                each val,index in property
+                  if (index === 0)
+                    li.active(data-target= index+1)
+                      .tit
+                        h6= val.title
+                        i.icon-circle-down
+                      .icon
+                        .icon-img
+                          img(src= val.icon, alt="")
+                  else
+                    li(data-target= index+1)
+                      .tit 
+                        h6= val.title
+                        i.icon-circle-down
+                      .icon
+                        .icon-img
+                          img(src= val.icon, alt="")
             .roll-box
               .roll
               .roll-photo
                 img(src="../../uploads/property/photo-center.png", alt="")
-        .property-swiper(style="display: none")
+        // 電腦版
+        .property-swiper
           .swiper-container
             .swiper-wrapper
               // 24/10修改
@@ -239,6 +237,7 @@ html(lang="zh-Hant-HK")
                     .text
                       h6= val.title
                       p !{val.text}
+        // 手機板
         .property-swiper-mobile
           .photo-swiper-mobile
             each val,index in property
@@ -262,8 +261,12 @@ html(lang="zh-Hant-HK")
                 each val,index in property
                   .swiper-slide
                     .slide-box
-                      h6= val.title
-                      p !{val.text}
+                      .top-title= val.title
+                      .text
+                        h6= val.title
+                        p !{val.text}
+              .swiper-button-prev
+              .swiper-button-next
         section.section-swiper#section-swiper
           .section-wrap.common-width
             .swiper-common
