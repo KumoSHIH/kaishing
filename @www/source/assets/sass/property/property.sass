@@ -448,6 +448,8 @@
         +ellipsis(2, 22px)
       +rwdmax(1300)
         padding: 0 20px
+        max-width: 450px
+        width: 100%
         p 
           margin-top: 20px
     .swiper-button-prev,
@@ -497,6 +499,8 @@
         display: none
       +rwdmax(1300)
         text-align: left
+        max-width: 600px
+        width: 100%
         .top-title
           margin-bottom: 350px
           display: block
@@ -516,6 +520,8 @@
           font-size: px(16)
         .text
           padding: 0 20px
+      +rwdmax(900)
+        max-width: 500px
     .swiper-button-prev,
     .swiper-button-next
       width: 50px
@@ -540,7 +546,17 @@
       &::after
         content: '\e902'
         transform: translateX(15px)
-
+    .swiper-btn
+      +rwdmax(1300)
+        max-width: 600px
+        width: 100%
+        position: absolute
+        top: 0
+        left: 50%
+        transform: translateX(-50%)
+        z-index: 1
+      +rwdmax(900)
+        max-width: 500px 
 
   .section-swiper
     position: relative
