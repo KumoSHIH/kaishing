@@ -168,6 +168,10 @@
         flex-direction: column
         >li 
           padding: 15px 0
+    +rwdmax(767)
+      >ul 
+        margin-right: 0
+        width: 70%
   &-second
     min-width: 200px
     width: 100%
@@ -455,3 +459,11 @@
       top: 107px
     +rwdmax(1200)
       display: none !important
+
+[data-lang="en"]
+  .hd-second a
+    padding: 15px 0
+    font-size: px(16)
+  .hd-other ul
+    +rwdmax(767)
+      flex-wrap: wrap

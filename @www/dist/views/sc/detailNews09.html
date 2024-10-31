@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-Hant-HK">
+<html lang="zh-CN">
   <!-- head標籤 & 網站設定-->
   <head itemscope="itemscope" itemtype="http://schema.org/WebSite">
     <!--共用設定-->
     <!-- 網站語系及語言宣告-->
-    <meta http-equiv="content-language" content="zh-Hant-HK">
+    <meta http-equiv="content-language" content="zh-CN">
     <meta charset="UTF-8">
     <!-- RWD設定-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -43,11 +43,7 @@
                   </li>
                   <li><a href="./service.html"><span>卓越服务</span></a>
                   </li>
-                  <li class="hasBg"><a href="./story.html"><span>人物故事</span></a>
-                    <ul class="hd-second">
-                      <li><a href="./story.html#content1">公司员工的核心价值</a></li>
-                      <li><a href="./story.html#content2">员工故事分享</a></li>
-                    </ul>
+                  <li><a href="./story.html"><span>人物故事</span></a>
                   </li>
                 </ul>
                 <div class="hd-tools hd-search">
@@ -72,7 +68,7 @@
                   <input type="text" placeholder="请输入文字"><a href="javascript:;"><i class="icon-search"></i></a>
                 </div>
                 <ul>
-                  <li style="display: none"><a href="./videos.html">影片库</a></li>
+                  <li><a href="./videos.html">影片库</a></li>
                   <li><a href="./news.html">新闻及资源</a></li>
                   <li><a href="./contact.html">联系我们</a></li>
                   <li><a href="https://career.kaishing.hk/">加入我们</a></li>
@@ -93,12 +89,13 @@
       <!-- 主要內容-->
       <main>
         <section class="detail-banner">
-          <div class="detail-width">
+          <div class="detail-width"><a href="./news.html"><i class="icon-keyboard_arrow_left"></i><span>返回</span></a>
             <h6 class="section-title">奖项及成就</h6>
           </div>
         </section>
         <section class="detail-content detail-width">
           <h2>启胜荣获「PropTech Excellence Awards 2024」之「年度最佳房地产科技奖项 - 物业管理 （企业钻石奖）」</h2>
+          <p class="date pt-1">2024年4月5日</p>
           <article>
             <div class="photo"><img src="../../uploads/news/09.jpg" alt=""></div>
             <p>启胜管理服务有限公司（启胜）致力探索创新科技，为旗下管理物业引入创新科技解决方案，优化物业管理工作。 最近，启胜更荣获由香港房地产科技协会首届举办的「PropTech Excellence Awards 2024」颁发「年度最佳房地产科技奖项 - 物业管理（企业钻石奖）」，以表扬启胜推动物业管理科技的杰出表现。<br><br>颁奖典礼当日，启胜旗下管理的环球贸易广场（ICC）更获邀与在场同业进行分享，讲解为物业引入的扩增实境（AR）解决方案。 作为本港具标志性建筑物之一，ICC积极引进多项创新科技，致力成为全港最高的绿色智慧建筑物。 为实现节能减碳的目标，ICC团队将扩增实境（AR）技术引入物业管理系统中，精确地将整幢ICC的内部及外部结构进行立体扫瞄，让团队能透过AR操作接口系统，遥距监察及操控各设施状态，令营运变得更具效率及弹性。 此外，新技术更能协助保安员在巡逻时制定巡逻路线图，加强巡逻准确性及安全度，提升整体物业管理质素，为客户创造更安全、舒适的环境。<br><br>启胜对获奖感到十分荣幸和鼓舞。 凭借过往丰富的物业管理经验，我们一直积极为不同物业寻求创新的解决方案，力求结合先进科技及创新思维，以提高物业管理服务质素，为生活在启胜物业的人打造更理想的生活及工作环境。</p>
@@ -118,18 +115,14 @@
         <div class="footer common-width waypoint">
           <div class="footer-relative"> 
             <h6>相关公司</h6>
-            <!-- 點擊 前往property.html -->
-            <!-- 並切換下方相對應的輪播-->
-            <!-- callback function:-->
-            <!-- commonSwiper.slideTo(index,800,true)-->
-            <!-- $('.hd').addClass('down');-->
             <ul>
-              <li data-index="1"><a href="./property.html#slider-3"><img src="../../assets/img/logo-main.png" alt=""></a></li>
-              <li data-index="2"><a href="./property.html#slider-1"><img src="../../assets/img/ft-logo02.png" alt=""></a></li>
-              <li data-index="3"><a href="./property.html#slider-2"><img src="../../assets/img/ft-logo03.png" alt=""></a></li>
-              <li data-index="4"><a href="./property.html#slider-5"><img src="../../assets/img/ft-logo04.png" alt=""></a></li>
-              <li data-index="5"><a href="./property.html#slider-6"><img src="../../assets/img/ft-logo05.png" alt=""></a></li>
-              <li data-index="6"><a href="./property.html#slider-7"><img src="../../assets/img/ft-logo06.png" alt=""></a></li>
+              <li><a href="./property.html#slider-1" data-index="1"><img src="../../assets/img/ft-logo02.png" alt=""></a></li>
+              <li><a href="./property.html#slider-2" data-index="2"><img src="../../assets/img/ft-logo03.png" alt=""></a></li>
+              <li><a href="./property.html#slider-3" data-index="3"><img src="../../assets/img/ft-logo04.png" alt=""></a></li>
+              <li><a href="./property.html#slider-4" data-index="4"><img src="../../assets/img/ft-logo05.png" alt=""></a></li>
+              <li><a href="./property.html#slider-5" data-index="5"><img src="../../assets/img/ft-logo06.png" alt=""></a></li>
+              <li><a href="./property.html#slider-6" data-index="6"><img src="../../assets/img/logo08.png" alt=""></a></li>
+              <li><a href="./property.html#slider-7" data-index="7"><img src="../../assets/img/logo07.png" alt=""></a></li>
             </ul>
           </div>
           <div class="footer-other">
