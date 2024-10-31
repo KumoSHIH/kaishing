@@ -601,16 +601,16 @@ let _property = {
     setTimeout(() => {
       const HashTag = window.location.hash;
       const matchTag = HashTag.match(/#slider-(\d+)/);
+      console.log(matchTag);
+
       if (matchTag) {
         const number = parseInt(matchTag[0]);
         const index = parseInt(matchTag[1]);
-        commonSwiper.slideTo(number, 800, true);
+        
+        commonSwiper.slideTo(index, 800, true);
         _property.scrollPos(".section-swiper");
-        $(
-          ".section-swiper .swiper-pagination-bullet:nth-child(" + index + ")"
-        ).addClass("swiper-pagination-bullet-active");
       }
-    },500)
+    }, 500);
   }
 };
 
@@ -781,7 +781,7 @@ let _swiper = {
       loop: true,
       speed: 800,
       spaceBetween: 20,
-      hashNavigation: true,
+      // hashNavigation: true,
       pagination: {
         el: ".section-swiper .swiper-pagination",
         clickable: true,
@@ -1187,11 +1187,10 @@ const readyFunction = {
     _swiper.service();
   },
   property() {
+    _swiper.common();
     _property.resize();
-    // _property.showText();
     _property.hashTagSlideTo();
     _swiper.property2();
-    _swiper.common();
     _swiper.propertyPhotoMobile();
     _common.resizeFun(_property.resize);
     _swiper.propertyTextMobile();
