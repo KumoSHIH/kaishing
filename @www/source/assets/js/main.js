@@ -415,7 +415,7 @@ let _header = {
   // 手機板點擊標題展開子項目
   mobileOpenItems() {
     $('.hd.mobile .hd-menu li.hasBg > a').attr('href', 'javascript:;').addClass('openItems');
-    
+    $(".hd.mobile .hd-menu li.hasBg .openItems").addClass('active');
     $(".hd.mobile .hd-menu li.hasBg .openItems").on('click',function(){
       if(!$(this).hasClass('active')) {
         $(this).addClass('active');
@@ -654,7 +654,7 @@ let _swiper = {
       },
       autoplay: {
         delay: 3000,
-        disableOnInteraction: false,
+        // disableOnInteraction: false,
       },
       loop: true,
       speed: 1000,
