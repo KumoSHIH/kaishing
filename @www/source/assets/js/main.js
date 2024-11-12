@@ -369,6 +369,8 @@ let _header = {
   },
   mobileClick() {
     $('.hd.mobile .hd-hum').off().on('click',function(){
+      $(".hd.mobile .hd-menu li.hasBg .openItems").addClass('active');
+      $('.hd.mobile .hd-menu ul').slideDown();
       if(!$(this).hasClass('active')){
         $(this).addClass('active');
         _header.openEvent();
@@ -416,7 +418,7 @@ let _header = {
   mobileOpenItems() {
     $('.hd.mobile .hd-menu li.hasBg > a').attr('href', 'javascript:;').addClass('openItems');
     $(".hd.mobile .hd-menu li.hasBg .openItems").addClass('active');
-    $(".hd.mobile .hd-menu li.hasBg .openItems").on('click',function(){
+    $(".hd.mobile .hd-menu li.hasBg .openItems").off().on('click',function(){
       if(!$(this).hasClass('active')) {
         $(this).addClass('active');
         $(".hd.mobile .hd-menu li.hasBg ul").slideDown(500);
