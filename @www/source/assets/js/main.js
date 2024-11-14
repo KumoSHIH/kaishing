@@ -462,40 +462,6 @@ let _footer = {
 
 // home
 let _home = {
-  // swiperText() {
-  //   let slide = $('.swiper-banner .swiper-slide');
-  //   let len = Number(slide.length);
-
-  //   slide.each(function(i){
-  //     let index = Number(i + 1);
-      
-  //     // 上一則標題
-  //     let prevTitle = function() {
-  //       if( index - 1 > 0) {
-  //         return $('.swiper-banner .swiper-slide').eq(i - 1).find('.title h6').text();
-  //       }
-  //       // 第一則
-  //       else{
-  //         return $('.swiper-banner .swiper-slide').eq(len - 1).find('.title h6').text();
-  //       }
-  //     }
-
-  //     // 下一則標題
-  //     let nextTitle = function() {
-  //       if( index + 1 <= len) {
-  //         return $('.swiper-banner .swiper-slide').eq(i + 1).find('.title h6').text();
-  //       }
-  //       // 最後一則
-  //       else {
-  //         return $('.swiper-banner .swiper-slide').eq(0).find('.title h6').text();
-  //       }
-  //     }
-
-  //     $(this).find('.title').prepend(`<div class="title-prev">${prevTitle()}</div>`);
-  //     $(this).find('.title').append(`<div class="title-next">${nextTitle()}</div>`);
-  //   });
-  // },
-
   // news swiper
   resize() {
     if(articleSwiper !== undefined) {
@@ -570,12 +536,8 @@ let _property = {
   resize() {
     let btn = $(".property-text li");
     if ($(window).outerWidth() <= 1300) {
-      // $(".property-swiper > .swiper-container").removeClass("swiper-no-swiping");
-      // _swiper.property();
-      // _swiper.propertyText();
       btn.removeClass("desktop");
     } else {
-      // $(".property-swiper > .swiper-container").addClass("swiper-no-swiping");
       if (propertySwiper !== undefined) {
         propertySwiper.destroy();
       }
@@ -655,7 +617,6 @@ let _swiper = {
       },
       autoplay: {
         delay: 3000,
-        // disableOnInteraction: false,
       },
       loop: true,
       speed: 1000,
@@ -723,37 +684,19 @@ let _swiper = {
         init() {
           const swiper = $(this)[0];
           getSlidesCount(swiper);
-          // const slidesCount = function () {
-          //   if (swiper.loopedSlides) {
-          //     return swiper.slides.length - swiper.loopedSlides * 2
-          //   }
-          //   else {
-          //     return swiper.slides.length
-          //   }
-          // }
-          // if(slidesCount() <= 2) {
-          //   swiper.$el.addClass('swiper-no-swiping')
-          //   $(swiper.params.pagination.el).hide()
-          //   swiper.params.autoplay.enabled = false
-          // }
         },
       },
       speed: 1200,
       loop: true,
-      // spaceBetween: 40,
-      // slidesPerView: 3,
       autoplay: {
         delay: 5000,
         disableOnInteraction: false,
       },
       breakpoints: {
         320: {
-          // slidesPerView: 1,
-          // slidesPerColumn: 2,
           spaceBetween: 0,
         },
         767: {
-          // slidesPerView: 2,
           spaceBetween: 30,
         },
         1201: {
@@ -782,7 +725,6 @@ let _swiper = {
       loop: true,
       speed: 800,
       spaceBetween: 20,
-      // hashNavigation: true,
       pagination: {
         el: ".section-swiper .swiper-pagination",
         clickable: true,
@@ -827,27 +769,6 @@ let _swiper = {
       setting
     );
   },
-  // property() {
-  //   const setting = {
-  //     on: {
-  //       init() {},
-  //       slideChangeTransitionEnd() {
-  //         const swiper = $(this)[0];
-  //       },
-  //     },
-  //     // loop: true,
-  //     speed: 500,
-  //     navigation: {
-  //       nextEl: ".property-swiper > .swiper-container .swiper-button-next",
-  //       prevEl: ".property-swiper > .swiper-container .swiper-button-prev",
-  //     },
-  //   };
-  //   propertySwiper = new Swiper(
-  //     ".property-swiper > .swiper-container",
-  //     setting
-  //   );
-  // },
-
   // 電腦版
   property2() {
     function setting(ele) {
@@ -897,40 +818,6 @@ let _swiper = {
       setting(".photo-swiper6")
     );
   },
-  // propertyText() {
-  //   const setting = {
-  //     on: {
-  //       init() {},
-  //       slideChangeTransitionStart() {
-  //         const swiper = $(this)[0];
-  //         console.log(swiper.activeIndex);
-  //         if (propertyTextMobSwiper !== undefined) {
-  //           propertyTextMobSwiper.slideTo(swiper.activeIndex, 500, true);
-  //         }
-  //         $(".photo-swiper-mobile .swiper-container").removeClass("active");
-  //         $(`.photo-swiper-mobile${Number(swiper.activeIndex) + 1}`).addClass(
-  //           "active"
-  //         );
-  //       },
-  //     },
-  //     // allowTouchMove: false,
-  //     speed: 500,
-  //     slidesPerView: 1,
-  //     effect: "fade",
-  //     navigation: {
-  //       nextEl: ".property-text-swiper .swiper-button-next",
-  //       prevEl: ".property-text-swiper .swiper-button-prev",
-  //     },
-  //     thumbs: {
-  //       // swiper: propertySwiper,
-  //       swiper: propertyTextMobSwiper,
-  //     },
-  //   };
-  //   propertyTextSwiper = new Swiper(
-  //     ".property-text-swiper .swiper-container",
-  //     setting
-  //   );
-  // },
   propertyTextMobile() {
     const setting = {
       on: {
@@ -943,7 +830,6 @@ let _swiper = {
           );
         },
       },
-      // loop: true,
       speed: 500,
       navigation: {
         nextEl: ".text-swiper-mobile .swiper-button-next",
@@ -1145,7 +1031,6 @@ const readyFunction = {
     _header.all();
     // footer
     _footer.hashTagSlideTo();
-    // _swiper.footer();
     //Blazy
     _common.blazyInit();
     // waypoint
@@ -1177,14 +1062,12 @@ const readyFunction = {
     _swiper.common();
   },
   development() {
-    // _development.openText();
   },
   privacy() {},
   disclaimer() {},
   story() {},
   service() {
     _form.formSelect();
-    // _service.openList();
     _swiper.service();
   },
   property() {
@@ -1197,7 +1080,6 @@ const readyFunction = {
     _swiper.propertyTextMobile();
   },
   detail() {
-    // _libox.all();
     if($('.detail-swiper').length > 0) {
       _swiper.detail();
     }

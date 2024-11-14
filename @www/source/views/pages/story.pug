@@ -90,18 +90,6 @@ html(lang="zh-Hant-HK")
                   img(src= val.icon, alt="")
                 p !{val.text}
                 span= val.span
-        //- section.section-content.common-width#content2
-        //-   ul
-        //-     each val,index in story
-        //-       li
-        //-         .num= index+1
-        //-         .text
-        //-           h6= val.title
-        //-           p= val.content
-        //-           a.btn-more(href="javascript:;" target="_blank") 
-        //-             span 了解更多
-        //-             .circle-right.main
-        //-               div
         // 24/10修改
         section.section-content.common-width#content2
           each val in story
@@ -110,9 +98,6 @@ html(lang="zh-Hant-HK")
                 .photo-wrap 
                   img.b-lazy(src="../../assets/img/blazy.gif" data-src= val.photo, alt="")
               .text
-                //- p.location 
-                //-   img(src="../assets/img/location.png", alt="")
-                //-   span= val.location 
                 h6= val.title
                 p.content !{val.content}
                 a.btn-more(href= val.url target="_blank")

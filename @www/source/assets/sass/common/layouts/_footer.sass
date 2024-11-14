@@ -5,8 +5,6 @@ footer
 .footer
   padding: 25px 0
   position: relative
-  // +commonW(1650)
-  // width: 90%
   +rwdmax(767)
     width: 85%
   &-relative
@@ -15,16 +13,12 @@ footer
     ul
       display: flex
       flex-wrap: wrap
-      // justify-content: center
       align-items: center
-      // display: none
       li 
         a 
           padding: 10px
         img
           max-width: 185px
-          // max-width: 180px
-          // max-height: 85px
         &:nth-child(6),
         &:nth-child(7)
           img 
@@ -72,9 +66,6 @@ footer
     padding-top: 50px
     display: flex
     justify-content: space-between
-    // max-width: 1350px
-    // width: 100%
-    // margin: 0 auto
     +rwdmax(1200)
       padding-top: 80px
       flex-direction: column-reverse
@@ -84,8 +75,6 @@ footer
   &-link
     display: flex
     li 
-      // padding-left: 15px
-      // margin-left: 15px
       position: relative
       &::after
         content: ''
@@ -97,8 +86,6 @@ footer
         height: 8px
         background-color: #333
       &:first-child
-        // margin-left: 0
-        // padding-left: 0
         &::after
           display: none
         a 
@@ -109,8 +96,6 @@ footer
         &:hover 
           color: $main
       +rwdmax(1200)
-        // padding-left: 10px
-        // margin-left: 10px
         &::after
           height: 12px
         a 
